@@ -13,13 +13,15 @@ gem 'ember-rails'
 gem 'ember-source'#, '1.5.0'
 
 gem 'devise'
-gem 'better_errors'
+gem 'activeadmin', github: 'activeadmin'
 gem 'haml-rails'
 gem 'haml'
 gem 'jquery-validation-rails'
+gem 'carrierwave'
+gem 'acts-as-taggable-on', '~> 3.4'
 
-# gem 'font-awesome-sass', '~> 4.2.0'
-# gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails'
+gem 'font-awesome-sass', '~> 4.2.0'
+gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
