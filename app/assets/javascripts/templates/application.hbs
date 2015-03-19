@@ -1,21 +1,47 @@
 <div id="aside-menu">
-    <div class="logo">
-        image
-    </div>
-    <div class="logo-text">
+    <div class="logo"></div>
+    <div class="logo-text vertical-text">
         <strong>blog</strong>
     </div>
 </div>
 
 <div class="wrapper">
     <div id="content">
-        content
+        {{outlet}}
     </div>
 
     <div id="right-bar" class="pull-right">
-        right-bar
-        <div id="top-right-bar">
-            top-right-bar
+        <div id="top-right-bar-head">
+            <div class="socail-icons">
+                <a class="fa fa-facebook" href="#"></a>
+                <a class="fa fa-github" href="#"></a>
+                <a class="fa fa-google-plus" href="#"></a>
+                <a class="fa fa-instagram" href="#"></a>
+                <a class="fa fa-linkedin" href="#"></a>
+                <a class="fa fa-twitter" href="#"></a>
+                <a class="fa fa-vk" href="#"></a>
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-flag fa-stack-1x"></i>
+                </span>
+            </div>
+        </div>
+        <div id="top-right-bar-content">
+            <strong>NEW POSTS</strong>
+            {{#each post in model}}
+                <div class="post-item">
+                    <div class="post-description">
+                        <h4>{{post.title}}</h4>
+                        <br>
+                        {{post.created_at}}
+                    </div>
+                    <div class="post-image">
+                        <img {{bind-attr src=post.image}} width="30%" height="30%"/>
+                    </div>
+                    <p></p>
+                    <hr>
+                </div>
+            {{/each}}
         </div>
     </div>
 </div>

@@ -1,0 +1,34 @@
+.post-preview {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  .post-preview-info {
+    padding: 30% 150px;
+    .post-preview-image {
+      z-index: 1;
+    }
+    .post-preview-title, .post-preview-body, .post-preview-button {
+      z-index: 2;
+      color: #FFF;
+    }
+    .post-preview-title {
+      font-size: 60px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+    .post-preview-body {}
+    .post-preview-button {
+      margin-top: 50px;
+      text-decoration: none;
+      outline: none;
+      padding: 18px;
+      border: 1px solid #FFF;
+      border-radius: 5%;
+    }
+    .post-preview-hr {
+      width: 220px;
+      border-top: 2px solid #E45245;
+    }
+  }
+
+}

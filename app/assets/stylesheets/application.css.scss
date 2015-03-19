@@ -14,6 +14,8 @@
  *= require_self
  */
 
+
+// Some global settings
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
@@ -30,8 +32,21 @@
   font-style: normal;
 }
 
+a {
+  &:focus {
+    text-decoration: none;
+    border: none;
+    outline: none;
+  }
+}
+
+// Needs for aside bar
 .ember-view {
   padding-left: 75px;
+}
+
+.vertical-text {
+  transform: rotate(270deg);
 }
 
 html, body {
@@ -46,17 +61,20 @@ html, body {
   position: fixed;
   height: 100%;
   width: 75px;
-  border: 1px solid red;
+  border-right: 1px solid #F2F1F0;
   .logo {
     position: relative;
     width: 100%;
     height: 75px;
-    border: 1px solid blue;
+    background: blanchedalmond;
+
   }
   .logo-text {
-    font-family: "Source Sans Pro",Arial,sans-serif;
+    margin-top: 75px;
+    font-family: "Source Sans Pro", Arial, sans-serif;
     font-size: 24px;
-    line-height: 75px;
+    // dont know how this moves text to bottom
+    line-height: 20px;
     text-transform: uppercase;
     white-space: nowrap;
   }
@@ -66,22 +84,39 @@ html, body {
 #content {
   display: inline-block;
   position: relative;
-  width: 70%;
+  width: 65%;
   height: 100%;
-  border: 2px solid black;
 }
 
 // RIGHT BAR
 #right-bar {
   display: inline-block;
   position: relative;
-  border: 2px solid orange;
-  width: 30%;
+  width: 35%;
   height: 100%;
-  #top-right-bar {
+  #top-right-bar-head {
     position: fixed;
-    width: 30%;
+    width: 100%;
     height: 75px;
-    border: 1px solid yellow;
+    background-color: #FFF;
+    z-index: 2;
+  }
+  #top-right-bar-content {
+    z-index: 1;
+    padding: 70px 15px 0 50px;
+    width: 100%;
+    margin-top: 75px;
+    position: relative;
+    height: 100%;
+    background-color: #F5F5F5;
+    .post-item {
+      .post-description {
+        display: inline-block;
+      }
+      .post-image {
+        display: inline-block;
+      }
+    }
+
   }
 }
