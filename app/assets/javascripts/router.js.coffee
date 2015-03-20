@@ -1,6 +1,7 @@
 # For more information see: http://emberjs.com/guides/routing/
 
 Blog.Router.map ()->
-#  @route('index')
-#  @resource('posts')
+  @resource('posts', ->
+    @route('show', {path: '/:id'})
+  )
 

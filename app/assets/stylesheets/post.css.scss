@@ -1,4 +1,8 @@
 .post-preview {
+  &.show {
+    height: 75%;
+    overflow: visible;
+  }
   &:before {
     z-index: 1;
     position: absolute;
@@ -21,6 +25,9 @@
     left: 10%;
     position: absolute;
     z-index: 2;
+    &.show {
+      top: 65%;
+    }
     .post-preview-image {
 
     }
@@ -50,5 +57,29 @@
       border-top: 2px solid #E45245;
     }
   }
+  .author-image {
+    z-index: 2;
+    position: absolute;
+    bottom: -60px;
+    left: 100px;
+    width: 125px;
+    height: 125px;
+    background-color: #B00100;
+  }
 
+}
+
+.post-info {
+  .fa.fa-calendar-o {
+    margin-right: 3px;
+  }
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  .created_by {
+    padding-left: 30px;
+  }
+  .created_at {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+  }
 }

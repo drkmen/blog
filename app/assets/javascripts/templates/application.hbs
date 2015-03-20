@@ -42,7 +42,7 @@
                 <input type="text" placeholder="Search">
                 <i class="fa fa-search"></i>
             </div>
-            <div class="user">  
+            <div class="user">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle-thin fa-stack-2x"></i>
                   <i class="fa fa-user fa-stack-1x"></i>
@@ -54,7 +54,10 @@
             {{#each post in model}}
                 <div class="post-item">
                     <div class="post-description">
-                        <h4>{{truncate post.title 30}}</h4>
+                        {{#link-to 'posts.show' post.id }}
+                            <h4>{{truncate post.title 30}}</h4>
+                        {{/link-to}}
+
                         <small>{{date post.created_at}}, by Lalka</small>
                     </div>
                     <a class="post-image">
