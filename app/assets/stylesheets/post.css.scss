@@ -1,3 +1,9 @@
+.post-preview.index{
+  &:before {
+    display: none;
+  }
+}
+
 .post-preview {
   &.show {
     height: 75%;
@@ -70,16 +76,78 @@
 }
 
 .post-info {
-  .fa.fa-calendar-o {
-    margin-right: 3px;
-  }
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
+  padding: 0 10px 25px 10px;
+  .fa.fa-calendar-o, .fa.fa-tag {
+    color: #EA7B71;
+    margin-right: 3px;
+  }
   .created_by {
     padding-left: 30px;
+    .author {
+      color: #EA7B71;
+    }
   }
   .created_at {
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
   }
+  .tag {
+    margin: 0 10px;
+  }
+  .row {
+    padding-bottom: 25px;
+  }
+}
+.post-body {
+  font-size: 20px;
+  font-weight: 200;
+  padding: 0 25px;
+}
+
+// posts list
+.posts {
+  padding: 35px 50px;
+  height: 100%;
+  position: relative;
+  .post {
+    content: "";
+    height: 65%;
+    z-index: 1;
+    margin-bottom: 250px;
+    position: relative;
+    .post-index {
+      position: relative;
+      z-index: 2;
+      background-color: #FFFFFF;
+      width: 90%;
+      height: 75px;
+      top: -50px;
+      padding: 0 25px;
+      margin: 0 auto;
+      .title {
+        font-weight: 300;
+        font-size: 40px;
+      }
+      .date {
+        font-weight: 100;
+        font-size: 14px;
+      }
+      .body {
+        font-weight: 100;
+        font-size: 20px;
+      }
+      .post-preview-button {
+        border: 1px solid #898989;
+        border-radius: 5%;
+        color: #898989;
+        outline: medium none;
+        padding: 18px;
+        text-decoration: none;
+      }
+
+    }
+  }
+
 }

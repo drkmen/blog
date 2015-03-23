@@ -1,0 +1,15 @@
+<div class="post-preview index" {{bind-attr style=post.PPbackground}}>
+
+</div>
+<div class="post-index">
+    <span class="title">{{post.title}}</span>
+    <br>
+    <p></p>
+    <span class="date">{{date post.created_at}} by LALKA</span>
+
+    <p></p>
+    <span class="body">{{truncate post.body 200}}</span>
+    <p></p>
+    <br>
+    {{#link-to 'posts.show' post.id class='post-preview-button'}}Read more{{/link-to}}
+</div>

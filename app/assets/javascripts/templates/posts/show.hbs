@@ -1,4 +1,4 @@
-<div class="post-preview show" {{bind-attr style=PPbackground}}>
+<div class="post-preview show" {{bind-attr style=model.PPbackground}}>
     <div class="post-preview-info show">
         <div class="post-preview-hr"></div>
         <h1 class="post-preview-title">{{model.title}}</h1>
@@ -9,16 +9,25 @@
 <br>
 <div class="post-info container-fluid">
     <div class="row">
-        <div class="col-md-7 col-md-offset-2">
+        <div class="col-md-6 col-md-offset-2">
             <div class="created_by">
-                by post author
+                by <b class="author">post author</b>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4 text-right">
             <i class="fa fa-calendar-o"></i>
             {{postInfoDate model.created_at}}
+            <span class="tag">
+                <i class="fa fa-tag"></i>
+                Ember.js Ember.js Ember.js
+            </span>
         </div>
-
     </div>
+    <p></p>
+    <hr>
 </div>
+<div class="post-body">
+    {{model.body}}
+</div>
+
 
