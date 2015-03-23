@@ -21,6 +21,8 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+@import "mixin";
+
 //@font-face {
 //  font-family: "writer-pixellove";
 //  src: asset-path("writer_pixellove/writer-pixellove.eot");
@@ -44,9 +46,10 @@ a {
 
 // Needs for aside bar
 .ember-view {
-  padding-left: 75px;
+//  padding-left: 75px;
   height: 100%;
 }
+
 
 .vertical-text {
   transform: rotate(270deg);
@@ -61,6 +64,8 @@ html, body {
 }
 
 .wrapper {
+  z-index: 1;
+  padding-left: 75px;
   position: relative;
   width: 100%;
   height: 100%;
@@ -68,6 +73,7 @@ html, body {
 
 // MENU ON LEFT
 #aside-menu {
+  z-index: 2;
   left: 0;
   position: fixed;
   height: 100%;
@@ -90,11 +96,28 @@ html, body {
     white-space: nowrap;
   }
   .open-menu-button {
+    padding-left: 0!important;
     position: absolute;
     width: 75px;
     text-align: center;
     top: 45%;
+    cursor: pointer;
+//    @include transition(0.2s, ease-in-out);
+//    &:hover {
+//      @include transition(0.2s, ease-in-out);
+//    }
   }
+}
+
+.aside-block {
+  z-index: 3;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #fff;
+  border: 1px solid red;
 }
 
 // MIDDLE BAR

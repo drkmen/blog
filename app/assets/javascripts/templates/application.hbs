@@ -3,8 +3,10 @@
     <div class="logo-text vertical-text">
         <strong>blog</strong>
     </div>
-    <div class="open-menu-button">
-        <i class="fa fa-ellipsis-v fa-2x"></i>
+    <div class="open-menu-button" {{action "showAsideMenu"}}>
+        {{#view "asideButton"}}
+            <i class='fa fa-ellipsis-v fa-2x'></i>
+        {{/view}}
     </div>
 </div>
 
@@ -74,3 +76,15 @@
     </div>
 </div>
 
+{{#with showMenuVisible as isVisible}}
+    {{#view "asideMenu" isVisible=isVisible}}
+        <div class="aside-block">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+    {{/view}}
+{{/with}}
