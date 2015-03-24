@@ -1,11 +1,29 @@
 <div id="aside-menu">
+    <div class="aside-block">
+        <ul class="aside-block-ul">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
     <div class="logo"></div>
     <div class="logo-text vertical-text">
         <strong>blog</strong>
     </div>
-    <div class="open-menu-button">
-        <i class="fa fa-ellipsis-v fa-2x"></i>
-    </div>
+    {{#if showMenuVisible}}
+        <div class="open-menu-button" {{action "hideaAsideMenu"}}>
+            {{#view "asideButtonClose"}}
+                <i class='fa fa-times fa-2x'></i>
+            {{/view}}
+        </div>
+    {{else}}
+        <div class="open-menu-button" {{action "showAsideMenu"}}>
+            {{#view "asideButtonOpen"}}
+                <i class='fa fa-ellipsis-v fa-2x'></i>
+            {{/view}}
+        </div>
+    {{/if}}
 </div>
 
 <div class="wrapper">
@@ -74,3 +92,15 @@
     </div>
 </div>
 
+<!--{{!#with showMenuVisible as isVisible}}-->
+    <!--{{!#view "asideMenu" isVisible=isVisible}}-->
+        <!--<div class="aside-block">-->
+            <!--<ul>-->
+                <!--<li>1</li>-->
+                <!--<li>2</li>-->
+                <!--<li>3</li>-->
+                <!--<li>4</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--{{!/view}}-->
+<!--{{!/with}}-->
