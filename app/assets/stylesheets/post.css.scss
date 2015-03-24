@@ -103,7 +103,21 @@
 .post-body {
   font-size: 20px;
   font-weight: 200;
-  padding: 0 25px;
+}
+
+.post-share {
+  text-align: center;
+  color: #a8a8a8;
+  .title {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .social-buttons {
+    i {
+      margin: 0 10px;
+    }
+    font-size: 30px;
+  }
 }
 
 // posts list
