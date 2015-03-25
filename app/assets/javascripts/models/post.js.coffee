@@ -5,6 +5,9 @@ Blog.Post = DS.Model.extend
   created_at: DS.attr 'date'
   updated_at: DS.attr 'date'
 
+  tags: DS.hasMany 'tags'
+  author: DS.belongsTo 'author'
+
   PPbackground: (()->
     "background-image:url('" + @get("image") + "'); background-repeat: no-repeat;"
   ).property("image")
