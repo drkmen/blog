@@ -3,15 +3,46 @@
         <ul class="aside-block-ul">
             <li><h4>{{#link-to 'index'}}HOME{{/link-to}}</h4></li>
             <li><h4>{{#link-to 'posts'}}BLOG{{/link-to}}</h4></li>
-            Home<br>
-            HOME<br>
-            Blog<br>
-            BLOG<br>
+            Last 5 articles:
+            {{#each post in model}}
+                <li>{{#link-to 'posts.show' post.id}}{{truncate post.title 20}}{{/link-to}}</li>
+            {{/each}}
             <hr>
-            ©
+            <li><h4>{{#link-to 'index'}}CONTACTS{{/link-to}}</h4></li>
+            <li>
+                <span class="fa-stack">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="fa-stack">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="fa-stack">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="fa-stack">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="fa-stack">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="fa-stack">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+            </li>
+            <br>
+            <hr>
+            <span>© cпиздил дизайн, нехуя не защищено {{year}}</span>
+
         </ul>
+
     </div>
-    <div class="logo"></div>
+    <div class="logo"><img src="https://avatars2.githubusercontent.com/u/4477953?v=3&s=460"></div>
     <div class="logo-text vertical-text">
         <strong>blog</strong>
     </div>
@@ -52,7 +83,7 @@
                 </span>
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle-thin fa-stack-2x"></i>
-                  <i class="fa fa-instagram fa-stack-1x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x"></i>
                 </span>
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle-thin fa-stack-2x"></i>
@@ -95,16 +126,3 @@
         </div>
     </div>
 </div>
-
-<!--{{!#with showMenuVisible as isVisible}}-->
-    <!--{{!#view "asideMenu" isVisible=isVisible}}-->
-        <!--<div class="aside-block">-->
-            <!--<ul>-->
-                <!--<li>1</li>-->
-                <!--<li>2</li>-->
-                <!--<li>3</li>-->
-                <!--<li>4</li>-->
-            <!--</ul>-->
-        <!--</div>-->
-    <!--{{!/view}}-->
-<!--{{!/with}}-->

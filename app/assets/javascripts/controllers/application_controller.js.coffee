@@ -6,12 +6,12 @@ Blog.ApplicationController = Ember.ObjectController.extend(
     showAsideMenu: ()->
       $('#aside-menu').animate {
         left: '+=300'
-      }, 800
+      }, 400
       @set('showMenuVisible', true)
     hideaAsideMenu: ()->
       $('#aside-menu').animate {
         left: '-=300'
-      }, 800
+      }, 400
       @set('showMenuVisible', false)
 
 )
