@@ -6,7 +6,7 @@ ActiveAdmin.register Post do
     column :author
     column :title
     column :body
-    column :tags
+    column :tag_list
     column :created_at
     actions
   end
@@ -14,11 +14,15 @@ ActiveAdmin.register Post do
   form do |f|
     f.inputs "Post" do
       f.input :title
+      f.input :image
       f.input :author
       f.input :body
       f.input :tags, as: :check_boxes
     end
+    actions
   end
+
+  permit_params :title, :body, :author_id, :tag_ids => []
 
 
 

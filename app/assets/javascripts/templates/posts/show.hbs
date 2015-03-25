@@ -9,12 +9,12 @@
 <br>
 <div class="post-info container-fluid">
     <div class="row">
-        <div class="col-md-6 col-md-offset-2">
+        <div class="col-md-3 col-md-offset-2">
             <div class="created_by">
                 by <b class="author">{{model.author.name}}</b>
             </div>
         </div>
-        <div class="col-md-4 text-right">
+        <div class="col-md-7 text-right">
             <i class="fa fa-calendar-o"></i>
             {{postInfoDate model.created_at}}
             <span class="tag">
@@ -29,10 +29,12 @@
     <hr>
 </div>
 <div class="container">
+
     <div class="post-body">
         {{model.body}}
     </div>
     <hr>
+
     <div class="post-share">
         <span class="title">SHARE THIS POST</span>
         <p></p>
@@ -58,10 +60,31 @@
     <hr>
 
     <div class="related">
-        <div class="related-item">
-            <div class="img"></div>
-            <div class="text"></div>
-        </div>
+        <div class="title">RELATED POSTS</div>
+        {{#each post in controller.relatedPosts}}
+            <div class="related-item">
+                <div class="img"><img {{bind-attr src=post.image}}></div>
+                <p></p>
+                <div class="text">{{truncate post.body 50}}</div>
+            </div>
+        {{/each}}
+    </div>
+    <hr>
+
+    <div class="comments">
+        <h3>{{model.comments.length}} Comments</h3>
+        {{#each comment in model.comments}}
+            <div class="comment">
+                <div class="author-img"><img {{bind-attr src=comment.author.image}}></div>
+                <div class="date">
+                    <span class="author-name">{{comment.author.name}}</span>
+                    <small class="pull-right">{{date comment.created_at}}</small>
+                </div>
+                <p></p>
+                <div class="body">{{comment.body}}</div>
+                <div class="clear-fix"></div>
+            </div>
+        {{/each}}
     </div>
 
 </div>

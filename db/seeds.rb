@@ -8,6 +8,7 @@
 
 Post.delete_all
 Author.delete_all
+Comment.delete_all
 
 Author.create(:name => 'Mike', :image => 'http://cs306711.vk.me/v306711995/9eeb/HkaIDcDflrs.jpg' ,:url => 'http://vk.com/imdark')
 Author.create(:name => 'Habrahabr', :image => 'http://sitereviews.ru/wp-content/uploads/2013/06/habrahabr_index.png', :url => 'http://habrahabr.ru')
@@ -58,3 +59,10 @@ ActsAsTaggableOn::Tag.create(:name => 'Redis')
 ActsAsTaggableOn::Tag.create(:name => 'MongoDB')
 ActsAsTaggableOn::Tag.create(:name => '3rd API')
 ActsAsTaggableOn::Tag.create(:name => 'DB')
+
+5.times do
+  Comment.create(:body => 'Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec id elit non mi porta gravida at eget metus.',
+                 :author_id => Author.all.sample.id,
+                 :post_id => Post.all.sample.id
+  )
+end
