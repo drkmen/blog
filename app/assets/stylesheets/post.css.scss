@@ -40,9 +40,6 @@
     &.show {
       top: 65%;
     }
-    .post-preview-image {
-
-    }
     .post-preview-title, .post-preview-body, .post-preview-button {
       z-index: 2;
       color: #FFF;
@@ -57,12 +54,17 @@
       font-weight: 200;
     }
     .post-preview-button {
+      color: #fff;
       margin-top: 50px;
       text-decoration: none;
       outline: none;
       padding: 18px;
       border: 1px solid #FFF;
       border-radius: 5%;
+      &:hover {
+        color: #E45245;
+        border-color: #E45245;
+      }
     }
     .post-preview-hr {
       width: 220px;

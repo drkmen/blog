@@ -117,7 +117,9 @@
                         <small>{{date post.created_at}}, by Lalka</small>
                     </div>
                     <a class="post-image">
-                        <img {{bind-attr src=post.image}} width="40%" height="35%"/>
+                        {{#link-to 'posts.show' post.id }}
+                            <img {{bind-attr src=post.image}} width="40%" height="35%"/>
+                        {{/link-to}}
                     </a>
                     <p></p>
                 </div>
