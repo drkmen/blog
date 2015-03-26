@@ -121,7 +121,12 @@
                             <h4>{{truncate post.title 30}}</h4>
                         {{/link-to}}
 
-                        <small>{{date post.created_at}}, by Lalka</small>
+                        <small>
+                            {{date post.created_at}},
+                            {{#link-to 'index'}}
+                                <span class="author">{{post.author.name}}</span>
+                            {{/link-to}}
+                        </small>
                     </div>
                     <a class="post-image">
                         {{#link-to 'posts.show' post.id }}

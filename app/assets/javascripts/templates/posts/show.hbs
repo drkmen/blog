@@ -85,7 +85,22 @@
                 <div class="clear-fix"></div>
             </div>
         {{/each}}
+
+        <div class="new-comment">
+            <!--<h4>Feel free to be first!</h4>-->
+            <form role="form" {{action 'create_comment' on='submit'}}>
+                <div class ="form-group">
+                    {{textarea maxlength=200 value=comment-body class='form-control'}}
+                </div>
+                <div class ="form-group">
+                    <button type="submit" class="btn btn-info">Submit</button>
+                </div>
+            </form>
+        </div>
+
     </div>
+
+
 
 </div>
 

@@ -135,12 +135,6 @@ html, body {
   position: relative;
   width: 35%;
   height: 100%;
-  a {
-    color: #000;
-    text-decoration: none;
-    border: none;
-    outline: none;
-  }
   #top-right-bar-head {
     padding: 0 25px;
     line-height: 75px;
@@ -165,14 +159,20 @@ html, body {
       }
       input {
         border: none;
-        height: 35%;
+        height: 100%;
         &:focus {
-          border-bottom: 1px solid #F5F5F5;
+          border-bottom: 1px solid #5b5b5b;
         }
       }
     }
     .social-icons {
       padding-left: 100px;
+      a {
+        color: #000;
+        text-decoration: none;
+        border: none;
+        outline: none;
+      }
       span {
         opacity: 0.15;
         @include transition(0.2s, ease-in-out);
@@ -200,6 +200,14 @@ html, body {
         }
         small {
           color: #8e8e8e;
+          .author {
+            color: #8e8e8e;
+            @include transition(0.2s, ease-in-out);
+            &:hover {
+              @include transition(0.2s, ease-in-out);
+              color: #EC7B71;
+            }
+          }
         }
         padding-right: 25px;
         display: inline-block;
@@ -208,8 +216,8 @@ html, body {
         img {
           display: inline-block;
         }
-
       }
+
     }
 
   }
