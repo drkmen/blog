@@ -7,6 +7,7 @@
             {{#each post in model}}
                 <li>{{#link-to 'posts.show' post.id}}{{truncate post.title 20}}{{/link-to}}</li>
             {{/each}}
+            <li><h4>{{#link-to 'about'}}ABOUT{{/link-to}}</h4></li>
             <hr>
             <li><h4>{{#link-to 'index'}}CONTACTS{{/link-to}}</h4></li>
             <li>

@@ -2,10 +2,18 @@
 
 </div>
 <div class="post-index">
-    <span class="title">{{post.title}}</span>
+    {{#link-to 'posts.show' post.id}}<span class="title">{{post.title}}</span>{{/link-to}}
     <br>
     <p></p>
-    <span class="date">{{date post.created_at}} by LALKA</span>
+    <span class="date">
+        {{date post.created_at}}
+        by
+        <span class="author">
+            {{#link-to 'author.show' post.author.name}}
+                {{post.author.name}}
+            {{/link-to}}
+        </span>
+    </span>
 
     <p></p>
     <span class="body">{{truncate post.body 200}}</span>

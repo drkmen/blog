@@ -194,6 +194,11 @@
         font-weight: 100;
         font-size: 20px;
       }
+      .author {
+        a {
+          color: #E45245;
+        }
+      }
       .post-preview-button {
         border: 1px solid #898989;
         border-radius: 5%;
@@ -201,6 +206,10 @@
         outline: medium none;
         padding: 18px;
         text-decoration: none;
+        &:hover {
+          color: #E45245;
+          border-color: #E45245;
+        }
       }
 
     }
