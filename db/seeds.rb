@@ -13,6 +13,25 @@ Comment.delete_all
 Author.create(:name => 'Mike', :image => 'http://cs306711.vk.me/v306711995/9eeb/HkaIDcDflrs.jpg' ,:url => 'http://vk.com/imdark')
 Author.create(:name => 'Habrahabr', :image => 'http://sitereviews.ru/wp-content/uploads/2013/06/habrahabr_index.png', :url => 'http://habrahabr.ru')
 
+ActsAsTaggableOn::Tag.create(:name => 'Ruby')
+ActsAsTaggableOn::Tag.create(:name => 'RubyOnRails')
+ActsAsTaggableOn::Tag.create(:name => 'HTML')
+ActsAsTaggableOn::Tag.create(:name => 'Haml')
+ActsAsTaggableOn::Tag.create(:name => 'CSS')
+ActsAsTaggableOn::Tag.create(:name => 'Sass')
+ActsAsTaggableOn::Tag.create(:name => 'Scss')
+ActsAsTaggableOn::Tag.create(:name => 'JavaScript')
+ActsAsTaggableOn::Tag.create(:name => 'CoffeeScript')
+ActsAsTaggableOn::Tag.create(:name => 'jQuery')
+ActsAsTaggableOn::Tag.create(:name => 'Ajax')
+ActsAsTaggableOn::Tag.create(:name => 'Ember.js')
+ActsAsTaggableOn::Tag.create(:name => 'MySQL')
+ActsAsTaggableOn::Tag.create(:name => 'PostgreSQL')
+ActsAsTaggableOn::Tag.create(:name => 'Redis')
+ActsAsTaggableOn::Tag.create(:name => 'MongoDB')
+ActsAsTaggableOn::Tag.create(:name => '3rd API')
+ActsAsTaggableOn::Tag.create(:name => 'DB')
+
 Post.create(title: 'Full-Screen Images In Post',
             body: 'Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
                   Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas faucibus mollis interdum. Donec id elit non mi porta gravida at eget metus.
@@ -70,25 +89,6 @@ Post.create(title: 'Vulputate Ridiculus Fusce Pharetra Tristique',
             author_id: Author.all.sample.id,
             tags: [ActsAsTaggableOn::Tag.all.sample, ActsAsTaggableOn::Tag.all.sample]
 )
-
-ActsAsTaggableOn::Tag.create(:name => 'Ruby')
-ActsAsTaggableOn::Tag.create(:name => 'RubyOnRails')
-ActsAsTaggableOn::Tag.create(:name => 'HTML')
-ActsAsTaggableOn::Tag.create(:name => 'Haml')
-ActsAsTaggableOn::Tag.create(:name => 'CSS')
-ActsAsTaggableOn::Tag.create(:name => 'Sass')
-ActsAsTaggableOn::Tag.create(:name => 'Scss')
-ActsAsTaggableOn::Tag.create(:name => 'JavaScript')
-ActsAsTaggableOn::Tag.create(:name => 'CoffeeScript')
-ActsAsTaggableOn::Tag.create(:name => 'jQuery')
-ActsAsTaggableOn::Tag.create(:name => 'Ajax')
-ActsAsTaggableOn::Tag.create(:name => 'Ember.js')
-ActsAsTaggableOn::Tag.create(:name => 'MySQL')
-ActsAsTaggableOn::Tag.create(:name => 'PostgreSQL')
-ActsAsTaggableOn::Tag.create(:name => 'Redis')
-ActsAsTaggableOn::Tag.create(:name => 'MongoDB')
-ActsAsTaggableOn::Tag.create(:name => '3rd API')
-ActsAsTaggableOn::Tag.create(:name => 'DB')
 
 5.times do
   Comment.create(:body => 'Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec id elit non mi porta gravida at eget metus.',
