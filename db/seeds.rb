@@ -10,8 +10,14 @@ Post.delete_all
 Author.delete_all
 Comment.delete_all
 
-Author.create(:name => 'Mike', :image => 'http://cs306711.vk.me/v306711995/9eeb/HkaIDcDflrs.jpg' ,:url => 'http://vk.com/imdark')
-Author.create(:name => 'Habrahabr', :image => 'http://sitereviews.ru/wp-content/uploads/2013/06/habrahabr_index.png', :url => 'http://habrahabr.ru')
+Author.create(:name => 'Mike',
+              :image => 'http://cs306711.vk.me/v306711995/9eeb/HkaIDcDflrs.jpg',
+              :url => 'http://vk.com/imdark',
+              :about => 'Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing')
+Author.create(:name => 'Habrahabr',
+              :image => 'http://sitereviews.ru/wp-content/uploads/2013/06/habrahabr_index.png',
+              :url => 'http://habrahabr.ru',
+              :about => 'Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing')
 
 ActsAsTaggableOn::Tag.create(:name => 'Ruby')
 ActsAsTaggableOn::Tag.create(:name => 'RubyOnRails')

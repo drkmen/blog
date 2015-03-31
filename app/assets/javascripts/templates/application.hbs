@@ -124,7 +124,7 @@
 
                         <small>
                             {{date post.created_at}},
-                            {{#link-to 'index'}}
+                            {{#link-to 'author.show' post.author.id}}
                                 <span class="author">{{post.author.name}}</span>
                             {{/link-to}}
                         </small>

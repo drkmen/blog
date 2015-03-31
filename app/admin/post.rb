@@ -22,7 +22,7 @@ ActiveAdmin.register Post do
     actions
   end
 
-  permit_params :title, :body, :author_id, :tag_ids => []
+  permit_params :title, :image, :body, :author_id, :tag_ids => []
 
 
 
