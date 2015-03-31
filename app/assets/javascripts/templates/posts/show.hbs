@@ -63,9 +63,11 @@
         <div class="title">RELATED POSTS</div>
         {{#each post in controller.relatedPosts}}
             <div class="related-item">
-                <div class="img"><img {{bind-attr src=post.image}}></div>
-                <p></p>
-                <div class="text">{{truncate post.body 50}}</div>
+                {{#link-to 'posts.show' post.id}}
+                    <div class="img"><img {{bind-attr src=post.image}}></div>
+                    <p></p>
+                    <div class="text">{{truncate post.body 50}}</div>
+                {{/link-to}}
             </div>
         {{/each}}
     </div>
