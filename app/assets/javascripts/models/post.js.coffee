@@ -1,7 +1,7 @@
 Blog.Post = DS.Model.extend
   title: DS.attr 'string'
   body: DS.attr 'string'
-  image: DS.attr 'string'
+  image_path: DS.attr 'string'
   created_at: DS.attr 'date'
   updated_at: DS.attr 'date'
 
@@ -10,8 +10,8 @@ Blog.Post = DS.Model.extend
   author: DS.belongsTo 'author'
 
   PPbackground: (()->
-    "background-image:url('" + @get("image") + "'); background-repeat: no-repeat;"
-  ).property("image")
+    "background-image:url('" + @get("image_path") + "'); background-repeat: no-repeat;"
+  ).property("image_path")
 
   tagsArray: (()->
     @get('tags').map (tag)->

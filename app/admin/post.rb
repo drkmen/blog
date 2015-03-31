@@ -3,6 +3,9 @@ ActiveAdmin.register Post do
   index do
     selectable_column
     column :id
+    column :image do |post|
+      image_tag(post.image, height: 55)
+    end
     column :author
     column :title
     column :body
@@ -15,6 +18,7 @@ ActiveAdmin.register Post do
     f.inputs "Post" do
       f.input :title
       f.input :image
+      f.input :remote_image_url
       f.input :author
       f.input :body
       f.input :tags, as: :check_boxes
@@ -22,7 +26,7 @@ ActiveAdmin.register Post do
     actions
   end
 
-  permit_params :title, :image, :body, :author_id, :tag_ids => []
+  permit_params :title, :image, :remote_image_url, :body, :author_id, :tag_ids => []
 
 
 
