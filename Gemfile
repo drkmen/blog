@@ -22,6 +22,7 @@ gem 'acts-as-taggable-on', '~> 3.4'
 
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'bootstrap-sass'
+gem 'nprogress-rails' # progress bar
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

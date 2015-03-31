@@ -19,10 +19,13 @@
 @import "bootstrap-sprockets";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "nprogress";
+@import "nprogress-bootstrap";
 
 @import "mixin";
 @import "post";
 @import "author";
+
 
 // Needs for aside bar
 .ember-view {

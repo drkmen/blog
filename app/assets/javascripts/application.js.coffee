@@ -4,6 +4,7 @@
 #= require ember
 #= require ember-data
 #= require moment
+#= require nprogress
 #= require_self
 #= require blog
 
