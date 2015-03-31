@@ -18,6 +18,7 @@ gem 'haml-rails'
 gem 'haml'
 gem 'jquery-validation-rails'
 gem 'carrierwave'
+gem 'rmagick'
 gem 'acts-as-taggable-on', '~> 3.4'
 
 gem 'font-awesome-sass', '~> 4.2.0'
