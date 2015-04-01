@@ -1,0 +1,29 @@
+.tags {
+  margin-bottom: 50px;
+  list-style: none;
+  font-size: 15px;
+  font-weight: 300;
+  li {
+    display: inline;
+    &:after {
+      content: ' /';
+    }
+  }
+  li:last-child {
+    &:after {
+      content: '';
+    }
+  }
+  i {
+    color: #E45245;
+  }
+}
+.current-tag {
+  font-size: 30px;
+  font-weight: 100;
+  margin-bottom: 35px;
+  .tag {
+    color: #E45245;
+  }
+}
+

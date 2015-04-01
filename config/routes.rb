@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :posts, only: [:index, :show]
   resources :comments, only: [:create]
-  resources :authors
+  resources :authors, only: [:show]
+  resources :tags, only: [:index, :show]
 
 end

@@ -20,7 +20,7 @@
             <span class="tag">
                 <i class="fa fa-tag"></i>
                 {{#each tag in model.tags}}
-                    {{tag.name}}
+                    {{#link-to 'tags.show' tag.name}}{{tag.name}}{{/link-to}}
                 {{/each}}
             </span>
         </div>

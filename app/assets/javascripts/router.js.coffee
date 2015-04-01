@@ -7,5 +7,8 @@ Blog.Router.map ()->
   @resource('author', ->
     @route('show', {path: '/:name'})
   )
+  @resource('tags', ->
+    @route('show', {path: '/:name'})
+  )
   @route('about')
 

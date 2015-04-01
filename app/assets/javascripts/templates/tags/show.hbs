@@ -1,0 +1,11 @@
+<div class="current-tag">
+    <i class="fa fa-tag tag"></i>
+    {{tag.name}}, Total posts: {{tag.taggings_count}}
+</div>
+
+
+{{#each post in model}}
+    <div class="post">
+        {{partial 'posts/post_info'}}
+    </div>
+{{/each}}

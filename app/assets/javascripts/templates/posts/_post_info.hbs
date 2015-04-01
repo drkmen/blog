@@ -13,6 +13,12 @@
                 {{post.author.name}}
             {{/link-to}}
         </span>
+        <span class="tag pull-right">
+            <i class="fa fa-tag"></i>
+            {{#each tag in post.tags}}
+                {{#link-to 'tags.show' tag.name}}{{tag.name}}{{/link-to}}
+            {{/each}}
+        </span>
     </span>
 
     <p></p>

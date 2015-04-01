@@ -1,0 +1,11 @@
+<div class="posts">
+    <div class="tags">
+        <i class="fa fa-tags fa-3x pull-left"></i>
+        <ul class="tags">
+            {{#each tag in model}}
+                <li>{{#link-to 'tags.show' tag.name}}{{tag.name}} - {{tag.taggings_count}}{{/link-to}}</li>
+            {{/each}}
+        </ul>
+    </div>
+    {{outlet}}
+</div>
