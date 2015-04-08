@@ -136,6 +136,8 @@ GEM
     has_scope (0.6.0)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
+    highcharts-rails (4.1.4)
+      railties (>= 3.1)
     hike (1.2.3)
     hirb (0.7.3)
     html2haml (2.0.0)
@@ -283,6 +285,7 @@ DEPENDENCIES
   font-awesome-sass (~> 4.2.0)
   haml
   haml-rails
+  highcharts-rails
   hirb
   html2haml
   jquery-rails

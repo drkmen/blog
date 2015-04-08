@@ -5,6 +5,8 @@
 #= require ember-data
 #= require moment
 #= require nprogress
+#= require highcharts
+#= require highcharts/highcharts-more
 #= require_self
 #= require blog
 
