@@ -1,16 +1,55 @@
+
+
 <div class="wrapper about">
+    <h2 id="skills">Skills</h2>
+    <div class="inline m">
+        <div class="easypiechart text-success" data-percent="25" data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#8ec165" data-rotate="270" data-scale-Color="false" data-size="120" data-animate="2000">
+            <span class="h2 step font-bold">25</span>%
+            <div class="easypie-text text-muted">task done</div>
+        </div>
+        <div class="font-bold m-t">Total 150</div>
+    </div>
+    <script>
+        $(function() {
+            $('.easypiechart').easyPieChart({});
+        });
+    </script>
+
+    <!--<div class="chart" data-percent="73" data-scale-color="#ffb400">73%</div>-->
+<!---->
+    <script>
+        $(function() {
+            $('.chart').easyPieChart({
+                //your options goes here
+            });
+        });
+    </script>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
     <h2 id="portfolio">Portfolio</h2>
-    <div class="posts">
+    <div class="projects">
         {{#each project in model}}
-            <div class="post">
+            <div class="project">
                 {{partial 'about/project'}}
             </div>
         {{/each}}
     </div>
     <h2 id="contacts">Contacts</h2>
+
     <!--<div class="charts">-->
-        <!--{!{#view "experienceChart"}}-->
-            <!--<div id="experience" style="min-width: 310px; height: 400px; margin: 0 auto"></div>-->
-        <!--{!{/view}}-->
+    <!--{!{#view "experienceChart"}}-->
+    <!--<div id="experience" style="min-width: 310px; height: 400px; margin: 0 auto"></div>-->
+    <!--{!{/view}}-->
     <!--</div>-->
 </div>

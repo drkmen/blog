@@ -8,15 +8,42 @@
 
 .wrapper {
   &.about {
+    padding: 50px 75px 0 75px;
     h1, h2, h3 {
-      margin: 0 0 25px 75px;
       font-size: 50px;
       font-weight: 100;
     }
-    padding: 50px 0 0 0;
-    .posts {
-      padding: 0;
-      margin: 0;
+    .projects{
+      position: relative;
+      .project {
+        content: "";
+        height: 450px;
+        z-index: 1;
+        margin-bottom: 250px;
+        position: relative;
+        .project-index {
+          position: relative;
+          z-index: 2;
+          background-color: #FFFFFF;
+          width: 90%;
+          height: 75px;
+          top: -50px;
+          padding: 0 25px;
+          margin: 0 auto;
+          .title {
+            font-weight: 300;
+            font-size: 40px;
+          }
+          .body {
+            font-weight: 100;
+            font-size: 20px;
+          }
+
+        }
+      }
+
     }
   }
 }
+
+
