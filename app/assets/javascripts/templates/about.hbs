@@ -1,7 +1,16 @@
-<div class="wrapper">
-    <div class="charts">
-        {{#view "experienceChart"}}
-            <div id="experience" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-        {{/view}}
+<div class="wrapper about">
+    <h2 id="portfolio">Portfolio</h2>
+    <div class="posts">
+        {{#each project in model}}
+            <div class="post">
+                {{partial 'about/project'}}
+            </div>
+        {{/each}}
     </div>
+    <h2 id="contacts">Contacts</h2>
+    <!--<div class="charts">-->
+        <!--{!{#view "experienceChart"}}-->
+            <!--<div id="experience" style="min-width: 310px; height: 400px; margin: 0 auto"></div>-->
+        <!--{!{/view}}-->
+    <!--</div>-->
 </div>

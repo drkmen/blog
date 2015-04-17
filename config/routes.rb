@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :comments, only: [:create]
   resources :authors, only: [:show]
   resources :tags, only: [:index, :show]
+  resources :projects, only: [:index]
 
 end

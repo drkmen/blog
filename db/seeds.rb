@@ -9,6 +9,17 @@
 Post.delete_all
 Author.delete_all
 Comment.delete_all
+Project.delete_all
+
+Project.create(:name => 'Phonehome',
+               :description => "It's a system of monitoring and observing the progress of different server events executing. It is used along with a gem for interacting with API and also background process",
+               tags: [ActsAsTaggableOn::Tag.all.sample, ActsAsTaggableOn::Tag.all.sample])
+Project.create(:name => 'App Monitor',
+               :description => 'App Monitor is a system of checking whether a server machine is working and whether it has particular port opened',
+               tags: [ActsAsTaggableOn::Tag.all.sample, ActsAsTaggableOn::Tag.all.sample])
+Project.create(:name => 'Pokerr.co',
+               :description => 'The project is targeted to mobile usage. Users are able to establish a poker game and invite their friends to come and join. The app is connected with Whatsapp messenger and invitations are sent through it. There is a browser version for iOS which is why I developed a responsive layout for it and a native Android app for which I created a Ruby/Rails-based REST API',
+               tags: [ActsAsTaggableOn::Tag.all.sample, ActsAsTaggableOn::Tag.all.sample])
 
 Author.create(:name => 'Mike',
               # :image => 'http://cs306711.vk.me/v306711995/9eeb/HkaIDcDflrs.jpg',
@@ -97,7 +108,7 @@ Post.create(title: 'Vulputate Ridiculus Fusce Pharetra Tristique',
             tags: [ActsAsTaggableOn::Tag.all.sample, ActsAsTaggableOn::Tag.all.sample]
 )
 
-5.times do
+10.times do
   Comment.create(:body => 'Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec id elit non mi porta gravida at eget metus.',
                  :author_id => Author.all.sample.id,
                  :post_id => Post.all.sample.id
