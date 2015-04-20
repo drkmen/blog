@@ -10,6 +10,7 @@ Post.delete_all
 Author.delete_all
 Comment.delete_all
 Project.delete_all
+Skill.delete_all
 
 Project.create(:name => 'Phonehome',
                :description => "It's a system of monitoring and observing the progress of different server events executing. It is used along with a gem for interacting with API and also background process",
