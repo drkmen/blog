@@ -30,6 +30,21 @@ Author.create(:name => 'Habrahabr',
               :url => 'http://habrahabr.ru',
               :about => 'Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing')
 
+date = Date.new(2013, 5, 20) # May, 20, 2013
+
+Skill.create(:name => 'Ruby', :start_date => date, :value => 65)
+Skill.create(:name => 'RubyOnRails', :start_date => date, :value => 65)
+Skill.create(:name => 'HTML', :start_date => Date.new(2010, 1, 1), :value => 55)
+Skill.create(:name => 'CSS', :start_date => Date.new(2010, 1, 1), :value => 55)
+Skill.create(:name => 'Sass/Scss', :start_date => date, :value => 55)
+Skill.create(:name => 'JS/Coffee', :start_date => date, :value => 65)
+Skill.create(:name => 'jQuery/Ajax', :start_date => date, :value => 70)
+Skill.create(:name => 'Ember.js', :start_date => date, :value => 50)
+Skill.create(:name => 'Relational DB', :start_date => Date.new(2010, 1, 1), :value => 35)
+Skill.create(:name => 'Document-oriented DB', :start_date => date, :value => 10)
+Skill.create(:name => 'NoSQL DB', :start_date => date, :value => 10)
+Skill.create(:name => 'Linux administration', :start_date => date, :value => 10)
+
 ActsAsTaggableOn::Tag.create(:name => 'Ruby')
 ActsAsTaggableOn::Tag.create(:name => 'RubyOnRails')
 ActsAsTaggableOn::Tag.create(:name => 'HTML')

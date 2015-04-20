@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   resources :authors, only: [:show]
   resources :tags, only: [:index, :show]
   resources :projects, only: [:index]
+  resources :skills, only: [:index]
 
 end

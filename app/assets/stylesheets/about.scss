@@ -41,8 +41,76 @@
 
         }
       }
-
+    } // projects
+    .skill-chart {
+      display: inline-block;
     }
+    .skills {
+      .skill {
+        margin: 20px 10px;
+        display: inline-block;
+        .skill-level {
+          text-align: center;
+          font-weight: lighter;
+          font-size: 25px;
+          line-height: 20px;
+        }
+      }
+    }
+    .easypiechart {
+      position: relative;
+      text-align: center;
+      display: inline-block;
+    }
+    .easypiechart .h2 {
+      word-wrap: break-word;
+      font-size: 120%;
+      margin-top: 10px;
+      display: inline-block;
+    }
+    .easypiechart canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .easypiechart .easypie-text {
+      position: absolute;
+      z-index: 1;
+      line-height: 1;
+      font-size: 75%;
+      width: 100%;
+      top: 60%;
+    }
+    .easypiechart img {
+      margin-top: -4px;
+    }
+    .color {
+      &.html {
+        color: #dadc00;
+      }
+      &.css {
+        color: #87ffff;
+      }
+      &.scss {
+        color: #2e90ff;
+      }
+      &.js {
+        color: #ffc300;
+      }
+      &.ember {
+        color: #ff7d00;
+      }
+      &.db {
+        color: #8aff15;
+      }
+      &.ruby {
+        color: #ff0d00;
+      }
+      &.rails {
+        color: #bd0400;
+      }
+    }
+
   }
 }
 

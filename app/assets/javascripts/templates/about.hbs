@@ -1,45 +1,25 @@
-
-
 <div class="wrapper about">
     <h2 id="skills">Skills</h2>
-    <div class="inline m">
-        <div class="easypiechart text-success" data-percent="25" data-line-width="5" data-track-Color="#f0f0f0" data-bar-color="#8ec165" data-rotate="270" data-scale-Color="false" data-size="120" data-animate="2000">
-            <span class="h2 step font-bold">25</span>%
-            <div class="easypie-text text-muted">task done</div>
-        </div>
-        <div class="font-bold m-t">Total 150</div>
+    <div class="skills">
+        {{#each skill in model.skills}}
+            <div class="skill">
+                {{#view 'pieChart' data-percent=skill.value name=skill.name}}
+                    <span class="h2 step font-bold">{{skill.name}}</span>
+                    <div class="easypie-text text-muted">More than {{skill.years}} years</div>
+                    <!--<div class="font-bold m-t">{{!skill.name}}</div>-->
+                {{/view}}
+                <br>
+                <div class="skill-level">{{skill.level}}</div>
+            </div>
+        {{/each}}
     </div>
-    <script>
-        $(function() {
-            $('.easypiechart').easyPieChart({});
-        });
-    </script>
 
-    <!--<div class="chart" data-percent="73" data-scale-color="#ffb400">73%</div>-->
-<!---->
-    <script>
-        $(function() {
-            $('.chart').easyPieChart({
-                //your options goes here
-            });
-        });
-    </script>
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <br>
     <br>
 
     <h2 id="portfolio">Portfolio</h2>
     <div class="projects">
-        {{#each project in model}}
+        {{#each project in model.projects}}
             <div class="project">
                 {{partial 'about/project'}}
             </div>

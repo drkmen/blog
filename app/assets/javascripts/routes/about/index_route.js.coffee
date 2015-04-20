@@ -1,6 +1,9 @@
 Blog.AboutRoute = Ember.Route.extend(
 
   model: ->
-    @store.find('project')
+    Ember.RSVP.hash = {
+      projects: @store.find('project')
+      skills: @store.find('skill')
+    }
 
 )
