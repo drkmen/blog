@@ -170,16 +170,19 @@
   position: relative;
   .post {
     content: "";
-    height: 450px;
     z-index: 1;
-    margin-bottom: 250px;
+    margin-bottom: 15px;
     position: relative;
+    .post-preview {
+      &.index {
+        height: 450px;
+      }
+    }
     .post-index {
       position: relative;
       z-index: 2;
       background-color: #FFFFFF;
       width: 90%;
-      height: 75px;
       top: -50px;
       padding: 0 25px;
       margin: 0 auto;
