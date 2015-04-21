@@ -12,21 +12,7 @@ Comment.delete_all
 Project.delete_all
 Skill.delete_all
 
-Project.create(:name => 'Phonehome',
-               :description => "It's a system of monitoring and observing the progress of different server events executing. It is used along with a gem for interacting with API and also background process",
-               :remote_image_url => 'http://www.3dmgame.com/uploads/allimg/130604/153_130604150048_4.jpg',
-               :link => 'http://phonehome.io',
-               :tags => [ActsAsTaggableOn::Tag.all.sample, ActsAsTaggableOn::Tag.all.sample])
-Project.create(:name => 'App Monitor',
-               :remote_image_url => 'http://www.3dmgame.com/uploads/allimg/130604/153_130604150048_4.jpg',
-               :description => 'App Monitor is a system of checking whether a server machine is working and whether it has particular port opened',
-               :link => 'http://example.com',
-               :tags => [ActsAsTaggableOn::Tag.all.sample, ActsAsTaggableOn::Tag.all.sample])
-Project.create(:name => 'Pokerr.co',
-               :remote_image_url => 'http://www.3dmgame.com/uploads/allimg/130604/153_130604150048_4.jpg',
-               :description => 'The project is targeted to mobile usage. Users are able to establish a poker game and invite their friends to come and join. The app is connected with Whatsapp messenger and invitations are sent through it. There is a browser version for iOS which is why I developed a responsive layout for it and a native Android app for which I created a Ruby/Rails-based REST API',
-               :link => 'http://example.com',
-               :tags => [ActsAsTaggableOn::Tag.all.sample, ActsAsTaggableOn::Tag.all.sample])
+
 
 Author.create(:name => 'Mike',
               :remote_image_url => 'http://cs306711.vk.me/v306711995/9eeb/HkaIDcDflrs.jpg',
@@ -71,6 +57,22 @@ ActsAsTaggableOn::Tag.create(:name => 'MongoDB')
 ActsAsTaggableOn::Tag.create(:name => '3rd API')
 ActsAsTaggableOn::Tag.create(:name => 'DB')
 ActsAsTaggableOn::Tag.create(:name => 'Other')
+
+Project.create(:name => 'Phonehome',
+               :description => "It's a system of monitoring and observing the progress of different server events executing. It is used along with a gem for interacting with API and also background process",
+               :remote_image_url => 'http://www.3dmgame.com/uploads/allimg/130604/153_130604150048_4.jpg',
+               :link => 'http://phonehome.io',
+               :tags => [ActsAsTaggableOn::Tag.all.sample, ActsAsTaggableOn::Tag.all.sample])
+Project.create(:name => 'App Monitor',
+               :remote_image_url => 'http://www.3dmgame.com/uploads/allimg/130604/153_130604150048_4.jpg',
+               :description => 'App Monitor is a system of checking whether a server machine is working and whether it has particular port opened',
+               :link => 'http://example.com',
+               :tags => [ActsAsTaggableOn::Tag.all.sample, ActsAsTaggableOn::Tag.all.sample])
+Project.create(:name => 'Pokerr.co',
+               :remote_image_url => 'http://www.3dmgame.com/uploads/allimg/130604/153_130604150048_4.jpg',
+               :description => 'The project is targeted to mobile usage. Users are able to establish a poker game and invite their friends to come and join. The app is connected with Whatsapp messenger and invitations are sent through it. There is a browser version for iOS which is why I developed a responsive layout for it and a native Android app for which I created a Ruby/Rails-based REST API',
+               :link => 'http://example.com',
+               :tags => [ActsAsTaggableOn::Tag.all.sample, ActsAsTaggableOn::Tag.all.sample])
 
 Post.create(title: 'Full-Screen Images In Post',
             body: 'Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
