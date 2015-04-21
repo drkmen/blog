@@ -4,7 +4,7 @@
 <div class="project-index">
     <div class="title">
         {{project.name}}
-        <span class="date"><span class="tag pull-right project-link">{{project.link}}</span></span>
+        <span class="date"><span class="tag pull-right project-link"><a {{bind-attr href=project.link}}>{{project.link}}</a></span></span>
     </div>
     <br>
     <p></p>
