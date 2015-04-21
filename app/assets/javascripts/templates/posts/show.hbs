@@ -3,7 +3,7 @@
         <div class="post-preview-hr"></div>
         <h1 class="post-preview-title">{{model.title}}</h1>
     </div>
-    <div class="author-image"><img {{bind-attr src=model.author.image_path}}></div>
+    <!--<div class="author-image"><img {!{bind-attr src=model.author.image_path}}></div>-->
 
 </div>
 <br>
@@ -11,6 +11,7 @@
     <div class="row">
         <div class="col-md-3 col-md-offset-2">
             <div class="created_by">
+                <div class="author-image"><img {{bind-attr src=model.author.image_path}}></div>
                 by <b class="author">{{model.author.name}}</b>
             </div>
         </div>
@@ -28,7 +29,7 @@
     <p></p>
     <hr>
 </div>
-<div class="container">
+<div class="container-fluid">
 
     <div class="post-body">
         {{model.body}}

@@ -148,6 +148,9 @@ html, body {
   width: 35%;
   height: 100%;
   #top-right-bar-head {
+    &.row {
+      margin-left: 0;
+    }
     padding: 0 25px;
     line-height: 75px;
     position: fixed;
