@@ -72,75 +72,88 @@
     </div>
 
     <div id="right-bar" class="pull-right">
-        <div id="top-right-bar-head">
-            <span class="search">
-                <input type="text" placeholder="Search">
-                <i class="fa fa-search fa-lg"></i>
-            </span>
-            <span class="social-icons">
-                <a href="#">
-                    <span class="fa-stack">
-                      <i class="fa fa-square fa-stack-2x"></i>
-                      <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-                <a href="#">
-                    <span class="fa-stack">
-                      <i class="fa fa-square fa-stack-2x"></i>
-                      <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-                <a href="#">
-                    <span class="fa-stack">
-                      <i class="fa fa-square fa-stack-2x"></i>
-                      <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-                <a href="#">
-                    <span class="fa-stack">
-                      <i class="fa fa-square fa-stack-2x"></i>
-                      <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-                <a href="#">
-                    <span class="fa-stack">
-                      <i class="fa fa-square fa-stack-2x"></i>
-                      <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-                <a href="#">
-                    <span class="fa-stack">
-                      <i class="fa fa-square fa-stack-2x"></i>
-                      <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
+        <div id="top-right-bar-head" class="row">
+            <div class="col-lg-5 col-md-6 col-sm-6">
+                <span class="search">
+                    <input type="text" placeholder="Search">
+                    <i class="fa fa-search fa-lg"></i>
+                </span>
+            </div>
+            <div class="col-lg-7 col-md-6 col-sm-6">
+                <span class="social-icons">
+                    <a href="#">
+                        <span class="fa-stack">
+                          <i class="fa fa-square fa-stack-2x"></i>
+                          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                    <a href="#">
+                        <span class="fa-stack">
+                          <i class="fa fa-square fa-stack-2x"></i>
+                          <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                    <a href="#">
+                        <span class="fa-stack">
+                          <i class="fa fa-square fa-stack-2x"></i>
+                          <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                    <a href="#">
+                        <span class="fa-stack">
+                          <i class="fa fa-square fa-stack-2x"></i>
+                          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                    <a href="#">
+                        <span class="fa-stack">
+                          <i class="fa fa-square fa-stack-2x"></i>
+                          <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                    <a href="#">
+                        <span class="fa-stack">
+                          <i class="fa fa-square fa-stack-2x"></i>
+                          <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
 
-            </span>
+                </span>
+            </div>
         </div>
         <div id="top-right-bar-content">
             <strong>NEW POSTS</strong>
             {{#each post in model}}
-                <div class="post-item">
-                    <div class="post-description">
-                        {{#link-to 'posts.show' post.id }}
-                            <h4>{{truncate post.title 30}}</h4>
-                        {{/link-to}}
+                <!--<div class="row">-->
+                    <div class="row post-item">
 
-                        <small>
-                            {{date post.created_at}},
-                            {{#link-to 'author.show' post.author.name}}
-                                <span class="author">{{post.author.name}}</span>
-                            {{/link-to}}
-                        </small>
+                        <div class="col-lg-7">
+                            <div class="post-description">
+                                {{#link-to 'posts.show' post.id }}
+                                    <h4>{{truncate post.title 30}}</h4>
+                                {{/link-to}}
+
+                                <small>
+                                    {{date post.created_at}},
+                                    {{#link-to 'author.show' post.author.name}}
+                                        <span class="author">{{post.author.name}}</span>
+                                    {{/link-to}}
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5">
+                            <a class="post-image">
+                                {{#link-to 'posts.show' post.id }}
+                                    <img {{bind-attr src=post.image_path}} width="100%"/>
+                                {{/link-to}}
+                            </a>
+                            <p></p>
+                        </div>
+
                     </div>
-                    <a class="post-image">
-                        {{#link-to 'posts.show' post.id }}
-                            <img {{bind-attr src=post.image_path}} width="40%" height="35%"/>
-                        {{/link-to}}
-                    </a>
-                    <p></p>
-                </div>
-                <hr>
+                    <hr>
+                <!--</div>-->
             {{/each}}
         </div>
     </div>

@@ -148,6 +148,9 @@ html, body {
   width: 35%;
   height: 100%;
   #top-right-bar-head {
+    &.row {
+      margin-left: 0;
+    }
     padding: 0 25px;
     line-height: 75px;
     position: fixed;
@@ -157,6 +160,7 @@ html, body {
     background-color: #FFF;
     z-index: 2;
     .search {
+      width: 100%;
       font-weight: 300;
       font-size: 15px;
       i {
@@ -170,15 +174,18 @@ html, body {
         }
       }
       input {
+        outline: none;
         border: none;
-        height: 100%;
+        width: calc(100% - 30px);
+        line-height: normal;
         &:focus {
-          border-bottom: 1px solid #5b5b5b;
+          -webkit-outline: none;
+          -webkit-border: none;
+          border-bottom: 1px solid #F5F5F5;
         }
       }
     }
     .social-icons {
-      padding-left: 100px;
       a {
         color: #000;
         text-decoration: none;
@@ -233,4 +240,15 @@ html, body {
     }
 
   }
+}
+@media screen and (max-width: 1366px) {
+  #top-right-bar-head {
+    &.row {
+      margin-left: 0;
+      .col-lg-7 {
+        padding-left: 0;
+      }
+    }
+  }
+
 }
