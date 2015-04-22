@@ -15,3 +15,18 @@ two:
   from: 2015-04-06 11:03:30
   to: 2015-04-06 11:03:30
   study: false
+
+# == Schema Information
+#
+# Table name: experiences
+#
+#  id          :integer          not null, primary key
+#  job_title   :string
+#  employer    :string
+#  description :string
+#  from        :datetime
+#  to          :datetime
+#  study       :boolean
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
