@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.0'
+ruby '2.2.1'
 
 gem 'rails', '4.2.0'
 gem 'pg'
@@ -26,6 +26,11 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'bootstrap-sass'
 gem 'nprogress-rails' # progress bar
+
+gem 'capistrano', '~> 3.4.0'
+gem 'capistrano-rvm'
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
