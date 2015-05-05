@@ -1,6 +1,6 @@
 rails_env         = ENV['RACK_ENV'] || ENV['RAILS_ENV'] || raise('Unknown env')
-app_path          = "/home/ubuntu/blog/#{rails_env}/current"
-pid               "/home/ubuntu/blog/#{rails_env}/shared/tmp/pids/unicorn.pid"
+app_path          = "/home/ubuntu/blog/current"
+pid               "/home/ubuntu/blog/shared/tmp/pids/unicorn.pid"
 stderr_path       "#{app_path}/log/#{rails_env}.log"
 stdout_path       "#{app_path}/log/#{rails_env}.log"
 sock_path         = "unix:#{app_path}/tmp/sockets/unicorn.sock"
