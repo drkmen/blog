@@ -18,13 +18,17 @@
 
     <h2 id="experience">Experience/Education</h2>
     <div class="charts">
-        {{#view "experienceChart"}}
-            <svg width="100%" height="120" viewBox="0 0 100% 120" xmlns="http://www.w3.org/2000/svg">
-                <rect x="10" y="100" width="100" height="20" style="fill: #4CC0C1;"/>
-                <rect x="120" y="100" width="200" height="20" style="fill: #FB6D5D;"/>
-                <rect x="580" y="100" width="160" height="20" style="fill: #FFC300;"/>
-                <line x1="0" y1="120" x2="100%" y2="120" stroke="black" stroke-width="1"/>
-            </svg>
+        {{#view "experienceChart" elements=model.experiences}}
+            <!--<svg width="100%" height="120" viewBox="0 0 1000 120" preserveAspectRatio="xMinYMax meet">-->
+                {{!#each experience in model.experiences}}
+                    <!--<rect {{!bind-attr x=experience.startYearInt width=experience.yearsInt}} y="100" height="20" style="fill: #FB6D5D;"/>-->
+                {{!/each}}
+                <!--<rect x="10" y="100" width="100" height="20" style="fill: #4CC0C1;"/>-->
+                <!--<rect x="120" y="100" width="200" height="20" style="fill: #FB6D5D;"/>-->
+                <!--<rect x="580" y="100" width="160" height="20" style="fill: #FFC300;"/>-->
+                <!--<rect x="5%" y="100" width="160" height="20" style="fill: #FFC300;"/>-->
+                <!--<line x1="0" y1="120" x2="100%" y2="120" stroke="#C0D0E0" stroke-width="1"/>-->
+            <!--</svg>-->
         {{/view}}
     </div>
 
