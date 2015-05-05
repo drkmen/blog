@@ -17,5 +17,6 @@
 /tmp
 
 .idea/
+#/config/database.yml
 public/uploads
 *.pem
