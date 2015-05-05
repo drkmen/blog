@@ -52,10 +52,12 @@ namespace :deploy do
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
+      execute "kill -SIGKILL `cat /home/ubuntu/blog/shared/tmp/pids/unicorn.pid` && rm /home/ubuntu/blog/shared/tmp/pids/unicorn.pid"
+      execute "bundle exec unicorn -c home/ubuntu/blog/current/config/unicorn.rb -E production -D"
     end
   end
 
 end
 
 # execute "kill -SIGKILL `cat /home/ubuntu/blog/shared/tmp/pids/unicorn.pid` && rm /home/ubuntu/blog/shared/tmp/pids/unicorn.pid"  ### kill unicorn
-# execute "cd #{release_path} && bundle exec unicorn -c /config/unicorn.rb -E production -D"     ### run production
+# execute "cd #{release_path} && bundle exec unicorn -c config/unicorn.rb -E production -D"     ### run production
