@@ -28,7 +28,7 @@ set :use_sudo, true
 set :ssh_options, {
                     forward_agent: true,
                     auth_methods: ["publickey"],
-                    keys: ["/home/dark/work/blog/Work.pem"]
+                    keys: ["/home/mike/work/blog/Work.pem"]
                 }
 
 # Default value for :linked_files is []

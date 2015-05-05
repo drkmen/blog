@@ -17,7 +17,5 @@
 /tmp
 
 .idea/
-.ruby-gemset
-.ruby-version
 public/uploads
 *.pem
