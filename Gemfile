@@ -27,6 +27,8 @@ gem 'font-awesome-sass', '~> 4.2.0'
 gem 'bootstrap-sass'
 gem 'nprogress-rails' # progress bar
 
+gem 'dotenv-rails'
+
 gem 'capistrano', '~> 3.4.0'
 gem 'capistrano-rvm'
 gem 'capistrano-bundler'

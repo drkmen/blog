@@ -119,6 +119,9 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    dotenv (2.0.1)
+    dotenv-rails (2.0.1)
+      dotenv (= 2.0.1)
     ember-data-source (1.0.0.beta.15)
       ember-source (~> 1.8)
     ember-rails (0.17.0)
@@ -303,6 +306,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.1.0)
   devise
+  dotenv-rails
   ember-rails
   ember-source
   font-awesome-sass (~> 4.2.0)

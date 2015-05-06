@@ -6,9 +6,7 @@ stdout_path       "#{app_path}/log/#{rails_env}.log"
 sock_path         = "unix:#{app_path}/tmp/sockets/unicorn.sock"
 working_directory app_path
 
-# listen            '192.241.215.86:3000'
-# listen            '127.0.0.1:3000'
-listen            '54.187.52.88:3000'
+listen            '127.0.0.1:3000'
 
 worker_processes  2
 timeout           30
