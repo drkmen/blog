@@ -53,7 +53,8 @@ namespace :deploy do
       p 'REBOOTING UNICORN'
       execute "kill -SIGKILL `cat /home/ubuntu/blog/shared/tmp/pids/unicorn.pid` && rm /home/ubuntu/blog/shared/tmp/pids/unicorn.pid"
       # execute "bundle exec unicorn -c home/ubuntu/blog/current/config/unicorn.rb -E production -D"
-      execute "cd #{release_path} && bundle exec unicorn -c config/unicorn.rb -E production -D"
+      # execute "cd #{release_path} && bundle exec unicorn -c config/unicorn.rb -E production -D"
+      execute "cd #{release_path} && unicorn -c config/unicorn.rb -E production -D"
     end
   end
 
