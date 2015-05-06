@@ -46,12 +46,22 @@ set :keep_releases, 3
 
 namespace :deploy do
 
-  after :deploy do
-    p '*'*100
-    p 'REBOOTING UNICORN'
-    execute "kill -SIGKILL `cat /home/ubuntu/blog/shared/tmp/pids/unicorn.pid` && rm /home/ubuntu/blog/shared/tmp/pids/unicorn.pid"
-    execute "bundle exec unicorn -c home/ubuntu/blog/current/config/unicorn.rb -E production -D"
+  task :restart do
+    on roles :app do
+      set :use_sudo, true
+      p '*'*100
+      p 'REBOOTING UNICORN'
+      execute "kill -SIGKILL `cat /home/ubuntu/blog/shared/tmp/pids/unicorn.pid` && rm /home/ubuntu/blog/shared/tmp/pids/unicorn.pid"
+      execute "bundle exec unicorn -c home/ubuntu/blog/current/config/unicorn.rb -E production -D"
+    end
   end
+
+  # after :deploy, :restart do
+  #   p '*'*100
+  #   p 'REBOOTING UNICORN'
+  #   execute "kill -SIGKILL `cat /home/ubuntu/blog/shared/tmp/pids/unicorn.pid` && rm /home/ubuntu/blog/shared/tmp/pids/unicorn.pid"
+  #   execute "bundle exec unicorn -c home/ubuntu/blog/current/config/unicorn.rb -E production -D"
+  # end
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
@@ -66,5 +76,6 @@ namespace :deploy do
 
 end
 
+after 'deploy:finished', 'deploy:restart'
 # execute "kill -SIGKILL `cat /home/ubuntu/blog/shared/tmp/pids/unicorn.pid` && rm /home/ubuntu/blog/shared/tmp/pids/unicorn.pid"  ### kill unicorn
 # execute "cd #{release_path} && bundle exec unicorn -c config/unicorn.rb -E production -D"     ### run production
