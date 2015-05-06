@@ -1,4 +1,19 @@
 <div class="wrapper about">
+
+    <h2 id="contacts">Contacts</h2>
+    <div class="contacts">
+        I am a Ukranian freelance full stack RubyOnRails developer. If you come here with a question of partnership or hire me you can send me email
+        or welcome to my <a href="https://www.odesk.com/users/specialist_~01ff20f9e5eed8fed0">oDesc profile</a> or <a href="https://www.linkedin.com/pub/%D0%BC%D0%B8%D1%85%D0%B0%D0%B8%D0%BB-%D0%B1%D0%B5%D0%BB%D1%8F%D0%B5%D0%B2/5b/772/1b3">LinkedIn profile</a>.
+        <br>
+        <p></p>
+        Some about me:
+        <p></p>
+        Mike Bieliaiev, {{my_old}} years, Ukraine, Zaporizhzhya<br>
+        Any questions? Ask me:<br>
+        <a href="mailto:drkmen@rambler.ru">drkmen@rambler.ru</a><br>
+        <a href="mailto:pair.dro@gmail.co">pair.dro@gmail.co</a><br>
+    </div>
+
     <h2 id="skills">Skills</h2>
     <div class="skills">
         {{#each skill in model.skills}}
@@ -17,15 +32,21 @@
     <br>
 
     <h2 id="experience">Experience/Education</h2>
-    <div class="charts">
-        {{#view "experienceChart"}}
-            <svg width="100%" height="120" viewBox="0 0 100% 120" xmlns="http://www.w3.org/2000/svg">
-                <rect x="10" y="100" width="100" height="20" style="fill: #4CC0C1;"/>
-                <rect x="120" y="100" width="200" height="20" style="fill: #FB6D5D;"/>
-                <rect x="580" y="100" width="160" height="20" style="fill: #FFC300;"/>
-                <line x1="0" y1="120" x2="100%" y2="120" stroke="black" stroke-width="1"/>
-            </svg>
-        {{/view}}
+    <div class="experience">
+        <h4>Education</h4>
+        {{#each education in controller.education}}
+            <hr>
+            <strong><h5>{{education.job_title}} | <small>{{education.employer}}</small></h5></strong>
+            <p>{{education.description}}
+            <br>{{education.startYear}} - {{education.endYear}}</p>
+        {{/each}}
+        <h4>Employment History</h4>
+        {{#each employment in controller.employment}}
+            <hr>
+            <strong><h5>{{employment.job_title}} | <small>{{employment.employer}}</small></h5></strong>
+            <p>{{employment.description}}
+            <br>{{employment.startYear}} - {{employment.endYear}}</p>
+        {{/each}}
     </div>
 
     <h2 id="portfolio">Portfolio</h2>
@@ -36,7 +57,5 @@
             </div>
         {{/each}}
     </div>
-    <h2 id="contacts">Contacts</h2>
-
 
 </div>

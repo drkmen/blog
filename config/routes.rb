@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   resources :tags, only: [:index, :show]
   resources :projects, only: [:index]
   resources :skills, only: [:index]
+  resources :experiences, only: [:index]
 
 end

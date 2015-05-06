@@ -11,3 +11,7 @@ Ember.Handlebars.helper "postInfoDate", (date) ->
 
 Ember.Handlebars.helper "year", ->
   moment().format("YYYY");
+
+Ember.Handlebars.helper 'my_old', () ->
+  today = moment().format("YYYY");
+  today - 1992
