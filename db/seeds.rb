@@ -58,6 +58,23 @@ ActsAsTaggableOn::Tag.create(:name => '3rd API')
 ActsAsTaggableOn::Tag.create(:name => 'DB')
 ActsAsTaggableOn::Tag.create(:name => 'Other')
 
+Experience.create(:job_title => 'Software engineering',
+                  :employer => 'Zaporizhzhya National Technical University',
+                  :description => "Bachelor's degree",
+                  :from => '01-09-2011'.to_date,
+                  :to => '30-06-2014'.to_date,
+                  :study => true)
+Experience.create(:job_title => 'Software development',
+                  :employer => 'Zaporizhzhya Electrical Engineering College',
+                  :from => '01-09-2007'.to_date,
+                  :to => '30-06-2011'.to_date,
+                  :study => true)
+Experience.create(:job_title => 'Full Stack Ruby/Ruby on Rails developer',
+                  :employer => 'Face IT',
+                  :from => '20-05-2013'.to_date,
+                  :study => false)
+
+
 Project.create(:name => 'Phonehome',
                :description => "It's a system of monitoring and observing the progress of different server events executing. It is used along with a gem for interacting with API and also background process",
                :remote_image_url => 'http://www.3dmgame.com/uploads/allimg/130604/153_130604150048_4.jpg',
