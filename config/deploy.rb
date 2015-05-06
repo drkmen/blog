@@ -32,8 +32,8 @@ set :ssh_options, {
                 }
 
 # Default value for :linked_files is []
-# set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
-set :linked_files, %w{config/database.yml config/secrets.yml}
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
+# set :linked_files, %w{config/database.yml config/secrets.yml}
 
 # Default value for linked_dirs is []
 # set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
@@ -46,14 +46,21 @@ set :keep_releases, 3
 
 namespace :deploy do
 
+  after :deploy do
+    p '*'*100
+    p 'REBOOTING UNICORN'
+    execute "kill -SIGKILL `cat /home/ubuntu/blog/shared/tmp/pids/unicorn.pid` && rm /home/ubuntu/blog/shared/tmp/pids/unicorn.pid"
+    execute "bundle exec unicorn -c home/ubuntu/blog/current/config/unicorn.rb -E production -D"
+  end
+
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
-      execute "kill -SIGKILL `cat /home/ubuntu/blog/shared/tmp/pids/unicorn.pid` && rm /home/ubuntu/blog/shared/tmp/pids/unicorn.pid"
-      execute "bundle exec unicorn -c home/ubuntu/blog/current/config/unicorn.rb -E production -D"
+      # execute "kill -SIGKILL `cat /home/ubuntu/blog/shared/tmp/pids/unicorn.pid` && rm /home/ubuntu/blog/shared/tmp/pids/unicorn.pid"
+      # execute "bundle exec unicorn -c home/ubuntu/blog/current/config/unicorn.rb -E production -D"
     end
   end
 
