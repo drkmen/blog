@@ -11,7 +11,7 @@ Author.delete_all
 Comment.delete_all
 Project.delete_all
 Skill.delete_all
-
+ActsAsTaggableOn::Tag.delete_all
 
 
 Author.create(:name => 'Mike',
