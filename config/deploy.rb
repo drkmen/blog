@@ -28,7 +28,7 @@ set :use_sudo, true
 set :ssh_options, {
                     forward_agent: true,
                     auth_methods: ["publickey"],
-                    keys: ["/home/mike/work/blog/Work.pem"]
+                    keys: ["/home/dark/work/blog/Work.pem"]
                 }
 
 # Default value for :linked_files is []
@@ -53,8 +53,8 @@ namespace :deploy do
       p 'REBOOTING UNICORN'
       execute "kill -SIGKILL `cat /home/ubuntu/blog/shared/tmp/pids/unicorn.pid` && rm /home/ubuntu/blog/shared/tmp/pids/unicorn.pid"
       # execute "bundle exec unicorn -c home/ubuntu/blog/current/config/unicorn.rb -E production -D"
-      # execute "cd #{release_path} && bundle exec unicorn -c config/unicorn.rb -E production -D"
-      execute "cd #{release_path} && unicorn -c config/unicorn.rb -E production -D"
+      execute "cd #{release_path}", :bundle, "exec unicorn -c config/unicorn.rb -E production -D"
+      # run "cd #{release_path} && unicorn -c config/unicorn.rb -E production -D"
     end
   end
 
