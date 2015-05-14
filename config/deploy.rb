@@ -57,6 +57,14 @@ namespace :deploy do
     end
   end
 
+  task :seed do
+    on roles :app do
+      within current_path do
+        execute :rake, "db:seed"
+      end
+    end
+  end
+
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
