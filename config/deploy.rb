@@ -28,7 +28,7 @@ set :use_sudo, true
 set :ssh_options, {
                     forward_agent: true,
                     auth_methods: ["publickey"],
-                    keys: ["/home/dark/work/blog/Work.pem"]
+                    keys: ["/home/mike/work/blog/Work.pem"]
                 }
 
 # Default value for :linked_files is []
@@ -48,22 +48,15 @@ namespace :deploy do
 
   task :restart do
     on roles :app do
-      set :use_sudo, true
-      p '*'*100
-      p 'REBOOTING UNICORN'
-      execute "kill -SIGKILL `cat /home/ubuntu/blog/shared/tmp/pids/unicorn.pid` && rm /home/ubuntu/blog/shared/tmp/pids/unicorn.pid"
-      # execute "bundle exec unicorn -c home/ubuntu/blog/current/config/unicorn.rb -E production -D"
-      execute "cd #{release_path}", :bundle, "exec unicorn -c config/unicorn.rb -E production -D"
-      # run "cd #{release_path} && unicorn -c config/unicorn.rb -E production -D"
+      within current_path do
+        p '*'*100
+        p 'REBOOTING UNICORN'
+        execute "kill -SIGKILL `cat /home/ubuntu/blog/shared/tmp/pids/unicorn.pid` && rm /home/ubuntu/blog/shared/tmp/pids/unicorn.pid"
+        execute :bundle, "exec unicorn -c config/unicorn.rb -E production -D"
+      end
     end
   end
 
-  # after :deploy, :restart do
-  #   p '*'*100
-  #   p 'REBOOTING UNICORN'
-  #   execute "kill -SIGKILL `cat /home/ubuntu/blog/shared/tmp/pids/unicorn.pid` && rm /home/ubuntu/blog/shared/tmp/pids/unicorn.pid"
-  #   execute "bundle exec unicorn -c home/ubuntu/blog/current/config/unicorn.rb -E production -D"
-  # end
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
@@ -71,13 +64,9 @@ namespace :deploy do
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
-      # execute "kill -SIGKILL `cat /home/ubuntu/blog/shared/tmp/pids/unicorn.pid` && rm /home/ubuntu/blog/shared/tmp/pids/unicorn.pid"
-      # execute "bundle exec unicorn -c home/ubuntu/blog/current/config/unicorn.rb -E production -D"
     end
   end
 
 end
 
 after 'deploy:finished', 'deploy:restart'
-# execute "kill -SIGKILL `cat /home/ubuntu/blog/shared/tmp/pids/unicorn.pid` && rm /home/ubuntu/blog/shared/tmp/pids/unicorn.pid"  ### kill unicorn
-# execute "cd #{release_path} && bundle exec unicorn -c config/unicorn.rb -E production -D"     ### run production
