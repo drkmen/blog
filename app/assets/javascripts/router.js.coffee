@@ -2,7 +2,7 @@
 
 Blog.Router.map ()->
   @resource('posts', ->
-    @route('show', {path: '/:id'})
+    @route('show', {path: '/:friendly_id'})
   )
   @resource('author', ->
     @route('show', {path: '/:name'})
