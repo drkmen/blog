@@ -22,6 +22,7 @@ gem 'jquery-validation-rails'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'acts-as-taggable-on', '~> 3.4'
+gem 'friendly_id', '~> 5.1.0'
 
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'bootstrap-sass'

@@ -5,7 +5,7 @@
             <li><h4>{{#link-to 'posts'}}BLOG{{/link-to}}</h4></li>
             Last 5 articles:
             {{#each post in model}}
-                <li>{{#link-to 'posts.show' post.id}}{{truncate post.title 20}}{{/link-to}}</li>
+                <li>{{#link-to 'posts.show' post.friendly_id}}{{truncate post.title 20}}{{/link-to}}</li>
             {{/each}}
             <li><h4>{{#link-to 'about'}}ABOUT{{/link-to}}</h4></li>
             <li><a href="#" {{action 'goToLink' 'about' '#skills'}}>Skills</a></li>
@@ -132,7 +132,7 @@
 
                         <div class="col-lg-7">
                             <div class="post-description">
-                                {{#link-to 'posts.show' post.id }}
+                                {{#link-to 'posts.show' post.friendly_id }}
                                     <h4>{{truncate post.title 30}}</h4>
                                 {{/link-to}}
 
@@ -147,7 +147,7 @@
 
                         <div class="col-lg-5">
                             <a class="post-image">
-                                {{#link-to 'posts.show' post.id }}
+                                {{#link-to 'posts.show' post.friendly_id }}
                                     <img {{bind-attr src=post.image_path}} width="100%"/>
                                 {{/link-to}}
                             </a>

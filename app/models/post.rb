@@ -1,5 +1,8 @@
 class Post < ActiveRecord::Base
 
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   acts_as_taggable
   mount_uploader :image, ImageUploader
 
@@ -9,7 +12,9 @@ class Post < ActiveRecord::Base
   scope :last_num, ->(limit_param) { limit_param.present? ? limit(limit_param).order('id DESC') : all}
   scope :tagged, ->(tags) { tags.present? ? tagged_with([tags], :any => true) : all}
 
-
+  def should_generate_new_friendly_id?
+    title_changed? || super
+  end
 
 end
 
