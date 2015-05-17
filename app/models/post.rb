@@ -11,6 +11,7 @@ class Post < ActiveRecord::Base
 
   scope :last_num, ->(limit_param) { limit_param.present? ? limit(limit_param).order('id DESC') : all}
   scope :tagged, ->(tags) { tags.present? ? tagged_with([tags], :any => true) : all}
+  scope :search_by_title, ->(str) { where('title ILIKE :str', :str => str)}
 
   def should_generate_new_friendly_id?
     title_changed? || super

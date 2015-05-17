@@ -5,9 +5,11 @@ Blog.ApplicationController = Ember.ObjectController.extend(
 
   actions:
 
-#    search: (str)->
-#      $.getJSON('/search=' + str).success(data)->
-#        @transitionToRoute('/search')
+    search: (str) ->
+      str = @get('search')
+      @transitionToRoute('search', {query: str})
+#      $.getJSON('/search/' + str).success ()=>
+
 
     goToLink: (item, anchor)->
       @get('controllers.about').set('anchor', anchor)
