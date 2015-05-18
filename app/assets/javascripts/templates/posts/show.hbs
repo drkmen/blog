@@ -64,7 +64,7 @@
         <div class="title">RELATED POSTS</div>
         {{#each post in controller.relatedPosts}}
             <div class="related-item">
-                {{#link-to 'posts.show' post.friendly_id}}
+                {{#link-to 'posts.show' post}}
                     <div class="img"><img {{bind-attr src=post.image_path}}></div>
                     <p></p>
                     <div class="text">{{truncate post.body 50}}</div>
