@@ -7,8 +7,8 @@ Blog.ApplicationController = Ember.ObjectController.extend(
     search: ->
       @get('controllers.postsIndex').set('searchVal', @get('search'))
       if(@get('currentPath') == 'posts.index')
-        $.getJSON('/search/' + @get('search')).success (responce)=>
-          @get('controllers.postsIndex').set('model', responce.search)
+        @store.find('post', {search: @get('search')}).then (posts)=>
+          @get('controllers.postsIndex').set('model', posts)
       else
         @transitionToRoute('posts.index')
 

@@ -4,13 +4,12 @@ Blog.PostsIndexRoute = Ember.Route.extend(
     @store.find('post')
 
   setupController: (controller, model)->
-    searchVal = controller.get('searchValObs')
+    searchVal = controller.get('searchVal')
     if(!searchVal)
       controller.set('model', model)
     else
-      console.log 'search'
-      $.getJSON('/search/' + searchVal).success (responce)=>
-        controller.set('model', responce.search)
+      @store.find('post', {search: searchVal}).then (posts)=>
+        controller.set('model', posts)
     controller.set('searchVal', null)
     searchVal = null
 
