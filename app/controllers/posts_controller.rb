@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   respond_to :json
 
   def index
-    respond_with Post.friendly.last_num(params[:last]).tagged(params[:tags])
+    respond_with Post.friendly.search_by_title_and_tag(params[:search]).last_num(params[:last]).tagged(params[:tags])
   end
 
   def show

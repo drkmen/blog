@@ -169,6 +169,7 @@ html, body {
       i {
         @include transition(0.2s, ease-in-out);
         opacity: 0.15;
+        cursor: pointer;
       }
       &:hover {
         i {

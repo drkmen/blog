@@ -1,7 +1,7 @@
 <div class="post-preview index" {{bind-attr style=post.PPbackground}}></div>
 
 <div class="post-index">
-    {{#link-to 'posts.show' post.friendly_id}}<span class="title">{{post.title}}</span>{{/link-to}}
+    {{#link-to 'posts.show' post}}<span class="title">{{post.title}}</span>{{/link-to}}
     <br>
     <p></p>
     <span class="date">
@@ -24,5 +24,5 @@
     <span class="body">{{truncate post.body 200}}</span>
     <p></p>
     <br>
-    {{#link-to 'posts.show' post.friendly_id class='post-preview-button'}}Read more{{/link-to}}
+    {{#link-to 'posts.show' post class='post-preview-button'}}Read more{{/link-to}}
 </div>

@@ -1,2 +1,4 @@
-Blog.PostsIndexView = Blog.AnimatedView.extend()
+Blog.PostsIndexView = Blog.AnimatedView.extend(
+  templateName: 'posts/index'
+)
 
