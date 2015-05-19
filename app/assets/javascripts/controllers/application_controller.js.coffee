@@ -4,6 +4,9 @@ Blog.ApplicationController = Ember.ObjectController.extend(
   needs: ['about', 'postsIndex']
 
   actions:
+    submit: ->
+      $('form').submit()
+
     search: ->
       @get('controllers.postsIndex').set('searchVal', @get('search'))
       if(@get('currentPath') == 'posts.index')

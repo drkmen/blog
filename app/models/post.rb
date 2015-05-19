@@ -11,11 +11,13 @@ class Post < ActiveRecord::Base
 
   scope :last_num, ->(limit_param) { limit_param.present? ? limit(limit_param).order('id DESC') : all}
   scope :tagged, ->(tags) { tags.present? ? tagged_with([tags], :any => true) : all}
-  scope :search_by_title, ->(str) {
+  scope :search_by_title_and_tag, ->(str) {
     if str.present?
-      where(%{"posts"."title" ILIKE :str}, :str => "%#{str}%")
+      joins(:tags => :taggings).
+        where(%{"posts"."title" ILIKE :str OR "tags"."name" ILIKE :str}, :str => "%#{str}%").uniq
     else
       all
+
     end
   }
 
