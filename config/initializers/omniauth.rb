@@ -4,6 +4,6 @@ Rails.application.config.middleware.use OmniAuth::Builder do
            {
                :scope => 'wall',
                :display => 'popup',
-               :image_size => 'mini'
+               :image_size => 'original'
            }
 end

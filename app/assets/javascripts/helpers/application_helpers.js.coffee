@@ -7,7 +7,7 @@ Ember.Handlebars.helper "date", (date) ->
   moment(date).format('DD.MM.YYYY');
 
 Ember.Handlebars.helper "time", (date) ->
-  moment(date).format('h:mm');
+  moment(date).format('HH:mm');
 
 Ember.Handlebars.helper "postInfoDate", (date) ->
   moment(date).format('dddd, DD MMMM YYYY');

@@ -14,6 +14,7 @@ Blog.PostsShowController = Ember.ObjectController.extend(
         post: @get('model')
       )
       comment.set("created_at", Date())
+      comment.set("author", @get('currentUser'))
       comment.save()
   }
 

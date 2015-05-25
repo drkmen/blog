@@ -15,11 +15,5 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  before_action :lal
-
-  def lal
-    p @current_user
-  end
-
 end
 
