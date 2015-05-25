@@ -1,5 +1,18 @@
 Blog.ApplicationController = Ember.ObjectController.extend(
 
+  currentUser: null
+
+  init: ->
+    if @getCookie('blog_user_id')
+      @set('currentUser', @store.find('author', @getCookie('blog_user_id')))
+
+
+  getCookie: (name) ->
+    matches = document.cookie.match(new RegExp(
+      "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    if matches then decodeURIComponent(matches[1]) else undefined
+
   showMenuVisible: false
   needs: ['about', 'postsIndex']
 

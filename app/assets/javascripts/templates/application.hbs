@@ -104,13 +104,13 @@
                           <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
                         </span>
                     </a>
-                    <a href="#">
+                    <a href="/auth/twitter">
                         <span class="fa-stack">
                           <i class="fa fa-square fa-stack-2x"></i>
                           <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
                         </span>
                     </a>
-                    <a href="#">
+                    <a href="/auth/vkontakte">
                         <span class="fa-stack">
                           <i class="fa fa-square fa-stack-2x"></i>
                           <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
@@ -140,7 +140,7 @@
 
                                 <small>
                                     {{date post.created_at}},
-                                    {{#link-to 'author.show' post.author.name}}
+                                    {{#link-to 'author.show' post.author}}
                                         <span class="author">{{post.author.name}}</span>
                                     {{/link-to}}
                                 </small>

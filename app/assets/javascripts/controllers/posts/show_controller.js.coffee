@@ -1,4 +1,8 @@
 Blog.PostsShowController = Ember.ObjectController.extend(
+
+  needs: ['application']
+  currentUserBinding: 'controllers.application.currentUser'
+
   relatedPosts: (()->
     @store.find('post', {tags: @model.get('tagsArray')})
   ).property('model')

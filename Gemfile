@@ -37,6 +37,13 @@ gem 'capistrano-rvm'
 gem 'capistrano-bundler'
 gem 'capistrano-rails'
 
+gem 'omniauth'
+gem 'oauth2'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-google'
+gem 'omniauth-vkontakte'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

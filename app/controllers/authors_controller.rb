@@ -4,7 +4,7 @@ class AuthorsController < ApplicationController
 
   def show
     # author name in params[:id]. dada, genius
-    respond_with Author.find_by(name: params[:id])
+    respond_with Author.find(params[:id])
   end
 
 end

@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   resources :skills, only: [:index]
   resources :experiences, only: [:index]
 
+  get '/auth/:provider/callback', to: 'sessions#create'
+
 end

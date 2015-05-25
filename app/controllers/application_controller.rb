@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  # @current_user = nil
+
   def index
     render 'application/index'
   end
@@ -11,6 +13,12 @@ class ApplicationController < ActionController::Base
     def find_resource
       resource_class.is_a?(FriendlyId) ? scoped_collection.where(slug: params[:id]).first! : scoped_collection.where(id: params[:id]).first!
     end
+  end
+
+  before_action :lal
+
+  def lal
+    p @current_user
   end
 
 end
