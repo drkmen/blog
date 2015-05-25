@@ -5,9 +5,12 @@
 #= require ember-data
 #= require moment
 #= require nprogress
+#= require highlight_js/highlight
 #= require jquery.easy-pie-chart
 #= require_self
 #= require blog
+
+hljs.initHighlightingOnLoad();
 
 # for more details see: http://emberjs.com/guides/application/
 window.Blog = Ember.Application.create()

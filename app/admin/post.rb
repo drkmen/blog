@@ -20,7 +20,7 @@ ActiveAdmin.register Post do
       f.input :image
       f.input :remote_image_url
       f.input :author
-      f.input :body
+      f.input :body, :as => :ckeditor
       f.input :tags, as: :check_boxes
     end
     actions
