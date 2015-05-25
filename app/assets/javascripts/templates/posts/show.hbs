@@ -81,7 +81,7 @@
                 <div class="author-img"><img {{bind-attr src=comment.author.image_path}}></div>
                 <div class="date">
                     <span class="author-name">{{comment.author.name}}</span>
-                    <small class="pull-right">{{date comment.created_at}}</small>
+                    <small class="pull-right">{{time comment.created_at}}, {{date comment.created_at}}</small>
                 </div>
                 <p></p>
                 <div class="body">{{comment.body}}</div>
