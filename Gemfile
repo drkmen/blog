@@ -41,7 +41,7 @@ gem 'omniauth'
 gem 'oauth2'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
-gem 'omniauth-google'
+gem 'omniauth-gplus'
 gem 'omniauth-vkontakte'
 
 # Use ActiveModel has_secure_password
