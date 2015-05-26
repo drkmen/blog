@@ -91,14 +91,69 @@
 
         <div class="new-comment">
             <!--<h4>Feel free to be first!</h4>-->
-            <form role="form" {{action 'create_comment' on='submit'}}>
-                <div class ="form-group">
-                    {{textarea maxlength=200 value=comment-body class='form-control'}}
-                </div>
-                <div class ="form-group">
-                    <button type="submit" class="btn btn-info">Submit</button>
-                </div>
-            </form>
+            {{#if currentUser}}
+                <form role="form" {{action 'create_comment' on='submit'}}>
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-2">
+                            <h4 class="name">{{currentUser.name}}</h4>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-2">
+                                <img {{bind-attr src=currentUser.image_path}} width="100">
+                            </div>
+                            <div class="col-md-8">
+                                <div class ="form-group">
+                                    {{textarea maxlength=200 value=comment-body class='form-control'}}
+                                </div>
+                                <div class ="form-group">
+                                    <button type="submit" class="btn btn-info">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            {{else}}
+                <form role="form" {{action 'create_comment' on='submit'}}>
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <div class="col-md-5 col-md-offset-2">
+                                    <div class ="form-group">
+                                        {{input type=text value=name placeholder='Name' class='form-control'}}
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <span class="or-login">or login:</span>
+                                    <div class="pull-right">
+                                        <span class="social-buttons">
+                                            <a href="/auth/vkontakte"><i class="fa fa-vk blue"></i></a>
+                                            <a href="/auth/twitter"><i class="fa fa-twitter azure"></i></a>
+                                            <a href="/auth/gplus"><i class="fa fa-google-plus red"></i></a>
+                                            <a href="/auth/facebook"><i class="fa fa-facebook dark-blue"></i></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-2">
+                                    <!--<img src="ruby.png" width="100">-->
+                                </div>
+                                <div class="col-md-8">
+                                    <div class ="form-group">
+                                        {{textarea maxlength=200 value=comment-body class='form-control'}}
+                                    </div>
+                                    <div class ="form-group">
+                                        <button type="submit" class="btn btn-info">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            {{/if}}
+
         </div>
 
     </div>

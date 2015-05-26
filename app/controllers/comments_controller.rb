@@ -1,9 +1,10 @@
 class CommentsController < ApplicationController
 
-  respond_to :json
-
   def create
-    respond_with Comment.create(comment_params)
+    comment = Comment.new(comment_params)
+    if comment.save
+      render :json => comment, :root => true
+    end
   end
 
   private
