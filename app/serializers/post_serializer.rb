@@ -8,6 +8,10 @@ class PostSerializer < ActiveModel::Serializer
     object.image_url
   end
 
+  def comments
+    object.comments.order('created_at ASC')
+  end
+
 end
 
 # == Schema Information

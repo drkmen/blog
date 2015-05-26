@@ -91,26 +91,61 @@
 
         <div class="new-comment">
             <!--<h4>Feel free to be first!</h4>-->
-            <form role="form" {{action 'create_comment' on='submit'}}>
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-2">
-                        <h4 class="name">{{currentUser.name}}</h4>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="col-md-2">
-                            <img {{bind-attr src=currentUser.image_path}} width="100">
+            {{#if currentUser}}
+                <form role="form" {{action 'create_comment' on='submit'}}>
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-2">
+                            <h4 class="name">{{currentUser.name}}</h4>
                         </div>
-                        <div class="col-md-8">
-                            <div class ="form-group">
-                                {{textarea maxlength=200 value=comment-body class='form-control'}}
+                        <div class="col-md-12">
+                            <div class="col-md-2">
+                                <img {{bind-attr src=currentUser.image_path}} width="100">
                             </div>
-                            <div class ="form-group">
-                                <button type="submit" class="btn btn-info">Submit</button>
+                            <div class="col-md-8">
+                                <div class ="form-group">
+                                    {{textarea maxlength=200 value=comment-body class='form-control'}}
+                                </div>
+                                <div class ="form-group">
+                                    <button type="submit" class="btn btn-info">Submit</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            {{else}}
+                <form role="form" {{action 'create_comment' on='submit'}}>
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <div class="col-md-6 col-md-offset-2">
+                                    <div class ="form-group">
+                                        {{input type=text value=name placeholder='Name' class='form-control'}}
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <span class="pull-right">icons</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-2">
+                                    <!--<img src="ruby.png" width="100">-->
+                                </div>
+                                <div class="col-md-8">
+                                    <div class ="form-group">
+                                        {{textarea maxlength=200 value=comment-body class='form-control'}}
+                                    </div>
+                                    <div class ="form-group">
+                                        <button type="submit" class="btn btn-info">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            {{/if}}
+
         </div>
 
     </div>
