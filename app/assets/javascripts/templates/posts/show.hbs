@@ -97,11 +97,7 @@
                             <div class="col-md-8">
                                 <div class ="form-group">
                                     {{textarea maxlength=200 value=comment-body class='form-control'}}
-                                    {{#each error in model.errors.body}}
-                                        <div class="error">
-                                            {{error.message}}
-                                        </div>
-                                    {{/each}}
+                                    <div class="error">{{controller.errors.comment.errors.body}}</div>
                                 </div>
                                 <div class ="form-group">
                                     <button type="submit" class="btn btn-info">Submit</button>
@@ -118,7 +114,7 @@
                                 <div class="for-name-input col-md-5 col-md-offset-2">
                                     <div class="form-group">
                                         {{input type=text value=name placeholder='Name' class='form-control'}}
-                                        {{controller.errors.author.errors.name}}
+                                        <div class="error">{{controller.errors.author.errors.name}}</div>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -139,6 +135,7 @@
                                 <div class="col-md-8 col-md-offset-2">
                                     <div class ="form-group">
                                         {{textarea maxlength=500 value=comment-body class='form-control'}}
+                                        <div class="error">{{controller.errors.comment.errors.body}}</div>
                                     </div>
                                     <div class ="form-group">
                                         <button type="submit" class="btn btn-info">Submit</button>

@@ -14,6 +14,7 @@ Blog.PostsShowController = Ember.ObjectController.extend(
 
   actions: {
     create_comment: ->
+      self = @
       if @get('currentUser')
         comment = @store.createRecord('comment',
           body: @get('comment-body')
@@ -27,6 +28,7 @@ Blog.PostsShowController = Ember.ObjectController.extend(
           name: @get('name')
         )
         author.save().then (author)=>
+          @set('errors.author', null)
           comment = @store.createRecord('comment',
             body: @get('comment-body')
             post: @get('model')
@@ -34,18 +36,12 @@ Blog.PostsShowController = Ember.ObjectController.extend(
             author_id: author.id
           )
           comment.set("created_at", moment())
-          comment.save().save().then ->
-#            console.log 'saved'
-#          , ->
-            #empty function
-#            console.log comment.get('errors')
+          comment.save().then ->
+            self.set('errors.comment', null)
+          , (errors)=>
+            self.set('errors.comment', errors)
         , (errors)=>
-          console.log errors
-#          @set('errors.author.name', errors.name.message)
           @set('errors.author', errors)
-          console.log @get('errors')
-#          console.log errors
-          #empty function
 
   }
 
