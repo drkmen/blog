@@ -37,24 +37,17 @@
     <hr>
 
     <div class="post-share">
-        <span class="title">SHARE THIS POST</span>
-        <p></p>
-        <span class="social-buttons">
-            <span class="fa-stack">
-              <i class="fa fa-square fa-stack-2x"></i>
-              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-            </span>
-            <span class="fa-stack">
-              <i class="fa fa-square fa-stack-2x"></i>
-              <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
-            </span>
-            <span class="fa-stack">
-              <i class="fa fa-square fa-stack-2x"></i>
-              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-            </span>
-            <span class="fa-stack">
-              <i class="fa fa-square fa-stack-2x"></i>
-              <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+        <span class="text-center">
+            <span class="title">SHARE THIS POST</span>
+            <p></p>
+            <br>
+            <span class="social-buttons">
+                <!--<a href="http://vk.com/share.php?url=http://mysite.com" target="_blank">Поделиться ВКонтакте</a>-->
+                <!--<a href="" target="_blank"><i class="fa fa-vk blue"></i></a>-->
+                {{{vkShareButton model.title model.body model.image_path}}}
+                <a href="/auth/twitter"><i class="fa fa-twitter azure"></i></a>
+                <a href="/auth/gplus"><i class="fa fa-google-plus red"></i></a>
+                <a href="/auth/facebook"><i class="fa fa-facebook dark-blue"></i></a>
             </span>
         </span>
     </div>
@@ -117,8 +110,8 @@
                     <div class="row">
                         <div class="row">
                             <div class="col-md-12 ">
-                                <div class="col-md-5 col-md-offset-2">
-                                    <div class ="form-group">
+                                <div class="for-name-input col-md-5 col-md-offset-2">
+                                    <div class="form-group">
                                         {{input type=text value=name placeholder='Name' class='form-control'}}
                                     </div>
                                 </div>
@@ -137,10 +130,10 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="col-md-2">
+                                <!--<div class="col-md-2">-->
                                     <!--<img src="ruby.png" width="100">-->
-                                </div>
-                                <div class="col-md-8">
+                                <!--</div>-->
+                                <div class="col-md-8 col-md-offset-2">
                                     <div class ="form-group">
                                         {{textarea maxlength=200 value=comment-body class='form-control'}}
                                     </div>

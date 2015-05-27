@@ -18,3 +18,11 @@ Ember.Handlebars.helper "year", ->
 Ember.Handlebars.helper 'my_old', () ->
   today = moment().format("YYYY");
   today - 1992
+
+Ember.Handlebars.helper "vkShareButton", (title, description, image)->
+  url = encodeURIComponent(window.location.href)
+  encodedTitle = encodeURIComponent(title)
+  imageLink = window.location.origin + image
+  truncatedDescription = encodeURIComponent(description.substring(0, 100))
+  "<a href='http://vk.com/share.php?url=" + url + "&title=" + encodedTitle + "&description=" + truncatedDescription + "&image=" + imageLink + "&noparse=true' target='_blank'><i class='fa fa-vk blue'></i></a>"
+

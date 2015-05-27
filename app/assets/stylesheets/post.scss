@@ -126,13 +126,46 @@
   color: #a8a8a8;
   .title {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 500;
   }
   .social-buttons {
-    i {
-      margin: 0 10px;
-    }
     font-size: 30px;
+    padding-top: 20px;
+    i {
+      &.blue, &.azure, &.dark-blue, &.red {
+        background-color: #aaaaaa;
+      }
+      opacity: 0.6;
+      line-height: 60px;
+      cursor: pointer;
+      height: 60px;
+      width: 60px;
+      margin: 0 10px;
+      @include transition(0.2s, ease-in-out);
+      &:hover {
+        @include transition(0.2s, ease-in-out);
+      }
+      &.blue {
+        &:hover {
+          background-color: #44678D;
+        }
+      }
+      &.azure {
+        &:hover {
+          background-color: #1AB2E8;
+        }
+      }
+      &.dark-blue {
+        &:hover {
+          background-color: #3C599F;
+        }
+      }
+      &.red {
+        &:hover {
+          background-color: #F01B00;
+        }
+      }
+    }
   }
 }
 
@@ -144,7 +177,7 @@
     margin-left: -50px;
     color: #a8a8a8;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 500;
     text-align: center;
   }
   .related-item {
@@ -281,35 +314,34 @@
     font-weight: 100;
     font-size: 20px;
   }
-  .social-buttons {
-    i {
-      opacity: 0.6;
-      line-height: 30px;
-      cursor: pointer;
-      text-align: center;
-      height: 30px;
-      width: 30px;
-      color: #fff;
-      border-radius: 50%;
+
+}
+.social-buttons {
+  i {
+    opacity: 0.6;
+    line-height: 30px;
+    cursor: pointer;
+    text-align: center;
+    height: 30px;
+    width: 30px;
+    color: #fff;
+    border-radius: 50%;
+    @include transition(0.2s, ease-in-out);
+    &:hover {
+      opacity: 1.0;
       @include transition(0.2s, ease-in-out);
-      &:hover {
-        opacity: 1.0;
-        @include transition(0.2s, ease-in-out);
-      }
-      &.blue {
-        background-color: #44678D;
-      }
-      &.azure {
-        background-color: #1AB2E8;
-      }
-      &.dark-blue {
-        background-color: #3C599F;
-      }
-      &.red {
-        background-color: #F01B00;
-      }
+    }
+    &.blue {
+      background-color: #44678D;
+    }
+    &.azure {
+      background-color: #1AB2E8;
+    }
+    &.dark-blue {
+      background-color: #3C599F;
+    }
+    &.red {
+      background-color: #F01B00;
     }
   }
-
-
 }
