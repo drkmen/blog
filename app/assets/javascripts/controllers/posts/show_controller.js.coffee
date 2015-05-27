@@ -7,6 +7,11 @@ Blog.PostsShowController = Ember.ObjectController.extend(
     @store.find('post', {tags: @model.get('tagsArray')})
   ).property('model')
 
+  errors: {
+    author: []
+    comment: []
+  }
+
   actions: {
     create_comment: ->
       if @get('currentUser')
@@ -27,10 +32,20 @@ Blog.PostsShowController = Ember.ObjectController.extend(
             post: @get('model')
             author: author
             author_id: author.id
-
           )
           comment.set("created_at", moment())
-          comment.save()
+          comment.save().save().then ->
+#            console.log 'saved'
+#          , ->
+            #empty function
+#            console.log comment.get('errors')
+        , (errors)=>
+          console.log errors
+#          @set('errors.author.name', errors.name.message)
+          @set('errors.author', errors)
+          console.log @get('errors')
+#          console.log errors
+          #empty function
 
   }
 

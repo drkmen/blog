@@ -8,7 +8,11 @@ class AuthorsController < ApplicationController
 
   def create
     author = Author.where(:name => params[:author][:name]).first_or_create
-    respond_with author
+    if author.save
+      respond_with author
+    else
+      render :json => {errors: author.errors}, status: :unprocessable_entity
+    end
   end
 
   private

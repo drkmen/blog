@@ -4,6 +4,9 @@ class Author < ActiveRecord::Base
   has_many :comments
 
   mount_uploader :image, ImageUploader
+
+  validates :name, presence: true
+
 end
 
 # == Schema Information

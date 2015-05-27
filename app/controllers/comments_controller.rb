@@ -4,6 +4,8 @@ class CommentsController < ApplicationController
     comment = Comment.new(comment_params)
     if comment.save
       render :json => comment, :root => true
+    else
+      render :json => {errors: comment.errors}, status: :unprocessable_entity
     end
   end
 
