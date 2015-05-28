@@ -26,3 +26,20 @@ Ember.Handlebars.helper "vkShareButton", (title, description, image)->
   truncatedDescription = encodeURIComponent(description.substring(0, 100))
   "<a href='http://vk.com/share.php?url=" + url + "&title=" + encodedTitle + "&description=" + truncatedDescription + "&image=" + imageLink + "&noparse=true' target='_blank'><i class='fa fa-vk blue'></i></a>"
 
+Ember.Handlebars.helper "twitterShareButton", ->
+  url = encodeURIComponent(window.location.href)
+  "<a href='https://twitter.com/intent/tweet?url=" + url + "' target='_blank'><i class='fa fa-twitter azure'></i></a>"
+
+
+Ember.Handlebars.helper "googleShareButton", ->
+  url = encodeURIComponent(window.location.href)
+  "<a href='https://plus.google.com/share?url=" + url + "' target='_blank'><i class='fa fa-google-plus red'></i></a>"
+
+
+Ember.Handlebars.helper "facebookShareButton", (title, description, image)->
+#  url = encodeURIComponent(window.location.href)
+  url = encodeURIComponent('http://localhost:3000/#/posts/vulputate-ridiculus-fusce-pharetra-tristique')
+  encodedTitle = encodeURIComponent(title)
+#  "<a href='http://facebook.com/sharer/sharer.php?u=" + url + "&t=" + encodedTitle + "' target='_blank'><i class='fa fa-facebook dark-blue'></i></a>"
+  "<a href='http://facebook.com/sharer/sharer.php?u=" + url + "&t=" + encodedTitle + "' target='_blank'><i class='fa fa-facebook dark-blue'></i></a>"
+#  <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=#url">Share</a>
