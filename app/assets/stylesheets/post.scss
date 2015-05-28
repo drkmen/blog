@@ -274,6 +274,9 @@
     &:nth-child(odd) {
       background-color: #F5F5F5;
     }
+    .body {
+      word-break: break-all;
+    }
     .body, .date {
       margin-left: 120px;
     }

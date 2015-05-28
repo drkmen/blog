@@ -37,9 +37,6 @@ Ember.Handlebars.helper "googleShareButton", ->
 
 
 Ember.Handlebars.helper "facebookShareButton", (title, description, image)->
-#  url = encodeURIComponent(window.location.href)
-  url = encodeURIComponent('http://localhost:3000/#/posts/vulputate-ridiculus-fusce-pharetra-tristique')
+  url = encodeURIComponent(window.location.href)
   encodedTitle = encodeURIComponent(title)
-#  "<a href='http://facebook.com/sharer/sharer.php?u=" + url + "&t=" + encodedTitle + "' target='_blank'><i class='fa fa-facebook dark-blue'></i></a>"
   "<a href='http://facebook.com/sharer/sharer.php?u=" + url + "&t=" + encodedTitle + "' target='_blank'><i class='fa fa-facebook dark-blue'></i></a>"
-#  <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=#url">Share</a>
