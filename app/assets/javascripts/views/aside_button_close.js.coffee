@@ -1,1 +1,0 @@
-Blog.AsideButtonCloseView = Ember.View.extend()

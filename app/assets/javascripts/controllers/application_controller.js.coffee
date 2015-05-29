@@ -28,20 +28,23 @@ Blog.ApplicationController = Ember.ObjectController.extend(
       else
         @transitionToRoute('posts.index')
 
-
     goToLink: (item, anchor)->
       @get('controllers.about').set('anchor', anchor)
       @transitionToRoute(item)
 
-    showAsideMenu: ()->
+    toggleMenu: ->
+      @toggleProperty('showMenuVisible')
+      null
+
+  asideMenuToggle: (->
+    if @get('showMenuVisible')
       $('#aside-menu').animate {
         left: '+=300'
       }, 400
-      @set('showMenuVisible', true)
-    hideaAsideMenu: ()->
+    else
       $('#aside-menu').animate {
         left: '-=300'
       }, 400
-      @set('showMenuVisible', false)
+  ).observes('showMenuVisible')
 
 )
