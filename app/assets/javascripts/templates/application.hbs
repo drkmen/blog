@@ -2,11 +2,13 @@
     <div class="aside-block">
         <ul class="aside-block-ul">
             <li><h4>{{#link-to 'index'}}HOME{{/link-to}}</h4></li>
+
             <li><h4>{{#link-to 'posts'}}BLOG{{/link-to}}</h4></li>
             Last 5 articles:
             {{#each post in model}}
                 <li>{{#link-to 'posts.show' post}}{{truncate post.title 20}}{{/link-to}}</li>
             {{/each}}
+
             <li><h4>{{#link-to 'about'}}ABOUT{{/link-to}}</h4></li>
             <li><a href="#" {{action 'goToLink' 'about' '#skills'}}>Skills</a></li>
             <li><a href="#" {{action 'goToLink' 'about' '#experience'}}>Education</a></li>
@@ -14,8 +16,12 @@
             <li><a href="#" {{action 'goToLink' 'about' '#portfolio'}}>Portfolio</a></li>
             <li><a href="#" {{action 'goToLink' 'about' '#contacts'}}>Contacts</a></li>
 
+            <li><h4>TERMS OF USE</h4></li>
+            <li>{{#link-to 'index'}}Terms{{/link-to}}</li>
+            <li>{{#link-to 'index'}}Privacy{{/link-to}}</li>
+            <li>{{#link-to 'index'}}Cookie{{/link-to}}</li>
+
             <hr>
-            <!--<li><h4>{{#link-to 'index'}}CONTACTS{{/link-to}}</h4></li>-->
             <li>
                 <div class="text-center">
                     <span class="fa-stack">

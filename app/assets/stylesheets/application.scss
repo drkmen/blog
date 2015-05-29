@@ -136,6 +136,10 @@ html, body {
     white-space: nowrap;
   }
   .open-menu-button {
+    @include transition(0.2s, ease-in-out);
+    i {
+      @include transition(0.2s, ease-in-out);
+    }
     padding-left: 0!important;
     position: absolute;
     width: 75px;

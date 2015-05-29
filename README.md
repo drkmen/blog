@@ -29,4 +29,4 @@ Please feel free to use a different markup language if you do not plan to run
 
 == License
 
-[drkmen.com](drkmen.com) is released under the [MIT License](http://opensource.org/licenses/mit-license.php).
+[drkmen.com](http://drkmen.com) is released under the [MIT License](http://opensource.org/licenses/mit-license.php).
