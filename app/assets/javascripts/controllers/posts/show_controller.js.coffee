@@ -8,7 +8,8 @@ Blog.PostsShowController = Ember.ObjectController.extend(
   ).property('model')
 
   errors: {
-    author: []
+    author:
+      errors: []
     comment:
       errors: []
   }
@@ -67,7 +68,6 @@ Blog.PostsShowController = Ember.ObjectController.extend(
           name: @get('name')
         )
         author.save().then (author)=>
-          @set('errors.author', null)
           comment = @store.createRecord('comment',
             body: @get('comment-body')
             post: @get('model')
@@ -75,12 +75,7 @@ Blog.PostsShowController = Ember.ObjectController.extend(
             author_id: author.id
           )
           comment.set("created_at", moment())
-          comment.save().then ->
-            self.set('errors.comment', null)
-          , (errors)=>
-            self.set('errors.comment', errors)
-        , (errors)=>
-          @set('errors.author', errors)
+          comment.save()
 
       $('textarea').val('')
       $('.for-name-input input').val('')
