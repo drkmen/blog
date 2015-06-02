@@ -1,1 +1,0 @@
-Blog.AboutView = Blog.AnimatedView.extend()

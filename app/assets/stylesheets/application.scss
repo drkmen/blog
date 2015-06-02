@@ -43,6 +43,11 @@ a, a.ember-view {
     outline: none;
     color: #EC7B71;
   }
+  &:focus {
+    text-decoration: none;
+    border: none;
+    outline: none;
+  }
   &.active {
     color: #EC7B71;
   }

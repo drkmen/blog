@@ -6,7 +6,9 @@ Blog.AboutView = Ember.View.extend(
     @scrollToAnc()
 
   scrollToAnc: ->
-    $(window).scrollTop($(@anchor).offset().top - 100)
+    $('html, body').animate({
+      scrollTop: $(@anchor).offset().top - 100
+    }, 500, 'swing')
 
   ancObserver: (->
     @scrollToAnc()
