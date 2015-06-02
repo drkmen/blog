@@ -6,6 +6,7 @@ ActiveAdmin.register Post do
     column :image do |post|
       image_tag(post.image, height: 55)
     end
+    column :description
     column :author
     column :title
     column :body do |post|

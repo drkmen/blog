@@ -9,8 +9,8 @@ end
 #  job_title   :string
 #  employer    :string
 #  description :string
-#  from        :datetime
-#  to          :datetime
+#  from        :date
+#  to          :date
 #  study       :boolean
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null

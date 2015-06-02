@@ -25,17 +25,22 @@ class Post < ActiveRecord::Base
     title_changed? || super
   end
 
+  validates :title, :body, :author_id, :description, presence: true
+  validates :title, uniqueness: true
+
 end
 
 # == Schema Information
 #
 # Table name: posts
 #
-#  id         :integer          not null, primary key
-#  title      :string
-#  body       :text
-#  image      :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  author_id  :integer
+#  id          :integer          not null, primary key
+#  title       :string
+#  body        :text
+#  image       :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  author_id   :integer
+#  slug        :string
+#  description :string
 #
