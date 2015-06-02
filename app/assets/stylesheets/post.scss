@@ -7,6 +7,11 @@
 }
 
 .post-preview {
+  content: "";
+  position: relative;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
   &.app-index {
     position: fixed;
     .post-preview-info {
@@ -28,11 +33,6 @@
     background-color: rgba(0, 0, 0, 0.3);
     content: "";
   }
-  content: "";
-  position: relative;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
   .post-preview-info {
     padding-right: 100px;
     top: 50%;
@@ -183,7 +183,8 @@
   .related-item {
     position: relative;
     display: inline-block;
-    width: 200px;
+    width: 215px;
+    overflow: hidden;
     height: 200px;
     margin: 25px;
     .img {

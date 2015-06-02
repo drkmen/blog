@@ -8,7 +8,9 @@ ActiveAdmin.register Post do
     end
     column :author
     column :title
-    column :body
+    column :body do |post|
+      truncate(post.body, length: 500)
+    end
     column :tag_list
     column :created_at
     actions
@@ -20,13 +22,14 @@ ActiveAdmin.register Post do
       f.input :image
       f.input :remote_image_url
       f.input :author
+      f.input :description
       f.input :body, :as => :ckeditor
       f.input :tags, as: :check_boxes
     end
     actions
   end
 
-  permit_params :title, :image, :remote_image_url, :body, :author_id, :tag_ids => []
+  permit_params :title, :image, :remote_image_url, :body, :author_id, :description, :tag_ids => []
 
 
 
