@@ -26,7 +26,7 @@ ActiveAdmin.register Project do
     actions
   end
 
-  permit_params :name, :description, :image, :remote_image_url
+  permit_params :name, :description, :image, :remote_image_url, :link, :tag_ids => []
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

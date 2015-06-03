@@ -1,5 +1,6 @@
-ActiveAdmin.register Comment, :as => "Post Comments" do
+ActiveAdmin.register ActsAsTaggableOn::Tag, as: 'Tags' do
 
+  permit_params :name
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
