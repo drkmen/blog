@@ -7,6 +7,7 @@ ActiveAdmin.register Project do
       image_tag(post.image, height: 55)
     end
     column :name
+    column :link
     column :description
     column :tag_list
     column :created_at
@@ -14,9 +15,10 @@ ActiveAdmin.register Project do
   end
 
   form do |f|
-    f.inputs "Post" do
+    f.inputs "Project" do
       f.input :name
       f.input :description
+      f.input :link
       f.input :image
       f.input :remote_image_url
       f.input :tags, as: :check_boxes
