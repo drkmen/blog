@@ -26,7 +26,7 @@ ActiveAdmin.register Skill do
   #   actions
   # end
   #
-  # permit_params :title, :image, :remote_image_url, :body, :author_id, :tag_ids => []
+  permit_params :name, :value, :start_date
 
 
 
