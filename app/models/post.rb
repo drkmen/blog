@@ -17,7 +17,6 @@ class Post < ActiveRecord::Base
         where(%{"posts"."title" ILIKE :str OR "tags"."name" ILIKE :str}, :str => "%#{str}%").uniq
     else
       all
-
     end
   }
 

@@ -1,7 +1,8 @@
 Blog.PostsIndexRoute = Ember.Route.extend(
 
   model: ()->
-    @store.find('post')
+    @store.find('post').then (posts)->
+      posts.sortBy('id').reverse()
 
   setupController: (controller, model)->
     searchVal = controller.get('searchVal')

@@ -3,13 +3,14 @@ class PostsController < ApplicationController
   respond_to :json
 
   def index
-    respond_with Post.friendly.order('created_at DESC')
+    respond_with Post.friendly
                      .search_by_title_and_tag(params[:search])
                      .last_num(params[:last])
                      .tagged(params[:tags])
-                     .where.not(:id => params[:post_id]) # if params[:post_id]
-
-
+                     .where.not(:id => params[:post_id])
+                     .preload(:author)
+                     .preload(:comments)
+                     .order('created_at DESC')
   end
 
   def show
