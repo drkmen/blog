@@ -5,6 +5,10 @@ Blog.ApplicationController = Ember.ObjectController.extend(
   init: ->
     if @getCookie('blog_user_id')
       @set('currentUser', @store.find('author', @getCookie('blog_user_id')))
+    if @getCookie('blog_show_cookie_tips')
+      @set('showCookieTips', false)
+    if @getCookie('blog_show_arrows_tips')
+      @get('controllers.postsIndex').set('showArrowsTips', false)
 
 
   getCookie: (name) ->
@@ -14,6 +18,7 @@ Blog.ApplicationController = Ember.ObjectController.extend(
     if matches then decodeURIComponent(matches[1]) else undefined
 
   showMenuVisible: false
+  showCookieTips: true
   needs: ['about', 'postsIndex']
 
   actions:
@@ -35,6 +40,13 @@ Blog.ApplicationController = Ember.ObjectController.extend(
     toggleMenu: ->
       @toggleProperty('showMenuVisible')
       null
+
+    cookieAgreed: ->
+      $('.tips').animate {
+        opacity: 0
+      }, 400, =>
+        @set('showCookieTips', false)
+      document.cookie = "blog_show_cookie_tips=false"
 
   asideMenuToggle: (->
     if @get('showMenuVisible')

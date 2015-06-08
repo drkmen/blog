@@ -9,11 +9,13 @@ Blog.PostsIndexView = Blog.AnimatedView.extend(
 
   willInsertElement: ->
     $(document).on('keydown', (e)=>
-      e.preventDefault()
-      e.stopPropagation()
       if e.keyCode == 38
+        e.preventDefault()
+        e.stopPropagation()
         @prevPost()
       else if e.keyCode == 40
+        e.preventDefault()
+        e.stopPropagation()
         @nextPost()
     )
 

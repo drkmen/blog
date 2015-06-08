@@ -1,3 +1,20 @@
+{{#if controller.showCookieTips}}
+    {{#tips-component}}
+        <h1>Cookies policy</h1>
+        DRKMEN.COM use your browser cookies to get some functions working. Such as a current tips and some others. Also, cookies used to remember your
+        social profile(only name and image). I am not using and don't save any emails for spam or any shitty stuff.
+        <p>
+            <small>*If you are not agreed with mine cookies policy, you will be redirected to google.com. Sorry, my app needs it to correctly work </small>
+        </p>
+
+        <p></p>
+        <div class="pull-right">
+            <a href="http://google.com"><button class="danger"> Disagreed </button></a>
+            <button class="success" {{action 'cookieAgreed'}}> Agreed </button>
+        </div>
+    {{/tips-component}}
+{{/if}}
+
 {{#view 'asideMenu' }}
     <div class="aside-block">
         <ul class="aside-block-ul">
