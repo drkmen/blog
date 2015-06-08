@@ -8,7 +8,9 @@ Blog.PostsIndexView = Blog.AnimatedView.extend(
     @set('posts', $('.posts').find('.row'))
 
   willInsertElement: ->
-    $(document).on('keyup', (e)=>
+    $(document).on('keydown', (e)=>
+      e.preventDefault()
+      e.stopPropagation()
       if e.keyCode == 38
         @prevPost()
       else if e.keyCode == 40
