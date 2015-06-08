@@ -1,3 +1,18 @@
+{{#if controller.showArrowsTips}}
+    {{#tips-component}}
+        <script>
+            // nachalnik! etot pidaras obosralsya!!!
+            $('.wrapper').css('z-index', 2);
+        </script>
+        <div class="text-center">
+            <h1>Tip: Use <i class="fa fa-arrow-up"></i> and <i class="fa fa-arrow-down"></i> to navigate to the next or previous post.</h1>
+            <br>
+            <p></p>
+            <button class="success" {{action 'gotIt'}}> Got it! </button>
+        </div>
+    {{/tips-component}}
+{{/if}}
+
 <div class="posts">
     {{#each post in model}}
         <div class="row">
