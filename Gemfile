@@ -44,6 +44,9 @@ gem 'omniauth-twitter'
 gem 'omniauth-gplus'
 gem 'omniauth-vkontakte'
 
+# SEO
+gem 'prerender_rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -242,6 +242,9 @@ GEM
     pg (0.18.1)
     polyamorous (1.1.0)
       activerecord (>= 3.0)
+    prerender_rails (1.1.2)
+      activesupport
+      rack
     puma (2.11.1)
       rack (>= 1.1, < 2.0)
     quiet_assets (1.1.0)
@@ -371,6 +374,7 @@ DEPENDENCIES
   omniauth-twitter
   omniauth-vkontakte
   pg
+  prerender_rails
   puma
   quiet_assets
   rails (= 4.2.0)
