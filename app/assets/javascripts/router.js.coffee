@@ -11,4 +11,3 @@ Blog.Router.map ()->
     @route('show', {path: '/:name'})
   )
   @route('about')
-
