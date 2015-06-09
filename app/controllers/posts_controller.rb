@@ -10,6 +10,7 @@ class PostsController < ApplicationController
                      .where.not(:id => params[:post_id])
                      .preload(:author)
                      .preload(:comments)
+                     .preload(:tags)
                      .order('created_at DESC')
   end
 

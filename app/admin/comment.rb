@@ -1,5 +1,13 @@
 ActiveAdmin.register Comment, :as => "Post Comments" do
 
+  index do
+    selectable_column
+    column :id
+    column :author
+    column :body
+    column :created_at
+    actions
+  end
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
