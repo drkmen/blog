@@ -11,3 +11,7 @@ Blog.Router.map ()->
     @route('show', {path: '/:name'})
   )
   @route('about')
+
+Blog.Router.reopen(
+  location: 'hashbang'
+)
