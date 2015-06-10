@@ -13,6 +13,6 @@ Blog.PostsIndexController = Ember.ArrayController.extend(
         @set('showArrowsTips', false)
       document.cookie = "blog_show_arrows_tips=false"
       ## blya ny pizdec
-      $('.wrapper').css('z-index', 3)
+      $('.wrapper').css('z-index', 1)
 
 )

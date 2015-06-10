@@ -40,5 +40,5 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   # needs for SEO and prerender js testing
-  config.middleware.use Rack::Prerender
+  config.middleware.use Rack::Prerender, prerender_token: 'FrIZm3sNPY4J5QF8oNhM'
 end
