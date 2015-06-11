@@ -15,3 +15,11 @@ Blog.Router.map ()->
 Blog.Router.reopen(
   location: 'hashbang'
 )
+
+Blog.Router.reopen(
+  notifyGoogleAnalytics: (->
+    ga 'send', 'pageview',
+      'page': @get('url')
+      'title': @get('url')
+  ).on('didTransition')
+)
