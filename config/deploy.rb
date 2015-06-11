@@ -65,6 +65,14 @@ namespace :deploy do
     end
   end
 
+  task :sitemap do
+    on roles :app do
+      within current_path do
+        execute :rake, "sitemap:refresh"
+      end
+    end
+  end
+
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do

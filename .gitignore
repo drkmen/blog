@@ -19,5 +19,6 @@
 .idea/
 /config/database.yml
 public/uploads
+public/sitemap.xml.gz
 *.pem
 .env
