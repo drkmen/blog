@@ -68,7 +68,7 @@ namespace :deploy do
   task :sitemap do
     on roles :app do
       within current_path do
-        execute :bundle, "exec rake sitemap:refresh"
+        execute :bundle, "exec rake sitemap:refresh RAILS_ENV=production"
       end
     end
   end
