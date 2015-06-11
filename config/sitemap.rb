@@ -27,7 +27,7 @@ SitemapGenerator::Sitemap.create do
   add "http://drkmen.com/#!/author"
 
   Post.find_each do |post|
-    add "http://drkmen.com/#!/posts/#{post.slug}", :lastmod => post.updated_at, :changefreq => 'daily'
+    add "http://drkmen.com/#!/posts/#{post.friendly_id}", :lastmod => post.updated_at, :changefreq => 'daily'
   end
 
   ActsAsTaggableOn::Tag.find_each do |tag|
