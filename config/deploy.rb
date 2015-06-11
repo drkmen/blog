@@ -68,7 +68,7 @@ namespace :deploy do
   task :sitemap do
     on roles :app do
       within current_path do
-        execute :rake, "sitemap:refresh"
+        execute :bundle, "exec rake sitemap:refresh"
       end
     end
   end
@@ -86,3 +86,4 @@ namespace :deploy do
 end
 
 after 'deploy:finished', 'deploy:restart'
+after 'deploy:finished', 'deploy:sitemap:refresh'

@@ -20,22 +20,22 @@ SitemapGenerator::Sitemap.create do
   #   add articles_path, :priority => 0.7, :changefreq => 'daily'
   #
   # Add all articles:
-  add "http://drkmen.com"
-  add "http://drkmen.com/#!/about"
-  add "http://drkmen.com/#!/posts"
-  add "http://drkmen.com/#!/tags"
-  add "http://drkmen.com/#!/author"
+  add "/"
+  add "/#!/about"
+  add "/#!/posts"
+  add "/#!/tags"
+  add "/#!/author"
 
   Post.find_each do |post|
-    add "http://drkmen.com/#!/posts/#{post.friendly_id}", :lastmod => post.updated_at, :changefreq => 'daily'
+    add "/#!/posts/#{post.friendly_id}", :lastmod => post.updated_at, :changefreq => 'daily'
   end
 
   ActsAsTaggableOn::Tag.find_each do |tag|
-    add "http://drkmen.com/#!/tags/#{tag.name}"
+    add "/#!/tags/#{tag.name}"
   end
 
   Author.find_each do |author|
-    add "http://drkmen.com/#!/author/#{author.name}"
+    add "/#!/author/#{author.name}"
   end
 
 end
