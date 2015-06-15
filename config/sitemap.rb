@@ -33,7 +33,7 @@ SitemapGenerator::Sitemap.create do
     add "/#!/tags/#{tag.name}"
   end
 
-  Author.find_each do |author|
+  Author.where(:posts_author => true) do |author|
     add "/#!/author/#{author.name}"
   end
 
