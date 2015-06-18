@@ -41,6 +41,6 @@ Ember.Handlebars.helper "facebookShareButton", (title, description, image)->
   encodedTitle = encodeURIComponent(title)
   "<a href='http://facebook.com/sharer/sharer.php?u=" + url + "&t=" + encodedTitle + "' target='_blank'><i class='fa fa-facebook dark-blue'></i></a>"
 
-Ember.Handlebars.helper 'headTitle', (title, subtext=null, args=null) ->
+Ember.Handlebars.helper 'headTitle', (title, subtext='', args='') ->
   Ember.$('head').find('title').text(title + subtext + args)
   ''
