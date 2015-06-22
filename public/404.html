@@ -1,19 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="application.scss">
+    <title>The page you were looking for doesn't exist (404)</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href = "http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,cyrillic-ext" rel = "stylesheet" type = "text/css">
 </head>
 
 <body>
+  <style>
+      body {
+          font-family: 'roboto';
+      }
+      a {
+          -webkit-transition: 0.2s, ease-in-out;
+          -moz-transition: 0.2s, ease-in-out;
+          -o-transition: 0.2s, ease-in-out;
+          transition: 0.2s, ease-in-out;
+          color: #000;
+      }
+      a:hover {
+          color: #EC7B71;
+      }
+
+      .right, .left {
+          padding: 0 10px;
+          width: 45%;
+          height: 100%;
+          display: inline-block;
+      }
+      .left {
+          text-align: right;
+      }
+      h1 {
+          font-weight: 100;
+          font-size: 250px;
+      }
+      .right {
+          font-weight: 100;
+          text-align: left;
+      }
+  </style>
   <!-- This file lives in public/404.html -->
   <div class="dialog">
-    <div>
-      <h1 class="text-center">404<small>The page you were looking for doesn't exist.</small></h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+    <div class="left">
+        <h1 class="text-center">404</h1>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+    <div class="right">
+        The page you were looking for doesn't exist.
+        <p>You may have mistyped the address or the page may have moved.</p>
+        <a href="http://drkmen.com">Go back to drkmen.com</a>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </div>
+
   </div>
 </body>
 </html>

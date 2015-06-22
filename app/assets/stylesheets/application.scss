@@ -10,6 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require_tree ../../../vendor/assets/stylesheets/hightlight-styles
  *= require_self
  */
 
@@ -21,7 +22,6 @@
 @import "font-awesome";
 @import "nprogress";
 @import "nprogress-bootstrap";
-@import "highlight_js/github";
 
 @import "mixin";
 @import "icons";

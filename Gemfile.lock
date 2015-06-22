@@ -165,8 +165,6 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hashie (3.4.1)
-    highlight_js-rails (7.1.0)
-      rails (>= 3.1.1)
     hike (1.2.3)
     hirb (0.7.3)
     html2haml (2.0.0)
@@ -363,7 +361,6 @@ DEPENDENCIES
   friendly_id (~> 5.1.0)
   haml
   haml-rails
-  highlight_js-rails
   hirb
   html2haml
   jquery-rails
