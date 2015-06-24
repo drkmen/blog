@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   resources :experiences, only: [:index]
 
   get '/auth/:provider/callback', to: 'sessions#create'
+  get '/reload_sitemap', to: 'application#reload_sitemap'
 
 end
