@@ -20,12 +20,14 @@
         <div class="col-md-7 text-right">
             <i class="fa fa-calendar-o"></i>
             {{postInfoDate model.created_at}}
-            <span class="tag">
-                <i class="fa fa-tag"></i>
-                {{#each tag in model.tags}}
-                    {{#link-to 'tags.show' tag.name}}{{tag.name}}{{/link-to}}
-                {{/each}}
-            </span>
+            {{#if model.tags}}
+                <span class="tag">
+                    <i class="fa fa-tag"></i>
+                    {{#each tag in model.tags}}
+                        {{#link-to 'tags.show' tag.name}}{{tag.name}}{{/link-to}}
+                    {{/each}}
+                </span>
+            {{/if}}
         </div>
     </div>
     <p></p>
@@ -53,20 +55,22 @@
     </div>
     <hr>
 
-    <div class="related">
-        <div class="title">RELATED POSTS</div>
-        {{#each post in controller.relatedPosts}}
-            <div class="related-item">
-                {{#link-to 'posts.show' post}}
-                    <div class="img"><img {{bind-attr src=post.image_path}}></div>
-                    <p></p>
-                    <div class="text">{{{truncate post.title 50}}}</div>
-                    <br>
-                {{/link-to}}
-            </div>
-        {{/each}}
-    </div>
-    <hr>
+    {{#if controller.relatedPosts}}
+        <div class="related">
+            <div class="title">RELATED POSTS</div>
+            {{#each post in controller.relatedPosts}}
+                <div class="related-item">
+                    {{#link-to 'posts.show' post}}
+                        <div class="img"><img {{bind-attr src=post.image_path}}></div>
+                        <p></p>
+                        <div class="text">{{{truncate post.title 50}}}</div>
+                        <br>
+                    {{/link-to}}
+                </div>
+            {{/each}}
+        </div>
+        <hr>
+    {{/if}}
 
     <div class="comments">
         <h3>{{model.comments.length}} Comments</h3>

@@ -4,7 +4,7 @@ Blog.PostsShowController = Ember.ObjectController.extend(
   currentUserBinding: 'controllers.application.currentUser'
 
   relatedPosts: (()->
-    @store.find('post', {tags: @model.get('tagsArray'), post_id: @model.id})
+    @store.find('post', {tags: @model.get('tagsArray'), post_id: @model.id, last: 8})
   ).property('model')
 
   errors: {

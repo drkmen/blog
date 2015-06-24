@@ -160,36 +160,34 @@
         <div id="top-right-bar-content">
             <strong>NEW POSTS</strong>
             {{#each post in model}}
-                <!--<div class="row">-->
-                    <div class="row post-item">
+                <div class="row post-item">
 
-                        <div class="col-lg-7">
-                            <div class="post-description">
-                                {{#link-to 'posts.show' post }}
-                                    <h4>{{truncate post.title 30}}</h4>
+                    <div class="col-lg-7">
+                        <div class="post-description">
+                            {{#link-to 'posts.show' post }}
+                                <h4>{{truncate post.title 30}}</h4>
+                            {{/link-to}}
+
+                            <small>
+                                {{date post.created_at}},
+                                {{#link-to 'author.show' post.author}}
+                                    <span class="author">{{post.author.name}}</span>
                                 {{/link-to}}
-
-                                <small>
-                                    {{date post.created_at}},
-                                    {{#link-to 'author.show' post.author}}
-                                        <span class="author">{{post.author.name}}</span>
-                                    {{/link-to}}
-                                </small>
-                            </div>
+                            </small>
                         </div>
-
-                        <div class="col-lg-5">
-                            <a class="post-image">
-                                {{#link-to 'posts.show' post }}
-                                    <img {{bind-attr src=post.image_path}} width="100%"/>
-                                {{/link-to}}
-                            </a>
-                            <p></p>
-                        </div>
-
                     </div>
-                    <hr>
-                <!--</div>-->
+
+                    <div class="col-lg-5">
+                        <a class="post-image">
+                            {{#link-to 'posts.show' post }}
+                                <img {{bind-attr src=post.image_path}} width="100%"/>
+                            {{/link-to}}
+                        </a>
+                        <p></p>
+                    </div>
+
+                </div>
+                <hr>
             {{/each}}
         </div>
     </div>
