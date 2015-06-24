@@ -3,7 +3,7 @@ class AuthorsController < ApplicationController
   respond_to :json
 
   def show
-    respond_with Author.find(params[:id])
+    respond_with Author.find_by(name: params[:id])
   end
 
   def create
