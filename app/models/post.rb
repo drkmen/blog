@@ -24,6 +24,10 @@ class Post < ActiveRecord::Base
     title_changed? || super
   end
 
+  def normalize_friendly_id(title)
+    I18n.transliterate(title).to_s
+  end
+
   validates :title, :body, :author_id, :description, presence: true
   validates :title, uniqueness: true
 
