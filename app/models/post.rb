@@ -25,7 +25,7 @@ class Post < ActiveRecord::Base
   end
 
   def normalize_friendly_id(title)
-    I18n.transliterate(title.downcase).to_s
+    I18n.transliterate(title).to_s
     super
   end
 
