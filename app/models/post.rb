@@ -26,6 +26,7 @@ class Post < ActiveRecord::Base
 
   def normalize_friendly_id(title)
     I18n.transliterate(title.downcase).to_s
+    super
   end
 
   validates :title, :body, :author_id, :description, presence: true
