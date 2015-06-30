@@ -44,3 +44,7 @@ Ember.Handlebars.helper "facebookShareButton", (title, description, image)->
 Ember.Handlebars.helper 'headTitle', (title, subtext='', args='') ->
   Ember.$('head').find('title').text(title + subtext + args)
   ''
+
+Ember.Handlebars.helper 'headDescription', (title, subtext='', args='') ->
+  Ember.$('head').find('meta[name=description]').attr('content', title + subtext + args)
+  ''
