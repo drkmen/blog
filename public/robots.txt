@@ -4,3 +4,9 @@
 # User-agent: *
 # Disallow: /
 Sitemap: http://drkmen.com/sitemap.xml.gz
+
+User-agent: Mediapartners-Google
+Allow: /
+
+
+
