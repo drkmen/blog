@@ -53,6 +53,12 @@ a, a.ember-view {
   }
 }
 
+h1, h2, h3, h4, h5 {
+  &.thin {
+    font-weight: 100;
+  }
+}
+
 html, body {
   position: relative;
   font-family: 'Roboto', sans-serif;

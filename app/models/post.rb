@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
   acts_as_taggable
   mount_uploader :image, ImageUploader
 
-  belongs_to :author
+  belongs_to :author, -> { where posts_author: true }
   has_many :comments, :dependent => :destroy
 
   scope :last_num, ->(limit_param) { limit_param.present? ? limit(limit_param).order('id DESC') : all}
