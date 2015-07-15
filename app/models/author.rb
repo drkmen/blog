@@ -3,6 +3,8 @@ class Author < ActiveRecord::Base
   has_many :posts
   has_many :comments, :dependent => :destroy
 
+  scope :posts_author, -> {where(:posts_author => true)}
+
   mount_uploader :image, ImageUploader
 
   validates :name, presence: true, length: {minimum: 2, maximum: 50}

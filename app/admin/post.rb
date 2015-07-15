@@ -22,7 +22,7 @@ ActiveAdmin.register Post do
       f.input :title
       f.input :image
       f.input :remote_image_url
-      f.input :author
+      f.input :author, :collection => Author.posts_author
       f.input :description
       f.input :body, :as => :ckeditor
       f.input :tags, as: :check_boxes
