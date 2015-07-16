@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    respond_with Post.friendly.find(params[:id])
+    respond_with Post.friendly.preload(:comments).find(params[:id])
   end
 
 end

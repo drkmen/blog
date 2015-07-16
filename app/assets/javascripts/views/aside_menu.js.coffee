@@ -1,3 +1,1 @@
-Blog.AsideMenuView = Ember.View.extend(
-
-)
+Blog.AsideMenuView = Ember.View.extend()

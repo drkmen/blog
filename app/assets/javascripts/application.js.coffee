@@ -5,7 +5,7 @@
 #= require ember-data
 #= require moment
 #= require nprogress
-#= require highlight.pack
+#= require ckeditor/plugins/codesnippet/lib/highlight/highlight.pack
 #= require jquery.easy-pie-chart
 #= require_self
 #= require blog
