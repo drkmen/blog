@@ -1,15 +1,26 @@
 Blog.AnimatedView = Ember.View.extend(
 
   willInsertElement: ->
-    @$().css({opacity: 0})
+    @beforeInsertAnimation(@element)
 
   didInsertElement: ->
-    @$().animate({opacity: 1}, 1000)
+    @afterInsertAnimation(@element)
 
   manualAnimate: (->
-    @willInsertElement()
-    @didInsertElement()
+    @beforeInsertAnimation(@element)
+    @afterInsertAnimation(@element)
   ).observes('controller.model')
+
+  beforeInsertAnimation: (elem)->
+    $(elem).css({top: '+=15px'}, 1)
+    $(elem).css(opacity: 0.1)
+
+  afterInsertAnimation: (elem)->
+    $(elem).animate({
+      opacity: 1,
+    }, 400)
+    $(elem).animate({top: '-=15px'}, 300)
+
 
 )
 

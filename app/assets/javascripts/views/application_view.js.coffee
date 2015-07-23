@@ -1,4 +1,4 @@
-Blog.ApplicationView = Blog.AnimatedView.extend(
+Blog.ApplicationView = Ember.View.extend(
 
   click: (event)->
     unless document.getElementById("aside-menu").contains(event.target)

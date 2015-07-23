@@ -5,9 +5,11 @@ Blog.PostsIndexView = Blog.AnimatedView.extend(
   currentPost: 0
 
   didInsertElement: ->
+    @_super()
     @set('posts', $('.posts').find('.row'))
 
   willInsertElement: ->
+    @_super()
     $(document).on('keydown', (e)=>
       if e.keyCode == 38
         e.preventDefault()
