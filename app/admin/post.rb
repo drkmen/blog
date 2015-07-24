@@ -24,13 +24,14 @@ ActiveAdmin.register Post do
       f.input :remote_image_url
       f.input :author, :collection => Author.posts_author
       f.input :description
+      f.input :google_desc
       f.input :body, :as => :ckeditor
       f.input :tags, as: :check_boxes
     end
     actions
   end
 
-  permit_params :title, :image, :remote_image_url, :body, :author_id, :description, :tag_ids => []
+  permit_params :title, :image, :remote_image_url, :body, :author_id, :description, :google_desc, :tag_ids => []
 
 
 

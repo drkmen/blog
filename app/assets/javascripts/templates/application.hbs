@@ -168,7 +168,7 @@
                             {{#link-to 'posts.show' post }}
                                 <h4>{{truncate post.title 30}}</h4>
                             {{/link-to}}
-
+                            <p><small>{{truncate post.description 70}}</small></p>
                             <small>
                                 {{date post.created_at}},
                                 {{#link-to 'author.show' post.author}}

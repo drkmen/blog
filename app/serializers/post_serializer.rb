@@ -1,6 +1,6 @@
 class PostSerializer < ActiveModel::Serializer
 
-  attributes :id, :title, :image_path, :body, :tags, :created_at, :updated_at, :comments, :friendly_id, :description
+  attributes :id, :title, :image_path, :body, :tags, :created_at, :updated_at, :comments, :friendly_id, :description, :google_desc
 
   has_one :author
 

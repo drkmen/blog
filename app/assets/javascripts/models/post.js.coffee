@@ -6,6 +6,7 @@ Blog.Post = DS.Model.extend
   created_at: DS.attr 'date'
   updated_at: DS.attr 'date'
   friendly_id: DS.attr 'string'
+  google_desc: DS.attr 'string'
 
   tags: DS.hasMany 'tags'
   comments: DS.hasMany 'comments'
