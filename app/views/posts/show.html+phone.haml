@@ -1,0 +1,24 @@
+.post-preview.show.mobile{style: "background-image:url('#{@post.image}'); background-repeat: no-repeat;"}
+  .post-preview-info.show
+    .post-preview-hr
+    %h5.post-preview-title.mobile
+      = @post.title
+
+.mobile
+  .row
+    .post-info.container-fluid
+      %br
+      .col-sm-12.text-right
+        %i.fa.fa-calendar-o
+        = @post.created_at.strftime("%A, %d %b %y")
+        -if @post.tags
+          %span.tag
+            %i.fa.fa-tag
+            = @post.tag_list
+            -#-@post.tags.each do |tag|
+            -#  = tag
+
+
+  .post-body.container
+    != @post.body
+

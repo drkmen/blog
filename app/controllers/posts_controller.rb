@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
 
-  respond_to :json
+  respond_to :json, :html
 
   def index
-    respond_with Post.friendly
+    @posts = Post.friendly
                      .search_by_title_and_tag(params[:search])
                      .last_num(params[:last])
                      .tagged(params[:tags])
@@ -12,10 +12,14 @@ class PostsController < ApplicationController
                      .preload(:comments)
                      .preload(:tags)
                      .order('created_at DESC')
+    respond_with @posts
   end
 
   def show
-    respond_with Post.friendly.preload(:comments).find(params[:id])
+    @post = Post.friendly.preload(:comments).find(params[:id])
+    respond_with @post
   end
+
+
 
 end

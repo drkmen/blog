@@ -1,6 +1,9 @@
 @import "mixin";
 
 .post-preview.index{
+  &.mobile {
+    height: 150px!important;
+  }
   &:before {
     display: none;
   }
@@ -23,6 +26,9 @@
   &.show {
     height: 75%;
     overflow: visible;
+    &.mobile {
+      height: 30%;
+    }
   }
   &:before {
     z-index: 1;
@@ -51,6 +57,9 @@
       font-size: 40px;
       font-weight: 400;
       text-transform: uppercase;
+      &.mobile{
+        font-size: 15px;
+      }
     }
     .post-preview-body {
       font-size: 15px;
