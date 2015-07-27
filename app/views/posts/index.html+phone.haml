@@ -1,0 +1,25 @@
+.posts
+  -@posts.each do |post|
+    .row
+      .post
+        .post-preview.index.mobile{style: "background-image:url('#{post.image}'); background-repeat: no-repeat;"}
+
+        .post-index.mobile
+          %br
+          = link_to post_path post do
+            %span.title
+              = post.title
+          %br
+          %p
+          %span.date
+            = post.created_at.strftime("%d.%m.%Y")
+            %span.tag.pull-right
+              %i.fa.fa-tag
+                = post.tag_list
+
+          %p
+          %span.body
+            = truncate(post.description, length: 100)
+
+          %p
+          %br
