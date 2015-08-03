@@ -24,4 +24,11 @@
             </div>
         </div>
     {{/each}}
+
+    {{#if availablePosts}}
+        <div class="text-center">
+            <span class="btn load-more" {{action 'loadMore'}}>Load more</span>
+        </div>
+    {{/if}}
+
 </div>

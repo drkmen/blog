@@ -1,7 +1,7 @@
 Blog.PostsIndexRoute = Ember.Route.extend(
 
   model: ()->
-    @store.find('post', {last: 100})
+    @store.find('post', {last: 5})
 
   setupController: (controller, model)->
     searchVal = controller.get('searchVal')

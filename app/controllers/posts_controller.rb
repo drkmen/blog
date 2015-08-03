@@ -6,6 +6,7 @@ class PostsController < ApplicationController
     @posts = Post.friendly
                      .search_by_title_and_tag(params[:search])
                      .last_num(params[:last])
+                     .offset(params[:offset])
                      .tagged(params[:tags])
                      .where.not(:id => params[:post_id])
                      .preload(:author)

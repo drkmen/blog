@@ -359,3 +359,19 @@
     }
   }
 }
+
+.load-more {
+  color: #898989;
+  margin: 75px 0;
+  text-decoration: none;
+  outline: none;
+  padding: 18px;
+  border: 1px solid #898989;
+  border-radius: 5%;
+  @include transition(0.2s, ease-in-out);
+  &:hover {
+    @include transition(0.2s, ease-in-out);
+    color: #E45245;
+    border-color: #E45245;
+  }
+}
