@@ -368,6 +368,7 @@
   padding: 18px;
   border: 1px solid #898989;
   border-radius: 5%;
+  min-width: 100px;
   @include transition(0.2s, ease-in-out);
   &:hover {
     @include transition(0.2s, ease-in-out);

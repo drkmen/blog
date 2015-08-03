@@ -21,6 +21,4 @@ class PostsController < ApplicationController
     respond_with @post
   end
 
-
-
 end
