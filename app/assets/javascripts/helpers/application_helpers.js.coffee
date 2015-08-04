@@ -48,3 +48,6 @@ Ember.Handlebars.helper 'headTitle', (title, subtext='', args='') ->
 Ember.Handlebars.helper 'headDescription', (title, subtext='', args='') ->
   Ember.$('head').find('meta[name=description]').attr('content', title + subtext + args)
   ''
+
+Ember.Handlebars.helper 'IsEmpty', (model) ->
+  model.content.length <= 0

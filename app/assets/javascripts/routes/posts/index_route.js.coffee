@@ -11,6 +11,7 @@ Blog.PostsIndexRoute = Ember.Route.extend(
       @store.find('post', {search: searchVal}).then (posts)=>
         controller.set('model', posts)
     controller.set('searchVal', null)
+    controller.set('availablePosts', true)
     searchVal = null
 
 )

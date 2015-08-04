@@ -1,6 +1,7 @@
 Blog.ApplicationController = Ember.ObjectController.extend(
 
   currentUser: null
+  showSearchCancel: false
 
   init: ->
     if @getCookie('blog_user_id')
@@ -9,7 +10,6 @@ Blog.ApplicationController = Ember.ObjectController.extend(
       @set('showCookieTips', false)
     if @getCookie('blog_show_arrows_tips')
       @get('controllers.postsIndex').set('showArrowsTips', false)
-
 
   getCookie: (name) ->
     matches = document.cookie.match(new RegExp(
@@ -22,11 +22,21 @@ Blog.ApplicationController = Ember.ObjectController.extend(
   needs: ['about', 'postsIndex']
 
   actions:
+    clearSearch: ->
+      @store.find('post', {last: 5}).then (posts)=>
+        @get('controllers.postsIndex').set('model', posts)
+        @get('controllers.postsIndex').set('availablePosts', true) # zaebali kostili
+        $('.search').find('input').val('')
+        @set('showSearchCancel', false)
+
+
     submit: ->
       $('form').submit()
 
     search: ->
+      @set('showSearchCancel', true)
       @get('controllers.postsIndex').set('searchVal', @get('search'))
+      @get('controllers.postsIndex').set('availablePosts', false) # prevent to show Load More button
       if(@get('currentPath') == 'posts.index')
         @store.find('post', {search: @get('search')}).then (posts)=>
           @get('controllers.postsIndex').set('model', posts)

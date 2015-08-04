@@ -3,7 +3,6 @@ Blog.PostsIndexController = Ember.ArrayController.extend(
   model: ''
   searchVal: null
   availablePosts: true
-
   showArrowsTips: true
 
   actions:

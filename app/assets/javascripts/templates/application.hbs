@@ -112,7 +112,12 @@
                 <span class="search">
                     <form role="form" {{action 'search' on='submit'}}>
                         {{input type="text" placeholder="Search" value=search}}
-                        <i class="fa fa-search fa-lg" {{action 'submit'}}></i>
+                        {{#if showSearchCancel}}
+                          <i class="fa fa-times fa-lg" {{action 'clearSearch'}}></i>
+                        {{else}}
+                          <i class="fa fa-search fa-lg" {{action 'submit'}}></i>
+                        {{/if}}
+
                     </form>
                 </span>
             </div>

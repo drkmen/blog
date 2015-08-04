@@ -17,13 +17,17 @@
 {{/if}}
 
 <div class="posts">
-    {{#each post in model}}
-        <div class="row">
+    {{#if (IsEmpty model)}}
+      <h1 class="thin text-center">Sorry, nothing found</h1>
+    {{else}}
+        {{#each post in model}}
+          <div class="row">
             <div class="post">
                 {{partial 'posts/post_info'}}
             </div>
-        </div>
-    {{/each}}
+          </div>
+        {{/each}}
+    {{/if}}
 
     {{#if availablePosts}}
         <div class="text-center">
