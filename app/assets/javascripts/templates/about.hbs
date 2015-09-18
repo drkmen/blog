@@ -19,6 +19,10 @@
 
     <h2 id="skills">Skills</h2>
     <div class="skills">
+      <div class="text-center">
+        <img src="ilike.png" title="Thanks https://www.workshape.io for this awesome graph!" width="90%">
+      </div>
+
         {{#each skill in model.skills}}
             <div class="skill">
                 {{#view 'pieChart' data-percent=skill.value name=skill.name}}
