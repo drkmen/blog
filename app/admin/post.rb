@@ -12,6 +12,7 @@ ActiveAdmin.register Post do
     column :body do |post|
       truncate(post.body, length: 500)
     end
+    column :hidden
     column :tag_list
     column :created_at
     actions
@@ -25,15 +26,20 @@ ActiveAdmin.register Post do
       f.input :author, :collection => Author.posts_author
       f.input :description
       f.input :google_desc
+      f.input :hidden
       f.input :body, :as => :ckeditor
       f.input :tags, as: :check_boxes
     end
     actions
   end
 
-  permit_params :title, :image, :remote_image_url, :body, :author_id, :description, :google_desc, :tag_ids => []
+  permit_params :title, :image, :remote_image_url, :body, :author_id, :description, :google_desc, :hidden, :tag_ids => []
 
-
+  controller do
+    def scoped_collection
+      Post.unscoped
+    end
+  end
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

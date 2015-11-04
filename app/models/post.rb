@@ -9,6 +9,8 @@ class Post < ActiveRecord::Base
   belongs_to :author, -> { where posts_author: true }
   has_many :comments, :dependent => :destroy
 
+  default_scope ->{ where(hidden: false) }
+
   scope :last_num, ->(limit_param) { limit_param.present? ? limit(limit_param) : all}
   scope :tagged, ->(tags) { tags.present? ? tagged_with([tags], :any => true) : all}
   scope :search_by_title_and_tag, ->(str) {
@@ -47,4 +49,6 @@ end
 #  author_id   :integer
 #  slug        :string
 #  description :string
+#  google_desc :string
+#  hidden      :boolean
 #

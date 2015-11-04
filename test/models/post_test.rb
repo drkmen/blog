@@ -19,4 +19,6 @@ end
 #  author_id   :integer
 #  slug        :string
 #  description :string
+#  google_desc :string
+#  hidden      :boolean
 #
