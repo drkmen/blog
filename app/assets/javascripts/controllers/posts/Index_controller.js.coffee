@@ -3,7 +3,6 @@ Blog.PostsIndexController = Ember.ArrayController.extend(
   model: ''
   searchVal: null
   availablePosts: true
-  showArrowsTips: true
 
   actions:
     loadMore: ->
@@ -16,14 +15,5 @@ Blog.PostsIndexController = Ember.ArrayController.extend(
         @model.addObjects(new_post)
         $('span.load-more').html('Load more')
         NProgress.done()
-
-    gotIt: ->
-      $('.tips').animate {
-        opacity: 0
-      }, 400, =>
-        @set('showArrowsTips', false)
-      document.cookie = "blog_show_arrows_tips=false"
-      ## blya ny pizdec
-      $('.wrapper').css('z-index', 1)
 
 )
