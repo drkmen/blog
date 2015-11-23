@@ -1,0 +1,1 @@
+Blog.TermsView = Blog.AboutView.extend()
