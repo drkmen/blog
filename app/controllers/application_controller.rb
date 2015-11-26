@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_action :set_cookies_for_crawlers
+  # before_action :set_cookies_for_crawlers
   before_action :set_variants
 
   def index
@@ -22,13 +22,6 @@ class ApplicationController < ActionController::Base
     redirect_to :back
   end
 
-  def set_cookies_for_crawlers
-    if request.env['HTTP_USER_AGENT'] =~ /Googlebot/
-      cookies[:blog_show_cookie_tips] = false
-      cookies[:blog_show_arrows_tips] = false
-    end
-  end
-
   ActiveAdmin::ResourceController.class_eval do
     def find_resource
       collection = scoped_collection.unscope(:where => :hidden)
@@ -41,6 +34,13 @@ class ApplicationController < ActionController::Base
   def set_variants
     request.variant = :phone if request.user_agent =~ /iphone|android|ipod|ipad/i
   end
+
+  # def set_cookies_for_crawlers
+  #   if request.env['HTTP_USER_AGENT'] =~ /Googlebot/
+  #     cookies[:blog_show_cookie_tips] = false
+  #     cookies[:blog_show_arrows_tips] = false
+  #   end
+  # end
 
 end
 
