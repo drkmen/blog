@@ -23,7 +23,6 @@ SitemapGenerator::Sitemap.create do
   add "/#!/about"
   add "/#!/posts"
   add "/#!/tags"
-  add "/#!/author"
 
   Post.find_each do |post|
     add "/#!/posts/#{post.friendly_id}", :lastmod => post.updated_at, :changefreq => 'daily'
@@ -31,10 +30,6 @@ SitemapGenerator::Sitemap.create do
 
   ActsAsTaggableOn::Tag.find_each do |tag|
     add "/#!/tags/#{tag.name}"
-  end
-
-  Author.where(:posts_author => true) do |author|
-    add "/#!/author/#{author.name}"
   end
 
 end

@@ -26,7 +26,6 @@
 @import "mixin";
 @import "icons";
 @import "post";
-@import "author";
 @import "tag";
 @import "about";
 @import "terms";
@@ -250,12 +249,7 @@ html, body {
         small {
           color: #8e8e8e;
           .author {
-            color: #8e8e8e;
-            @include transition(0.2s, ease-in-out);
-            &:hover {
-              @include transition(0.2s, ease-in-out);
-              color: #EC7B71;
-            }
+            color: #EC7B71;
           }
         }
         padding-right: 25px;

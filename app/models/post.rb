@@ -6,7 +6,6 @@ class Post < ActiveRecord::Base
   acts_as_taggable
   mount_uploader :image, ImageUploader
 
-  belongs_to :author, -> { where posts_author: true }
   has_many :comments, :dependent => :destroy
 
   default_scope ->{ where(hidden: false) }
@@ -31,7 +30,7 @@ class Post < ActiveRecord::Base
     super
   end
 
-  validates :title, :body, :author_id, :description, presence: true
+  validates :title, :body, :description, presence: true
   validates :title, uniqueness: true
 
 end
@@ -46,9 +45,8 @@ end
 #  image       :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  author_id   :integer
 #  slug        :string
 #  description :string
 #  google_desc :string
-#  hidden      :boolean
+#  hidden      :boolean          default(FALSE)
 #

@@ -1,6 +1,6 @@
 class AuthorSerializer < ActiveModel::Serializer
 
-  attributes :id, :name, :about, :url, :image_path, :posts
+  attributes :id, :name, :about, :image_path
 
   def image_path
     object.image_url
