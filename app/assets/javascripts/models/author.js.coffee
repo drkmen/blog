@@ -4,7 +4,6 @@ Blog.Author = DS.Model.extend(
   image_path: DS.attr 'string'
   about: DS.attr 'string'
 
-  posts: DS.hasMany 'posts'
   comments: DS.hasMany 'comments'
 
   PPbackground: (()->

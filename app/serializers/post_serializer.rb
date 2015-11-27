@@ -2,8 +2,6 @@ class PostSerializer < ActiveModel::Serializer
 
   attributes :id, :title, :image_path, :body, :tags, :created_at, :updated_at, :comments, :friendly_id, :description, :google_desc
 
-  has_one :author
-
   def image_path
     object.image_url
   end
@@ -24,9 +22,8 @@ end
 #  image       :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  author_id   :integer
 #  slug        :string
 #  description :string
 #  google_desc :string
-#  hidden      :boolean
+#  hidden      :boolean          default(FALSE)
 #

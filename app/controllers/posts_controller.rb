@@ -9,7 +9,6 @@ class PostsController < ApplicationController
                      .offset(params[:offset])
                      .tagged(params[:tags])
                      .where.not(:id => params[:post_id])
-                     .preload(:author)
                      .preload(:comments)
                      .preload(:tags)
                      .order('created_at DESC')

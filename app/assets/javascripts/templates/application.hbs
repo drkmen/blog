@@ -11,6 +11,7 @@
             {{#each post in model}}
                 <li>{{#link-to 'posts.show' post}}{{truncate post.title 20}}{{/link-to}}</li>
             {{/each}}
+            <li><h4>{{#link-to 'tags'}}TAGS{{/link-to}}</h4></li>
 
             <li><h4>{{#link-to 'about'}}ABOUT{{/link-to}}</h4></li>
             <li><a href="#" {{action 'goToLink' 'about' '#skills'}}>Skills</a></li>
@@ -163,9 +164,7 @@
                             <p><small>{{truncate post.description 70}}</small></p>
                             <small>
                                 {{date post.created_at}},
-                                {{#link-to 'author.show' post.author}}
-                                    <span class="author">{{post.author.name}}</span>
-                                {{/link-to}}
+                                <span class="author">Mike</span>
                             </small>
                         </div>
                     </div>

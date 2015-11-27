@@ -1,17 +1,15 @@
 class AuthorsController < ApplicationController
 
-  respond_to :json
-
   def show
-    respond_with Author.find_by(name: params[:id])
+    render json: Author.find(params[:id])
   end
 
   def create
     author = Author.where(:name => params[:author][:name]).first_or_create
     if author.save
-      respond_with author
+      render json: author
     else
-      render :json => {errors: author.errors}, status: :unprocessable_entity
+      render json: {errors: author.errors}, status: :unprocessable_entity
     end
   end
 

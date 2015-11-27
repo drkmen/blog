@@ -7,9 +7,6 @@ Blog.Experience = DS.Model.extend(
   to: DS.attr('date')
   study: DS.attr('boolean')
 
-#  years: ->
-#    @endYear() - @startYear()
-
   startYear: (->
     if !@get('study')
       moment(@get('from')).format('MMM YYYY')

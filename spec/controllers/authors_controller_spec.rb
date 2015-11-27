@@ -1,62 +1,56 @@
 require 'rails_helper'
 
+RSpec.shared_examples 'authors json' do
+  it 'returns valid json' do
+    json = JSON.parse(subject.body)['author']
+    expect(json).to have_key('id')
+    expect(json).to have_key('name')
+    expect(json).to have_key('about')
+    expect(json).to have_key('image_path')
+  end
+end
+
 RSpec.describe AuthorsController, :type => :controller do
 
   let(:author) { FactoryGirl.create(:author) }
 
   describe 'GET #show' do
+    subject { get :show, id: author.id, format: :json }
 
-    subject { get :show, id: author.name, format: :json }
+    it_behaves_like 'success responses'
+    it_behaves_like 'authors json'
+  end
 
-    it { is_expected.to be_success }
-    it { is_expected.to have_http_status(200) }
+  describe 'POST #create' do
 
-    it 'respond with json' do
-      expect(subject.header['Content-Type']).to include 'application/json'
-    end
+    describe 'success' do
+      let(:payload) { {author: {name: 'Bob'}} }
+      subject { post :create, payload, format: :json }
 
-    describe 'when posts are given' do
-      let!(:posts)  { Array.new(2) { FactoryGirl.create(:post, author: author) }  }
+      it_behaves_like 'success responses'
+      it_behaves_like 'authors json'
 
-      subject { JSON.parse(get(:show, id: author.name, format: :json).body)['author'] }
-      it 'loads author' do
-        p subject
-        expect(subject['id']).to_not be_nil
-        expect(subject['name']).to_not be_nil
-        expect(subject['about']).to_not be_nil
-        expect(subject['url']).to_not be_nil
-        expect(subject['image_path']).to_not be_nil
-        expect(subject['posts']).to_not be_empty
+      it 'should create new user' do
+        subject
+        expect(Author.exists?(name: payload[:author][:name])).to be true
       end
     end
 
+    describe 'failed' do
+      let(:payload) { {author: {name: ''}} }
+      subject { post :create, payload, format: :json }
 
+      it_behaves_like 'failed responses'
+
+      it 'should return error' do
+        json = JSON.parse(subject.body)['errors']
+        expect(json['name']).to be_an_instance_of(Array)
+        expect(json['name'][0]).to eq "can't be blank"
+        expect(json['name'][1]).to eq 'is too short (minimum is 2 characters)'
+      end
+    end
 
   end
 
-end
 
-# class AuthorsController < ApplicationController
-#
-#   respond_to :json
-#
-#   def show
-#     respond_with Author.find_by(name: params[:id])
-#   end
-#
-#   def create
-#     author = Author.where(:name => params[:author][:name]).first_or_create
-#     if author.save
-#       respond_with author
-#     else
-#       render :json => {errors: author.errors}, status: :unprocessable_entity
-#     end
-#   end
-#
-#   private
-#
-#   def author_params
-#     params.require(:author).permit(:name, :image_path)
-#   end
-#
-# end
+end

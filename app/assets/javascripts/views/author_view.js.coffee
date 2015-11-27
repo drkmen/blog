@@ -1,1 +1,0 @@
-Blog.AuthorShowView = Blog.AnimatedView.extend()

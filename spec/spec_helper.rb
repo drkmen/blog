@@ -90,3 +90,24 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+RSpec.shared_examples 'success responses' do
+
+  it { is_expected.to be_success }
+  it { is_expected.to have_http_status(200) }
+
+  it 'respond with json' do
+    expect(subject.header['Content-Type']).to include 'application/json'
+  end
+
+end
+
+RSpec.shared_examples 'failed responses' do
+
+  it { is_expected.to have_http_status(422) }
+
+  it 'respond with json' do
+    expect(subject.header['Content-Type']).to include 'application/json'
+  end
+
+end
