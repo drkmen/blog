@@ -10,7 +10,6 @@ Blog.Post = DS.Model.extend
 
   tags: DS.hasMany 'tags'
   comments: DS.hasMany 'comments'
-  author: DS.belongsTo 'author'
 
   PPbackground: (()->
     "background-image:url('" + @get("image_path") + "'); background-repeat: no-repeat;"

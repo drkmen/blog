@@ -16,9 +16,8 @@ end
 #  image       :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  author_id   :integer
 #  slug        :string
 #  description :string
 #  google_desc :string
-#  hidden      :boolean
+#  hidden      :boolean          default(FALSE)
 #

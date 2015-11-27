@@ -1,9 +1,6 @@
 class Author < ActiveRecord::Base
 
-  has_many :posts
   has_many :comments, :dependent => :destroy
-
-  scope :posts_author, -> {where(:posts_author => true)}
 
   mount_uploader :image, ImageUploader
 

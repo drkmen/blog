@@ -7,7 +7,6 @@ ActiveAdmin.register Post do
       image_tag(post.image, height: 55)
     end
     column :description
-    column :author
     column :title
     column :body do |post|
       truncate(post.body, length: 500)
@@ -23,7 +22,6 @@ ActiveAdmin.register Post do
       f.input :title
       f.input :image
       f.input :remote_image_url
-      f.input :author, :collection => Author.posts_author
       f.input :description
       f.input :google_desc
       f.input :hidden
@@ -33,13 +31,7 @@ ActiveAdmin.register Post do
     actions
   end
 
-  permit_params :title, :image, :remote_image_url, :body, :author_id, :description, :google_desc, :hidden, :tag_ids => []
-
-  controller do
-    def scoped_collection
-      Post.unscoped
-    end
-  end
+  permit_params :title, :image, :remote_image_url, :body, :description, :google_desc, :hidden, :tag_ids => []
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
