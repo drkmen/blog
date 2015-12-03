@@ -9,6 +9,7 @@ Blog.Router.map ()->
   )
   @route('about')
   @route('terms')
+  @route('testarea')
 
 Blog.Router.reopen(
   location: 'hashbang'
