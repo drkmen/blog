@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
 
   ActiveAdmin::ResourceController.class_eval do
     def find_resource
-      collection = scoped_collection.unscope(:where => :hidden)
+      # collection = scoped_collection.unscoped#(:where => :hidden)
       resource_class.is_a?(FriendlyId) ? collection.where(slug: params[:id]).first! : collection.where(id: params[:id]).first!
     end
   end

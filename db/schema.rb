@@ -120,11 +120,6 @@ ActiveRecord::Schema.define(version: 20151126152705) do
     t.date     "start_date"
   end
 
-  create_table "subscribes", force: :cascade do |t|
-    t.string "email"
-    t.text   "category", default: [], array: true
-  end
-
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
