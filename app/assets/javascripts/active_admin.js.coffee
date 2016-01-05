@@ -1,7 +1,6 @@
 #= require active_admin/base
 #= require ckeditor/init
 #= require ckeditor/plugins/codesnippet/lib/highlight/highlight.pack
-
 # ckeditor fix styles
 
 hljs.initHighlightingOnLoad();
