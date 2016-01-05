@@ -12,6 +12,9 @@ class PostsController < ApplicationController
                      .preload(:comments)
                      .preload(:tags)
                      .order('created_at DESC')
+    p '-'*100
+    p @posts.size
+    p '-'*100
     respond_with @posts
   end
 
