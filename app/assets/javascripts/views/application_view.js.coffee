@@ -1,6 +1,7 @@
 Blog.ApplicationView = Ember.View.extend(
 
   didInsertElement: ()->
+    NProgress.done()
     $('.aside-block').jScrollPane(
       mouseWheelSpeed: 100
     )

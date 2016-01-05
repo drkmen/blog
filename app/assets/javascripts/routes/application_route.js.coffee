@@ -1,6 +1,5 @@
 Blog.ApplicationRoute = Ember.Route.extend(
   model: ()->
-    NProgress.done()
     @store.find('post', {last: 5})
 )
 

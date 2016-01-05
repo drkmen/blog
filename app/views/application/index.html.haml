@@ -4,7 +4,7 @@
     %title drkmen | Mike B | WEB Developer Blog
     = favicon_link_tag
     = stylesheet_link_tag    'application', media: 'all'
-    = javascript_include_tag 'application'
+    = javascript_include_tag 'nprogress'
     %link{:href => "http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,cyrillic-ext", :rel => "stylesheet", :type => "text/css"}/
     = csrf_meta_tags
     %meta{:name => "fragment", :content => "!"}
@@ -14,3 +14,5 @@
     :javascript
       NProgress.start()
     = yield
+
+    = javascript_include_tag 'application'
