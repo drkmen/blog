@@ -8,6 +8,8 @@
 #= require ckeditor/init
 #= require ckeditor/plugins/codesnippet/lib/highlight/highlight.pack
 #= require jquery.easy-pie-chart
+#= require jquery.jscrollpane
+#= require jquery.mousewheel
 #= require_self
 #= require blog
 

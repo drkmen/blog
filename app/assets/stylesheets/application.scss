@@ -22,6 +22,7 @@
 @import "font-awesome";
 @import "nprogress";
 @import "nprogress-bootstrap";
+@import "jscrollpane";
 
 @import "mixin";
 @import "icons";
@@ -29,6 +30,7 @@
 @import "tag";
 @import "about";
 @import "terms";
+@import "scroll";
 @import "mobile";
 
 a, a.ember-view {
@@ -113,6 +115,7 @@ html, body {
   background-color: #fff;
   border-right: 1px solid #F2F1F0;
   .aside-block {
+    overflow-y: scroll;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     z-index: 3;
     width: 300px;

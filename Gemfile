@@ -11,6 +11,9 @@ gem 'jquery-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'active_model_serializers'
 
+gem 'jscrollpane-rails'
+gem 'jquery-mousewheel-rails'
+
 gem 'ember-rails'
 gem 'ember-source'#, '1.5.0'
 
