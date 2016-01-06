@@ -9,13 +9,13 @@ RSpec.describe PostsController, :type => :controller do
 
   describe 'GET #index' do
 
-    subject { get :index, ({format: :json}).merge(params) }
+    subject { get :index, {format: :json} } # used for shared examples
 
     it_behaves_like 'success responses'
 
     it 'should have valid json' do
-      let(:param) {}
-      json = JSON.parse(subject.body)['posts']
+      response = get :index, {format: :json}
+      json = JSON.parse(response.body)['posts']
 
       expect(json).to be_an_instance_of(Array)
       expect(json.size).to be 10
@@ -36,18 +36,48 @@ RSpec.describe PostsController, :type => :controller do
     end
 
     it 'should paginate' do
-      let(:param) { {last_num: 5, offset: 5} }
-      json = JSON.parse(subject.body)['posts']
+      response = get :index, { last: 5, offset: 3, format: :json }
+      json = JSON.parse(response.body)['posts']
       expect(json.size).to be 5
-      # .friendly
-      #      .search_by_title_and_tag(params[:search])
-      #      .last_num(params[:last])
-      #      .offset(params[:offset])
-      #      .tagged(params[:tags])
-      #      .where.not(:id => params[:post_id])
-      #      .preload(:comments)
-      #      .preload(:tags)
-      #      .order('created_at DESC')
+      expect(json.first['id']).to be 7
+      expect(json.last['id']).to be 3
+    end
+
+    it 'should return 3 last posts' do
+      response = get :index, { last: 3, format: :json }
+      json = JSON.parse(response.body)['posts']
+      expect(json.size).to be 3
+      expect(json.first['id']).to be 10
+    end
+
+    it 'should search' do
+      post = FactoryGirl.build(:post, title: 'search')
+      post.tag_list.add('test')
+      post.save
+      response = get :index, { search: 'search', format: :json }
+      json = JSON.parse(response.body)['posts']
+      expect(json.size).to be 1
+    end
+
+    it 'should be tagged' do
+      response = get :index, { tags: 'test', format: :json }
+      json = JSON.parse(response.body)['posts']
+      expect(json.size).to be 1
+    end
+
+    it 'should be without current post in recommendations' do
+      response = get :index, { post_id: 1, format: :json }
+      json = JSON.parse(response.body)['posts']
+      expect(json.size).to be 10
+      ids = json.to_a.map{|post| post['id']}
+      expect(ids).to_not include 1
+    end
+
+    it 'should be ordered by DESC' do
+      response = get :index, { format: :json }
+      json = JSON.parse(response.body)['posts']
+      ids = json.to_a.map{|post| post['id']}
+      expect(ids).to eq [11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
     end
 
   end
