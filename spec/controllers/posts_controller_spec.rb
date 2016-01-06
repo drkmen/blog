@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe PostsController, :type => :controller do
 
   before :all do
-    Post.delete_all
+    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.clean
     10.times { FactoryGirl.create(:post) }
   end
 
