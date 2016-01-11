@@ -97,7 +97,7 @@ Post.create(title: 'Full-Screen Images In Post',
                   Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla.
                   Donec ullamcorper nulla non metus auctor fringilla. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Maecenas sed diam eget risus varius blandit sit amet non magna.',
             remote_image_url: 'https://demo.gavick.com/joomla25/writer/media/k2/items/cache/e213534406f5e673030b12a49a117407_XL.jpg',
-            author_id: Author.all.sample.id,
+            description: '1',
             tags: [ActsAsTaggableOn::Tag.all.sample, ActsAsTaggableOn::Tag.all.sample]
 )
 Post.create(title: 'Lorem Malesuada Cursus',
@@ -106,7 +106,7 @@ Post.create(title: 'Lorem Malesuada Cursus',
                   Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla.
                   Donec ullamcorper nulla non metus auctor fringilla. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Maecenas sed diam eget risus varius blandit sit amet non magna.',
             remote_image_url: 'http://www.3dmgame.com/uploads/allimg/130604/153_130604150048_4.jpg',
-            author_id: Author.all.sample.id,
+            description: '1',
             tags: [ActsAsTaggableOn::Tag.all.sample, ActsAsTaggableOn::Tag.all.sample]
 )
 Post.create(title: 'Vulputate Ridiculus Fusce Pharetra Tristique',
@@ -115,7 +115,7 @@ Post.create(title: 'Vulputate Ridiculus Fusce Pharetra Tristique',
                   Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla.
                   Donec ullamcorper nulla non metus auctor fringilla. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Maecenas sed diam eget risus varius blandit sit amet non magna.',
             remote_image_url: 'http://cs306214.vk.me/v306214768/1785/3zQ9q_aMmhc.jpg',
-            author_id: Author.all.sample.id,
+            description: '1',
             tags: [ActsAsTaggableOn::Tag.all.sample, ActsAsTaggableOn::Tag.all.sample]
 )
 
@@ -125,7 +125,7 @@ Post.create(title: 'Vulputate Ridiculus Fusce Pharetra Tristique',
                   Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla.
                   Donec ullamcorper nulla non metus auctor fringilla. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Maecenas sed diam eget risus varius blandit sit amet non magna.',
             remote_image_url: 'http://www.3dmgame.com/uploads/allimg/130604/153_130604150048_4.jpg',
-            author_id: Author.all.sample.id,
+            description: '1',
             tags: [ActsAsTaggableOn::Tag.all.sample, ActsAsTaggableOn::Tag.all.sample]
 )
 
@@ -135,7 +135,7 @@ Post.create(title: 'Vulputate Ridiculus Fusce Pharetra Tristique',
                   Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla.
                   Donec ullamcorper nulla non metus auctor fringilla. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Maecenas sed diam eget risus varius blandit sit amet non magna.',
             remote_image_url: 'http://www.3dmgame.com/uploads/allimg/130604/153_130604150048_4.jpg',
-            author_id: Author.all.sample.id,
+            description: '1',
             tags: [ActsAsTaggableOn::Tag.all.sample, ActsAsTaggableOn::Tag.all.sample]
 )
 
@@ -145,7 +145,7 @@ Post.create(title: 'Vulputate Ridiculus Fusce Pharetra Tristique',
                   Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla.
                   Donec ullamcorper nulla non metus auctor fringilla. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Maecenas sed diam eget risus varius blandit sit amet non magna.',
             remote_image_url: 'http://www.3dmgame.com/uploads/allimg/130604/153_130604150048_4.jpg',
-            author_id: Author.all.sample.id,
+            description: '1',
             tags: [ActsAsTaggableOn::Tag.all.sample, ActsAsTaggableOn::Tag.all.sample]
 )
 
