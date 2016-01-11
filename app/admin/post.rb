@@ -46,10 +46,4 @@ ActiveAdmin.register Post do
   #   permitted
   # end
 
-  controller do
-    def scoped_collection
-      Post.unscoped
-    end
-  end
-
 end

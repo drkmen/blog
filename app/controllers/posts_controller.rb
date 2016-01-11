@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   respond_to :json, :html
 
   def index
-    @posts = Post.friendly
+    @posts = Post.active.friendly
                      .search_by_title_and_tag(params[:search])
                      .last_num(params[:last])
                      .offset(params[:offset])
@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.friendly.preload(:comments).find(params[:id])
+    @post = Post.active.friendly.preload(:comments).find(params[:id])
     respond_with @post
   end
 
