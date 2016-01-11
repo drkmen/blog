@@ -24,7 +24,7 @@ SitemapGenerator::Sitemap.create do
   add "/#!/posts"
   add "/#!/tags"
 
-  Post.find_each do |post|
+  Post.active.find_each do |post|
     add "/#!/posts/#{post.friendly_id}", :lastmod => post.updated_at, :changefreq => 'daily'
   end
 
