@@ -7,6 +7,9 @@ ActiveAdmin.register_page "Dashboard" do
     columns do
 
       column do
+        panel "Total posts" do
+          Post.count
+        end
         panel "Finish this!" do
           ul do
             Post.where(hidden: true).map do |post|
