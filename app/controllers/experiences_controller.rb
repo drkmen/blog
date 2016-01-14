@@ -6,5 +6,4 @@ class ExperiencesController < ApplicationController
     respond_with Experience.all
   end
 
-
 end

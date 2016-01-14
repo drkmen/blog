@@ -3,15 +3,15 @@ class PostsController < ApplicationController
   respond_to :json, :html
 
   def index
-    @posts = Post.active.friendly
-                     .search_by_title_and_tag(params[:search])
-                     .last_num(params[:last])
-                     .offset(params[:offset])
-                     .tagged(params[:tags])
-                     .where.not(:id => params[:post_id])
-                     .preload(:comments)
-                     .preload(:tags)
-                     .order('created_at DESC')
+    @posts = Post.friendly
+                 .search_by_title_and_tag(params[:search])
+                 .last_num(params[:last])
+                 .offset(params[:offset])
+                 .tagged(params[:tags])
+                 .where.not(:id => params[:post_id])
+                 .preload(:comments)
+                 .preload(:tags)
+                 .order('created_at DESC')
     respond_with @posts
   end
 

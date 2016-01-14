@@ -33,17 +33,4 @@ ActiveAdmin.register Post do
 
   permit_params :title, :image, :remote_image_url, :body, :description, :google_desc, :hidden, :tag_ids => []
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # permit_params :list, :of, :attributes, :on, :model
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:permitted, :attributes]
-  #   permitted << :other if resource.something?
-  #   permitted
-  # end
-
 end
