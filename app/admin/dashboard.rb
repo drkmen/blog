@@ -8,7 +8,9 @@ ActiveAdmin.register_page "Dashboard" do
 
       column do
         panel "Total posts" do
-          Post.count
+          span Post.active.count
+          br
+          span Post.where(hidden: true).count
         end
         panel "Finish this!" do
           ul do
