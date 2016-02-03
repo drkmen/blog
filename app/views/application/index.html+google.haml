@@ -23,6 +23,7 @@
         %h4
           %a{href: '/#!/posts'} BLOG
 
+      - @posts = Post.active.friendly.preload(:comments).preload(:tags).order('created_at DESC').last(5)
       Last 5 articles:
       - @posts.each do |post|
         %li

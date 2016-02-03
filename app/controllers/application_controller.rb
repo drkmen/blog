@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
       format.html do |html|
         html.desctop # renders app/views/projects/show.html+tablet.erb
         html.phone { redirect_to posts_path }
-        html.google
+        # html.google
       end
     end
   end
@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
 
   def set_variants
     request.variant = :phone if request.user_agent =~ /iphone|android|ipod|ipad/i
-    request.variant = :google if request.user_agent =~ /Googlebot|Mediapartners-Google/i
+    # request.variant = :google if request.user_agent =~ /Googlebot|Mediapartners-Google/i
   end
 
   # def redirect_google
