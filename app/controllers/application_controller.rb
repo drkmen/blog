@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_action :redirect_google
+  # before_action :redirect_google
   before_action :set_variants
 
   def index
@@ -37,13 +37,13 @@ class ApplicationController < ActionController::Base
     request.variant = :google if request.user_agent =~ /Googlebot|Mediapartners-Google/i
   end
 
-  def redirect_google
-    if request.env['HTTP_USER_AGENT'] =~ /Googlebot/
+  # def redirect_google
+  #   if request.env['HTTP_USER_AGENT'] =~ /Googlebot/
       # cookies[:blog_show_cookie_tips] = false
       # cookies[:blog_show_arrows_tips] = false
-      redirect_to root_path + '?_escaped_fragment_='
-    end
-  end
+      # redirect_to root_path + '?_escaped_fragment_='
+    # end
+  # end
 
 end
 
