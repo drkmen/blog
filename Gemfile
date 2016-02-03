@@ -47,7 +47,7 @@ gem 'omniauth-gplus'
 gem 'omniauth-vkontakte'
 
 # SEO
-# gem 'prerender_rails'
+gem 'prerender_rails', git: 'https://github.com/drkmen/prerender_rails'
 gem 'sitemap_generator'
 
 # Use ActiveModel has_secure_password
