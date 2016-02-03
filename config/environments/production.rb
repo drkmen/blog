@@ -78,5 +78,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # needs for SEO and prerender js
-  config.middleware.use Rack::Prerender, prerender_token: 'FrIZm3sNPY4J5QF8oNhM'
+  # config.middleware.use Rack::Prerender, prerender_token: 'FrIZm3sNPY4J5QF8oNhM'
 end

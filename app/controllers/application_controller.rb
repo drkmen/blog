@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  # before_action :set_cookies_for_crawlers
+  before_action :redirect_google
   before_action :set_variants
 
   def index
@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
       format.html do |html|
         html.desctop # renders app/views/projects/show.html+tablet.erb
         html.phone { redirect_to posts_path }
+        html.google
       end
     end
   end
@@ -33,14 +34,16 @@ class ApplicationController < ActionController::Base
 
   def set_variants
     request.variant = :phone if request.user_agent =~ /iphone|android|ipod|ipad/i
+    request.variant = :google if request.user_agent =~ /Googlebot|Mediapartners-Google/i
   end
 
-  # def set_cookies_for_crawlers
-  #   if request.env['HTTP_USER_AGENT'] =~ /Googlebot/
-  #     cookies[:blog_show_cookie_tips] = false
-  #     cookies[:blog_show_arrows_tips] = false
-  #   end
-  # end
+  def redirect_google
+    if request.env['HTTP_USER_AGENT'] =~ /Googlebot/
+      # cookies[:blog_show_cookie_tips] = false
+      # cookies[:blog_show_arrows_tips] = false
+      redirect_to root_path + '?_escaped_fragment_='
+    end
+  end
 
 end
 
