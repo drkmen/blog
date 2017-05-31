@@ -1,5 +1,4 @@
-ActiveAdmin.register Comment, :as => "Post Comments" do
-
+ActiveAdmin.register Comment, as: 'Post Comments' do
   index do
     selectable_column
     column :id
@@ -8,5 +7,4 @@ ActiveAdmin.register Comment, :as => "Post Comments" do
     column :created_at
     actions
   end
-
 end

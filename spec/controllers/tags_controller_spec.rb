@@ -1,11 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe TagsController, :type => :controller do
-
+RSpec.describe TagsController, type: :controller do
   before do
-    ActsAsTaggableOn::Tag.create(:name => 'Ruby')
-    ActsAsTaggableOn::Tag.create(:name => 'RubyOnRails')
-    ActsAsTaggableOn::Tag.create(:name => 'HTML')
+    ActsAsTaggableOn::Tag.create(name: 'Ruby')
+    ActsAsTaggableOn::Tag.create(name: 'RubyOnRails')
+    ActsAsTaggableOn::Tag.create(name: 'HTML')
   end
 
   describe 'GET #index' do
@@ -24,7 +23,6 @@ RSpec.describe TagsController, :type => :controller do
       expect(exp).to have_key('name')
       expect(exp).to have_key('taggings_count')
     end
-
   end
 
   describe 'GET #show' do
@@ -36,7 +34,5 @@ RSpec.describe TagsController, :type => :controller do
       json = JSON.parse(subject.body)['tag']
       expect(json['name']).to eq 'Ruby'
     end
-
   end
-
 end

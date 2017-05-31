@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe SkillsController, :type => :controller do
-
+RSpec.describe SkillsController, type: :controller do
   before do
     3.times { FactoryGirl.create(:skill) }
   end
@@ -23,7 +22,5 @@ RSpec.describe SkillsController, :type => :controller do
       expect(exp).to have_key('value')
       expect(exp).to have_key('start_date')
     end
-
   end
-
 end

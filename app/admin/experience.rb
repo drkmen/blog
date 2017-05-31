@@ -1,7 +1,6 @@
 ActiveAdmin.register Experience do
-
   form do |f|
-    f.inputs "Post" do
+    f.inputs 'Post' do
       f.input :job_title
       f.input :employer
       f.input :description
@@ -13,5 +12,4 @@ ActiveAdmin.register Experience do
   end
 
   permit_params :job_title, :employer, :description, :from, :to, :study
-
 end

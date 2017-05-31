@@ -1,7 +1,5 @@
 class ExperienceSerializer < ActiveModel::Serializer
-
   attributes :id, :job_title, :employer, :description, :from, :to, :study
-
 end
 
 # == Schema Information
@@ -17,4 +15,3 @@ end
 #  study       :boolean
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#

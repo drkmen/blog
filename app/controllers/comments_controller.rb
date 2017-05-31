@@ -1,11 +1,10 @@
 class CommentsController < ApplicationController
-
   def create
-    comment = Comment.new(comment_params)
+    comment = Comment.new comment_params
     if comment.save
-      render :json => comment, :root => true
+      render json: comment, root: true
     else
-      render :json => {errors: comment.errors}, status: :unprocessable_entity
+      render json: { errors: comment.errors }, status: :unprocessable_entity
     end
   end
 
@@ -14,5 +13,4 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:body, :post_id, :author_id)
   end
-
 end

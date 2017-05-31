@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -9,14 +8,14 @@ class ApplicationController < ActionController::Base
   def index
     respond_to do |format|
       format.html do |html|
-        html.desctop # renders app/views/projects/show.html+tablet.erb
+        html.desctop
         html.phone { redirect_to posts_path }
       end
     end
   end
 
   def reload_sitemap
-    SitemapGenerator::Interpreter.run(:config_file => (SitemapGenerator.app.root + 'config/sitemap.rb'), :verbose => false)
+    SitemapGenerator::Interpreter.run(config_file: (SitemapGenerator.app.root + 'config/sitemap.rb'), verbose: false)
     SitemapGenerator::Sitemap.ping_search_engines
     redirect_to :back
   end
@@ -32,6 +31,4 @@ class ApplicationController < ActionController::Base
   def set_variants
     request.variant = :phone if request.user_agent =~ /iphone|android|ipod|ipad/i
   end
-
 end
-

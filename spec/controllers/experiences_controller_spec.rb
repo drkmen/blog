@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ExperiencesController, :type => :controller do
-
+RSpec.describe ExperiencesController, type: :controller do
   before do
     3.times { FactoryGirl.create(:experience) }
   end
@@ -26,7 +25,5 @@ RSpec.describe ExperiencesController, :type => :controller do
       expect(exp).to have_key('to')
       expect(exp).to have_key('study')
     end
-
   end
-
 end

@@ -1,5 +1,4 @@
 class TagsController < ApplicationController
-
   respond_to :json
 
   def index
@@ -7,7 +6,6 @@ class TagsController < ApplicationController
   end
 
   def show
-    respond_with ActsAsTaggableOn::Tag.find_by(:name => params[:id])
+    respond_with ActsAsTaggableOn::Tag.find_by(name: params[:id])
   end
-
 end

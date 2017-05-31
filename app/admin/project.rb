@@ -1,5 +1,4 @@
 ActiveAdmin.register Project do
-
   index do
     selectable_column
     column :id
@@ -15,7 +14,7 @@ ActiveAdmin.register Project do
   end
 
   form do |f|
-    f.inputs "Project" do
+    f.inputs 'Project' do
       f.input :name
       f.input :description
       f.input :link
@@ -26,6 +25,5 @@ ActiveAdmin.register Project do
     actions
   end
 
-  permit_params :name, :description, :image, :remote_image_url, :link, :tag_ids => []
-
+  permit_params :name, :description, :image, :remote_image_url, :link, tag_ids: []
 end

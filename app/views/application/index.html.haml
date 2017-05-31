@@ -7,10 +7,10 @@
     = javascript_include_tag 'nprogress'
     = javascript_include_tag 'application'
 
-    %link{:href => "http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,cyrillic-ext", :rel => "stylesheet", :type => "text/css"}/
+    %link{href: 'http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,cyrillic-ext', rel: 'stylesheet', type: 'text/css'}/
     = csrf_meta_tags
-    %meta{:name => "fragment", :content => "!"}
-    %meta{:name => :description, :content => "WEB Developer Blog"}
+    %meta{name: 'fragment', content: '!'}
+    %meta{name: :description, content: 'WEB Developer Blog'}
   %body
     = render :partial => 'ga'
     :javascript

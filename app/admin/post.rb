@@ -1,5 +1,4 @@
 ActiveAdmin.register Post do
-
   index do
     selectable_column
     column :id
@@ -18,19 +17,19 @@ ActiveAdmin.register Post do
   end
 
   form do |f|
-    f.inputs "Post" do
+    f.inputs 'Post' do
       f.input :title
       f.input :image
       f.input :remote_image_url
       f.input :description
       f.input :google_desc
       f.input :hidden
-      f.input :body, :as => :ckeditor
+      f.input :body, as: :ckeditor
       f.input :tags, as: :check_boxes
     end
     actions
   end
 
-  permit_params :title, :image, :remote_image_url, :body, :description, :google_desc, :hidden, :tag_ids => []
-
+  permit_params :title, :image, :remote_image_url, :body, :description,
+                :google_desc, :hidden, tag_ids: []
 end

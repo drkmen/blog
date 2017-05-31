@@ -1,17 +1,10 @@
 class PostsController < ApplicationController
-
   respond_to :json, :html
 
   def index
-    @posts = Post.active.friendly
-                 .search_by_title_and_tag(params[:search])
-                 .last_num(params[:last])
-                 .offset(params[:offset])
-                 .tagged(params[:tags])
-                 .where.not(:id => params[:post_id])
-                 .preload(:comments)
-                 .preload(:tags)
-                 .order('created_at DESC')
+    @posts = Post.active.friendly.search_by_title_and_tag(params[:search]).last_num(params[:last])
+                 .offset(params[:offset]).tagged(params[:tags]).where.not(id: params[:post_id])
+                 .preload(:comments).preload(:tags).order('created_at DESC')
     respond_with @posts
   end
 
@@ -19,5 +12,4 @@ class PostsController < ApplicationController
     @post = Post.active.friendly.preload(:comments).find(params[:id])
     respond_with @post
   end
-
 end

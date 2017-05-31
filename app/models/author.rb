@@ -1,11 +1,9 @@
 class Author < ActiveRecord::Base
-
-  has_many :comments, :dependent => :destroy
+  has_many :comments, dependent: :destroy
 
   mount_uploader :image, ImageUploader
 
-  validates :name, presence: true, length: {minimum: 2, maximum: 50}
-
+  validates :name, presence: true, length: { minimum: 2, maximum: 50 }
 end
 
 # == Schema Information

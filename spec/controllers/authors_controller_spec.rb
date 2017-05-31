@@ -10,8 +10,7 @@ RSpec.shared_examples 'authors json' do
   end
 end
 
-RSpec.describe AuthorsController, :type => :controller do
-
+RSpec.describe AuthorsController, type: :controller do
   let(:author) { FactoryGirl.create(:author) }
 
   describe 'GET #show' do
@@ -24,7 +23,7 @@ RSpec.describe AuthorsController, :type => :controller do
   describe 'POST #create' do
 
     describe 'success' do
-      let(:payload) { {author: {name: 'Bob'}} }
+      let(:payload) { { author: { name: 'Bob' } } }
       subject { post :create, payload, format: :json }
 
       it_behaves_like 'success responses'
@@ -37,7 +36,7 @@ RSpec.describe AuthorsController, :type => :controller do
     end
 
     describe 'failed' do
-      let(:payload) { {author: {name: ''}} }
+      let(:payload) { { author: { name: '' } } }
       subject { post :create, payload, format: :json }
 
       it_behaves_like 'failed responses'
@@ -49,8 +48,5 @@ RSpec.describe AuthorsController, :type => :controller do
         expect(json['name'][1]).to eq 'is too short (minimum is 2 characters)'
       end
     end
-
   end
-
-
 end

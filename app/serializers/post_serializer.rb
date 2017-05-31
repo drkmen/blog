@@ -1,6 +1,6 @@
 class PostSerializer < ActiveModel::Serializer
-
-  attributes :id, :title, :image_path, :body, :tags, :created_at, :updated_at, :comments, :friendly_id, :description, :google_desc
+  attributes :id, :title, :image_path, :body, :tags, :created_at, :updated_at,
+             :comments, :friendly_id, :description, :google_desc
 
   def image_path
     object.image_url
@@ -9,7 +9,6 @@ class PostSerializer < ActiveModel::Serializer
   def comments
     object.comments.order('created_at ASC')
   end
-
 end
 
 # == Schema Information
@@ -26,4 +25,3 @@ end
 #  description :string
 #  google_desc :string
 #  hidden      :boolean          default(FALSE)
-#

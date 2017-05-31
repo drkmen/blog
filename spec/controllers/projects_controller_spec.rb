@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ProjectsController, :type => :controller do
-
+RSpec.describe ProjectsController, type: :controller do
   before do
     3.times { FactoryGirl.create(:project) }
   end
@@ -28,10 +27,8 @@ RSpec.describe ProjectsController, :type => :controller do
 
     it 'should ordered by DESC' do
       json = JSON.parse(subject.body)['projects']
-      ids = json.to_a.map{|project| project['id']}
+      ids = json.to_a.map { |project| project['id'] }
       expect(ids).to eq [6, 5, 4, 3, 2, 1]
     end
-
   end
-
 end

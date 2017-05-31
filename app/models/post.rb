@@ -1,22 +1,22 @@
 class Post < ActiveRecord::Base
-
   extend FriendlyId
+  validates :title, :body, :description, presence: true
+  validates :title, uniqueness: true
+
   friendly_id :title, use: :slugged
 
   acts_as_taggable
   mount_uploader :image, ImageUploader
 
-  has_many :comments, :dependent => :destroy
-
-  # default_scope ->{ where(hidden: false) }
+  has_many :comments, dependent: :destroy
 
   scope :active, -> { where(hidden: false) }
-  scope :last_num, ->(limit_param) { limit_param.present? ? limit(limit_param) : all}
-  scope :tagged, ->(tags) { tags.present? ? tagged_with([tags], :any => true) : all}
-  scope :search_by_title_and_tag, ->(str) {
+  scope :last_num, ->(limit_param) { limit_param.present? ? limit(limit_param) : all }
+  scope :tagged, ->(tags) { tags.present? ? tagged_with([tags], any: true) : all }
+  scope :search_by_title_and_tag, lambda { |str|
     if str.present?
-      joins(:tags => :taggings).
-        where(%{"posts"."title" ILIKE :str OR "tags"."name" ILIKE :str}, :str => "%#{str}%").uniq
+      joins(tags: :taggings)
+        .where(%("posts"."title" ILIKE :str OR "tags"."name" ILIKE :str), str: "%#{str}%").uniq
     else
       all
     end
@@ -30,10 +30,6 @@ class Post < ActiveRecord::Base
     I18n.transliterate(title).to_s
     super
   end
-
-  validates :title, :body, :description, presence: true
-  validates :title, uniqueness: true
-
 end
 
 # == Schema Information

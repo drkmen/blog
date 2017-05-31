@@ -1,5 +1,4 @@
 ActiveAdmin.register Author do
-
   index do
     selectable_column
     column :id
@@ -13,7 +12,7 @@ ActiveAdmin.register Author do
   end
 
   form do |f|
-    f.inputs "Author" do
+    f.inputs 'Author' do
       f.input :name
       f.input :posts_author
       f.input :image
@@ -23,10 +22,5 @@ ActiveAdmin.register Author do
     actions
   end
 
-
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-
   permit_params :name, :image, :remote_image_url, :about, :posts_author
-
 end

@@ -1,7 +1,5 @@
 class SkillSerializer < ActiveModel::Serializer
-
   attributes :id, :name, :value, :start_date
-
 end
 
 # == Schema Information
@@ -14,4 +12,3 @@ end
 #  updated_at :datetime         not null
 #  value      :integer
 #  start_date :date
-#

@@ -1,11 +1,9 @@
 class AuthorSerializer < ActiveModel::Serializer
-
   attributes :id, :name, :about, :image_path
 
   def image_path
     object.image_url
   end
-
 end
 # == Schema Information
 #
@@ -19,6 +17,3 @@ end
 #  updated_at   :datetime         not null
 #  about        :text
 #  posts_author :boolean          default(FALSE)
-#
-
-#
