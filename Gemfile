@@ -27,6 +27,7 @@ gem 'rmagick'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'friendly_id', '~> 5.1.0'
 gem 'ckeditor'
+gem 'faker'
 
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'bootstrap-sass'
@@ -70,7 +71,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
-  gem 'faker'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
