@@ -14,12 +14,13 @@
   position: relative;
   background-position: center;
   background-size: cover;
-//  background-size: 100% 100%;
   width: 100%;
   height: 100%;
+
   &.app-index {
     position: fixed;
     width: 65%;
+
     .post-preview-info {
       width: 75%;
       left: 5%;
@@ -28,6 +29,7 @@
   &.show {
     height: 75%;
     overflow: visible;
+
     &.mobile {
       height: 30%;
     }
@@ -48,25 +50,31 @@
     left: 10%;
     position: absolute;
     z-index: 2;
+
     &.show {
       top: calc(65% - 20px);
     }
+
     .post-preview-title, .post-preview-body, .post-preview-button {
       z-index: 2;
       color: #FFF;
     }
+
     .post-preview-title {
       font-size: 40px;
       font-weight: 400;
       text-transform: uppercase;
+
       &.mobile{
         font-size: 15px;
       }
     }
+
     .post-preview-body {
       font-size: 15px;
       font-weight: 200;
     }
+
     .post-preview-button {
       color: #fff;
       margin-top: 50px;
@@ -75,11 +83,13 @@
       padding: 18px;
       border: 1px solid #FFF;
       border-radius: 5%;
+
       &:hover {
         color: #E45245;
         border-color: #E45245;
       }
     }
+
     .post-preview-hr {
       width: 220px;
       border-top: 2px solid #E45245;
@@ -92,12 +102,15 @@
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
   padding: 0 10px 25px 10px;
+
   .fa.fa-calendar-o, .fa.fa-tag {
     color: #EA7B71;
     margin-right: 3px;
   }
+
   .created_by {
     padding-left: 30px;
+
     .author-image {
       background-color: #fff;
       bottom: -20px;
@@ -106,22 +119,27 @@
       position: absolute;
       width: 125px;
       z-index: 2;
+
       img {
         width: 100%;
         height: 100%;
       }
     }
+
     .author {
       color: #EA7B71;
     }
   }
+
   .created_at {
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
   }
+
   .tag {
     margin: 0 10px;
   }
+
   .row {
     padding-bottom: 25px;
   }
@@ -131,9 +149,11 @@
   padding-left: 20px;
   font-size: 20px;
   font-weight: 200;
+
   a {
     text-decoration: underline;
   }
+
   h1, h2, h3, h4, h5 {
     font-weight: 100;
   }
@@ -143,13 +163,16 @@
   padding: 25px 0;
   text-align: center;
   color: #a8a8a8;
+
   .title {
     font-size: 20px;
     font-weight: 500;
   }
+
   .social-buttons {
     font-size: 30px;
     padding-top: 20px;
+
     i {
       &.blue, &.azure, &.dark-blue, &.red {
         background-color: #aaaaaa;
@@ -161,24 +184,29 @@
       width: 60px;
       margin: 0 10px;
       @include transition(0.2s, ease-in-out);
+
       &:hover {
         @include transition(0.2s, ease-in-out);
       }
+
       &.blue {
         &:hover {
           background-color: #44678D;
         }
       }
+
       &.azure {
         &:hover {
           background-color: #1AB2E8;
         }
       }
+
       &.dark-blue {
         &:hover {
           background-color: #3C599F;
         }
       }
+
       &.red {
         &:hover {
           background-color: #F01B00;
@@ -192,6 +220,7 @@
   padding: 25px 0;
   position: relative;
   margin-left: 50px;
+
   .title {
     margin-left: -50px;
     color: #a8a8a8;
@@ -199,6 +228,7 @@
     font-weight: 500;
     text-align: center;
   }
+
   .related-item {
     position: relative;
     display: inline-block;
@@ -206,14 +236,12 @@
     overflow: hidden;
     height: 200px;
     margin: 25px;
+
     .img {
       img {
         width: 100%;
         height: 150px;
       }
-    }
-    .text {
-
     }
   }
 }
@@ -223,11 +251,13 @@
   padding: 35px 50px;
   height: 100%;
   position: relative;
+
   .post {
     content: "";
     z-index: 1;
     margin-bottom: 15px;
     position: relative;
+
     .post-preview {
       &.index {
         height: 450px;
@@ -241,26 +271,32 @@
       top: -50px;
       padding: 0 25px;
       margin: 0 auto;
+
       .title {
         font-weight: 300;
         font-size: 40px;
       }
+
       .date {
         font-weight: 100;
         font-size: 14px;
       }
+
       .body {
         font-weight: 100;
         font-size: 20px;
       }
+
       .author {
         a {
           color: #E45245;
         }
       }
+
       .tag {
         color: #E45245;
       }
+
       .post-preview-button {
         border: 1px solid #898989;
         border-radius: 5%;
@@ -268,6 +304,7 @@
         outline: medium none;
         padding: 18px;
         text-decoration: none;
+
         &:hover {
           color: #E45245;
           border-color: #E45245;
@@ -283,24 +320,30 @@
 
 .comments {
   padding: 25px 50px;
+
   h3 {
     font-weight: 300;
   }
+
   .comment {
     margin-top: 25px;
     font-weight: 300;
     padding: 35px;
     min-height: 150px;
     position: relative;
+
     &:nth-child(odd) {
       background-color: #F5F5F5;
     }
+
     .body {
       word-break: break-all;
     }
+
     .body, .date {
       margin-left: 120px;
     }
+
     .author-img {
       position: absolute;
       height: 100%;
@@ -309,6 +352,7 @@
         width: 75px;
       }
     }
+
     .date {
       .author-name {
         color: #EA7B71;
@@ -322,13 +366,16 @@
     position: relative;
     height: auto;
     margin-top: 100px;
+
     textarea {
       min-height: 100px;
       resize: vertical;
     }
+
     img {
       float: right;
     }
+
     .name {
       padding-left: 10px;
     }
@@ -351,19 +398,24 @@
     color: #fff;
     border-radius: 50%;
     @include transition(0.2s, ease-in-out);
+
     &:hover {
       opacity: 1.0;
       @include transition(0.2s, ease-in-out);
     }
+
     &.blue {
       background-color: #44678D;
     }
+
     &.azure {
       background-color: #1AB2E8;
     }
+
     &.dark-blue {
       background-color: #3C599F;
     }
+
     &.red {
       background-color: #F01B00;
     }
@@ -380,6 +432,7 @@
   border-radius: 5%;
   min-width: 100px;
   @include transition(0.2s, ease-in-out);
+
   &:hover {
     @include transition(0.2s, ease-in-out);
     color: #E45245;

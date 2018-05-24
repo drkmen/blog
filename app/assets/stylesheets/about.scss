@@ -9,26 +9,32 @@
 .wrapper {
   &.about {
     padding: 50px 75px 0 75px;
+
     h1, h2, h3 {
       font-size: 50px;
       font-weight: 100;
       margin: 40px 0;
     }
+
     .contacts {
       font-size: 20px;
       font-weight: 100;
+
       a {
         text-decoration: underline;
       }
     }
+
     .projects{
       position: relative;
+
       .project {
         content: "";
         height: 450px;
         z-index: 1;
         margin-bottom: 250px;
         position: relative;
+
         .project-index {
           position: relative;
           z-index: 2;
@@ -38,14 +44,17 @@
           top: -50px;
           padding: 0 25px;
           margin: 0 auto;
+
           .title {
             font-weight: 300;
             font-size: 40px;
           }
+
           .body {
             font-weight: 100;
             font-size: 20px;
           }
+
           .project-link {
             font-weight: lighter;
             font-size: 20px;
@@ -54,13 +63,16 @@
         }
       }
     } // projects
+
     .skill-chart {
       display: inline-block;
     }
+
     .skills {
       .skill {
         margin: 20px 10px;
         display: inline-block;
+
         .skill-level {
           padding-top: 10px;
           text-align: center;
@@ -70,22 +82,26 @@
         }
       }
     }
+
     .easypiechart {
       position: relative;
       text-align: center;
       display: inline-block;
     }
+
     .easypiechart .h2 {
       word-wrap: break-word;
       font-size: 120%;
       margin-top: 10px;
       display: inline-block;
     }
+
     .easypiechart canvas {
       position: absolute;
       top: 0;
       left: 0;
     }
+
     .easypiechart .easypie-text {
       position: absolute;
       z-index: 1;
@@ -94,31 +110,40 @@
       width: 100%;
       top: 60%;
     }
+
     .easypiechart img {
       margin-top: -4px;
     }
+
     .color {
       &.html {
         color: #dadc00;
       }
+
       &.css {
         color: #87ffff;
       }
+
       &.scss {
         color: #2e90ff;
       }
+
       &.js {
         color: #ffc300;
       }
+
       &.ember {
         color: #ff7d00;
       }
+
       &.db {
         color: #8aff15;
       }
+
       &.ruby {
         color: #ff0d00;
       }
+
       &.rails {
         color: #bd0400;
       }
@@ -128,18 +153,18 @@
         small {
           font-weight: 200;
         }
+
         font-size: 25px;
         font-weight: 300;
         margin-bottom: 10px;
       }
+
       h4 {
         font-size: 35px;
         font-weight: 100;
         margin: 30px 0;
       }
     }
-
-
   }
 }
 
